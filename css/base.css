@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+}
+
+a {
+  color: whitesmoke;
+  text-decoration: none;
+}

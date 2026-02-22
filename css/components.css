@@ -1,0 +1,27 @@
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem 0 4rem;
+}
+
+a {
+  font-size: 1.5rem;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+
+.links img {
+  width: 100px;
+}
+
+.logo-container img {
+  height: 60px;
+  width: auto;
+}
