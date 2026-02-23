@@ -1,3 +1,15 @@
+/* ===========================
+   COMPONENTS - Wiederverwendbare Komponenten
+   ===========================
+   Hier gehören:
+   - Header, Footer, Navigation
+   - Buttons (spezifische Styles)
+   - Cards, Badges
+   - Icons, Logos
+   - Modale, Dropdowns
+   - Alles, was mehrfach verwendet wird
+   =========================== */
+
 header {
   width: 100%;
   display: flex;
@@ -10,14 +22,14 @@ a {
   font-size: 1.5rem;
 }
 
-.links {
+nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 1rem;
 }
 
-.links img {
+nav img {
   height: 30px;
 }
 

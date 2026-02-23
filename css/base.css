@@ -1,3 +1,15 @@
+/* ===========================
+   BASE - Grundlegende Styles
+   ===========================
+   Hier gehören:
+   - Resets (*-Selector)
+   - body, html Styles
+   - Grundlegende Typografie
+   - Globale Farben & Variablen
+   - Link-Styles (a-Tag)
+   - Font-Imports
+   =========================== */
+
 * {
   box-sizing: border-box;
   margin: 0;
