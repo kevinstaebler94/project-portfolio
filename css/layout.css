@@ -14,6 +14,13 @@
    =========================== */
 
 /* Hero Section Layout */
+body {
+  max-width: 1440px;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
 
 .hero-content-wrapper {
   height: 70vh;
@@ -23,6 +30,7 @@
   row-gap: 2rem;
   padding-top: 15rem;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 h1 {
@@ -75,4 +83,37 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 80vh;
+}
+
+.portrait-wrapper {
+  display: flex;
+  justify-content: end;
+  align-items: start;
+  width: 100%;
+}
+
+.portrait-container {
+  position: relative;
+  margin-top: 10rem;
+  width: 85%;
+}
+
+.portrait-container::before {
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: -7%;
+  width: 100%;
+  height: 100%;
+  background-image: url(/assets/images/portrait-bg.svg);
+  background-size: cover;
+  background-position: left;
+  z-index: 0;
+}
+
+.portrait-img {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
 }
