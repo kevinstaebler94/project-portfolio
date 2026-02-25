@@ -94,7 +94,7 @@ h2 {
 
 .portrait-container {
   position: relative;
-  margin-top: 10rem;
+  margin-top: 7rem;
   width: 85%;
 }
 
@@ -116,4 +116,8 @@ h2 {
   display: block;
   position: relative;
   z-index: 1;
+}
+
+.about-me-wrapper {
+  padding: 0 6rem;
 }
