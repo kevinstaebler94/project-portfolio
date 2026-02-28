@@ -21,20 +21,20 @@ p {
   color: whitesmoke;
 }
 
-h1 {
-  font-size: 7.5rem;
+.hero-content-wrapper > h1 {
+  font-size: var(--fs-4xl);
 }
 
-h2 {
-  font-size: 3rem;
+.hero-content-wrapper > h2 {
+  font-size: var(--fs-2xl);
 }
 
 button {
-  font-size: 1.25rem;
-  padding: 1rem 1.5rem;
+  font-size: var(--fs-md);
+  padding: var(--spacing-sm) var(--spacing-md);
   border-radius: 35px;
   border: 2px solid whitesmoke;
-  color: whitesmoke;
+  color: var(--color-text);
   background-color: transparent;
 }
 
@@ -51,7 +51,7 @@ button {
 
 .status {
   color: #3dcfb6;
-  font-size: 1.5rem;
+  font-size: var(--spacing-md);
 }
 
 .dot {
@@ -76,4 +76,45 @@ button {
 
 .portrait-img {
   border-radius: 35px;
+}
+
+.about-me-container {
+  border: 2px solid white;
+  border-radius: 25px;
+}
+
+.about-me-wrapper > h3 {
+  font-size: var(--spacing-md);
+}
+
+.about-me-wrapper > div > h2 {
+  font-size: var(--fs-3xl);
+}
+
+.about-me-container > p {
+  font-size: var(--fs-md);
+}
+
+.about-me-container > div > p {
+  font-size: var(--fs-md);
+  color: #d2d5d5;
+}
+
+/* Media Querries */
+@media (max-width: 1200px) {
+  .about-me-wrapper > h3 {
+    font-size: var(--fs-md);
+  }
+
+  .about-me-wrapper > div > h2 {
+    font-size: var(--fs-2xl);
+  }
+
+  .about-me-container > p {
+    font-size: var(--fs-sm);
+  }
+
+  .about-me-container > div > p {
+    font-size: var(--fs-sm);
+  }
 }

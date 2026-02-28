@@ -17,34 +17,33 @@
 body {
   max-width: 1440px;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   margin: 0 auto;
   overflow-x: hidden;
 }
 
 .hero-content-wrapper {
-  height: 70vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 2rem;
+  row-gap: var(--spacing-lg);
   padding-top: 15rem;
   margin: 0 auto;
   overflow: hidden;
 }
 
-h1 {
+.hero-content-wrapper > h1 {
   order: 2;
 }
-
-h2 {
+.hero-content-wrapper > h2 {
   order: 1;
 }
 
 .btn-container {
   order: 3;
   display: flex;
-  gap: 2rem;
+  gap: var(--spacing-lg);
   padding-bottom: 10rem;
 }
 
@@ -59,13 +58,13 @@ h2 {
 .banner-track {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: var(--spacing-2xl);
 }
 
 .status {
   display: inline-flex;
   align-items: center;
-  gap: 4rem;
+  gap: var(--spacing-2xl);
   flex-shrink: 0;
 }
 
@@ -74,7 +73,7 @@ h2 {
   width: 10px;
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: var(--spacing-2xl);
 }
 
 /* About Section Layout */
@@ -82,7 +81,10 @@ h2 {
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 80vh;
+  /* height: 80vh; */
+  gap: var(--spacing-2xl);
+  align-items: start;
+  padding: 0 var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl);
 }
 
 .portrait-wrapper {
@@ -90,12 +92,14 @@ h2 {
   justify-content: end;
   align-items: start;
   width: 100%;
+  margin-top: var(--spacing-3xl);
 }
 
 .portrait-container {
   position: relative;
-  margin-top: 7rem;
-  width: 85%;
+  max-width: 612px;
+  width: 100%;
+  height: 100%;
 }
 
 .portrait-container::before {
@@ -113,11 +117,43 @@ h2 {
 
 .portrait-img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
   position: relative;
   z-index: 1;
 }
 
 .about-me-wrapper {
-  padding: 0 6rem;
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.about-me-wrapper > h3 {
+  margin-bottom: 1.5rem;
+  max-width: 612px;
+  width: 100%;
+}
+
+.about-me-container {
+  padding: 1rem;
+  max-width: 612px;
+  width: 100%;
+}
+
+.about-me-container > h2,
+.about-me-container > p,
+.about-me-container > div > p {
+  margin-bottom: 1.5rem;
+}
+
+/* Media Querries */
+@media (max-width: 1200px) {
+  .about {
+    padding: 0 2rem 4rem 4rem;
+    gap: 3rem;
+  }
 }
