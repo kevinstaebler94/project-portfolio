@@ -82,6 +82,7 @@ button {
 .skills-content {
   border: var(--border);
   border-radius: var(--br-25);
+  height: fit-content;
 }
 
 .about-me-wrapper > h3,
@@ -98,7 +99,8 @@ button {
 
 .about-me-container > p,
 .skills-description,
-.skills-contact-text {
+.skills-contact-text,
+.skills-technology > p {
   font-size: var(--fs-md);
   text-align: justify;
   hyphens: auto;
@@ -122,21 +124,17 @@ button {
   color: var(--color-primary);
 }
 
+.skills-technology > p {
+  text-align: center;
+}
+
 /* Media Querries */
 @media (max-width: 1200px) {
-  .about-me-wrapper > h3 {
+  /* .about-me-wrapper > h3 {
     font-size: var(--fs-md);
-  }
+  } */
 
   .about-me-wrapper > div > h2 {
     font-size: var(--fs-2xl);
-  }
-
-  .about-me-container > p {
-    font-size: var(--fs-sm);
-  }
-
-  .about-me-container > div > p {
-    font-size: var(--fs-sm);
   }
 }

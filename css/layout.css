@@ -17,7 +17,6 @@
 body {
   max-width: 1440px;
   width: 100%;
-  /* height: 100vh; */
   margin: 0 auto;
   overflow-x: hidden;
 }
@@ -80,11 +79,10 @@ body {
 
 .about {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* height: 80vh; */
+  grid-template-columns: repeat(auto-fit, minmax(425px, 1fr));
   gap: var(--spacing-2xl);
   align-items: start;
-  padding: 0 var(--spacing-2xl) var(--spacing-2xl) var(--spacing-2xl);
+  padding: 0 var(--spacing-sm) var(--spacing-2xl) var(--spacing-2xl);
 }
 
 .portrait-wrapper {
@@ -129,7 +127,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: end;
 }
 
 .about-me-wrapper > h3,
@@ -163,8 +161,8 @@ body {
 
 .skills {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 100vh;
+  grid-template-columns: repeat(auto-fit, minmax(485px, 1fr));
+  gap: var(--spacing-md);
 }
 
 .skills-container {
@@ -179,10 +177,61 @@ body {
   padding-left: var(--spacing-xs);
 }
 
+.skills-technologies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--spacing-2xl);
+  padding: calc(var(--spacing-4xl) - 27px) var(--spacing-2xl) var(--spacing-2xl)
+    0;
+}
+
+.skills-technology {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
 /* Media Querries */
 @media (max-width: 1200px) {
   .about {
-    padding: 0 var(--spacing-lg) var(--spacing-2xl) var(--spacing-2xl);
+    padding: 0 var(--spacing-lg) 0 var(--spacing-2xl);
     gap: var(--spacing-xl);
+    align-items: center;
   }
+
+  .skills-technologies {
+    padding-right: var(--spacing-xs);
+  }
+}
+
+@media (max-width: 993px) {
+  .portrait-wrapper {
+    justify-content: center;
+  }
+
+  .about-me-wrapper {
+    align-items: center;
+  }
+
+  .skills-container,
+  .skills-technologies {
+    align-items: center;
+  }
+
+  .about,
+  .skills-container {
+    padding: var(--spacing-xl) var(--spacing-xl);
+  }
+
+  .skills-technologies {
+    max-width: 612px;
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--spacing-xl) 0 var(--spacing-xl) 0;
+  }
+}
+
+@media (max-width: 786px) {
 }
