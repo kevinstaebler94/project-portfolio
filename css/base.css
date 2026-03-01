@@ -11,14 +11,18 @@
    =========================== */
 
 :root {
+  --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
   --spacing-2xl: 4rem;
   --spacing-3xl: 5rem;
+  --spacing-4xl: 10rem;
+  --spacing-5xl: 15rem;
   --color-primary: #3dcfb6;
   --color-text: whitesmoke;
+  --color-bg: #1c1c1c;
   --fs-xs: 0.875rem;
   --fs-sm: 1rem;
   --fs-md: 1.25rem;
@@ -27,6 +31,9 @@
   --fs-2xl: 3rem;
   --fs-3xl: 4rem;
   --fs-4xl: 7.5rem;
+  --br-25: 25px;
+  --br-35: 35px;
+  --border: 2px solid white;
 }
 
 * {

@@ -71,33 +71,55 @@ button {
 /* About Section Styling */
 
 .about {
-  background-color: #1c1c1c;
+  background-color: var(--color-bg);
 }
 
 .portrait-img {
-  border-radius: 35px;
+  border-radius: var(--br-25);
 }
 
-.about-me-container {
-  border: 2px solid white;
-  border-radius: 25px;
+.about-me-container,
+.skills-content {
+  border: var(--border);
+  border-radius: var(--br-25);
 }
 
-.about-me-wrapper > h3 {
+.about-me-wrapper > h3,
+.skills-container > h3 {
   font-size: var(--spacing-md);
+  color: var(--color-primary);
 }
 
-.about-me-wrapper > div > h2 {
+.about-me-container > h2,
+.skills-content > h2 {
   font-size: var(--fs-3xl);
+  color: var(--color-primary);
 }
 
-.about-me-container > p {
+.about-me-container > p,
+.skills-description,
+.skills-contact-text {
   font-size: var(--fs-md);
+  text-align: justify;
+  hyphens: auto;
 }
 
 .about-me-container > div > p {
   font-size: var(--fs-md);
   color: #d2d5d5;
+}
+
+/* Skills Section */
+.skills {
+  background-color: var(--color-bg);
+}
+
+.skills-cta {
+  font-size: var(--spacing-lg);
+}
+
+.skills-highlight {
+  color: var(--color-primary);
 }
 
 /* Media Querries */
