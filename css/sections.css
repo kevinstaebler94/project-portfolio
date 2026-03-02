@@ -70,7 +70,9 @@ button {
 
 /* About Section Styling */
 
-.about {
+.about,
+.skills,
+.projects {
   background-color: var(--color-bg);
 }
 
@@ -86,13 +88,15 @@ button {
 }
 
 .about-me-wrapper > h3,
-.skills-container > h3 {
+.skills-container > h3,
+.projects-left > h2 {
   font-size: var(--spacing-md);
   color: var(--color-primary);
 }
 
 .about-me-container > h2,
-.skills-content > h2 {
+.skills-content > h2,
+.projects-left > h3 {
   font-size: var(--fs-3xl);
   color: var(--color-primary);
 }
@@ -100,7 +104,8 @@ button {
 .about-me-container > p,
 .skills-description,
 .skills-contact-text,
-.skills-technology > p {
+.skills-technology > p,
+.projects-left > p {
   font-size: var(--fs-md);
   text-align: justify;
   hyphens: auto;
@@ -112,11 +117,9 @@ button {
 }
 
 /* Skills Section */
-.skills {
-  background-color: var(--color-bg);
-}
 
-.skills-cta {
+.skills-cta,
+.project-title {
   font-size: var(--spacing-lg);
 }
 
@@ -126,6 +129,30 @@ button {
 
 .skills-technology > p {
   text-align: center;
+}
+
+/* Projects Section */
+
+.projects {
+  color: whitesmoke;
+}
+
+.project {
+  border-top: 2px solid #3dcfb6;
+}
+
+.project:nth-last-child(1) {
+  border-bottom: 2px solid #3dcfb6;
+}
+
+.project-technologies {
+  list-style: none;
+}
+
+.project-technologies > li:not(:last-child)::after {
+  content: "|";
+  display: inline-flex;
+  align-items: center;
 }
 
 /* Media Querries */
