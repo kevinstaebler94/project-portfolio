@@ -204,10 +204,10 @@ body {
   grid-template-columns: 1fr 400px;
   grid-template-rows: auto auto auto 1fr;
   grid-template-areas:
-    "h2"
-    "h3"
-    "p"
-    "div";
+    "h2 h2"
+    "h3 h3"
+    "p p"
+    "div div";
   padding: var(--spacing-3xl) 0 var(--spacing-2xl) var(--spacing-2xl);
 }
 
@@ -254,6 +254,30 @@ body {
 
   .skills-technologies {
     padding-right: var(--spacing-xs);
+  }
+}
+
+@media (max-width: 1050px) {
+  .projects {
+    padding: var(--spacing-xl) var(--spacing-xl);
+  }
+
+  .projects-left {
+    display: contents;
+  }
+
+  .projects-left > div {
+    grid-area: auto;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "h2"
+      "h3"
+      "p";
+    height: auto;
   }
 }
 
