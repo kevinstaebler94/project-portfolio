@@ -12,6 +12,12 @@
    - Section-spezifische Styles
    =========================== */
 
+/* Header & Navigation Styling */
+
+nav a {
+  font-size: 1.5rem;
+}
+
 /* Hero Section Styling */
 
 h1,
@@ -22,7 +28,7 @@ p {
 }
 
 .hero-content-wrapper > h1 {
-  font-size: var(--fs-4xl);
+  font-size: var(--fs-5xl);
 }
 
 .hero-content-wrapper > h2 {
@@ -31,9 +37,9 @@ p {
 
 button {
   font-size: var(--fs-md);
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: 35px;
-  border: 2px solid whitesmoke;
+  padding: var(--spacing-xs) var(--spacing-lg);
+  border-radius: var(--br-35);
+  border: 2px solid var(--color-text);
   color: var(--color-text);
   background-color: transparent;
 }
@@ -131,18 +137,91 @@ button {
   text-align: center;
 }
 
-/* Projects Section */
+/* Project Modal Section */
+.project-modal {
+  background: linear-gradient(
+    to top right,
+    #1c1c1c 0%,
+    #1c1c1c 32%,
+    #202c29 42%,
+    #1c3632 52%,
+    #16403a 62%,
+    #104943 72%,
+    #0b4d42 100%
+  );
+  border-radius: var(--br-25);
+  border: var(--border);
+}
 
+.project-modal-number {
+  font-size: var(--fs-6xl);
+  color: var(--color-primary);
+}
+
+.project-modal-title {
+  font-size: var(--fs-4xl);
+}
+
+.project-modal-subtitle {
+  font-size: var(--fs-xl);
+  color: var(--color-primary);
+}
+
+.project-modal-description {
+  font-size: var(--fs-md);
+  color: var(--color-text);
+  width: 48ch;
+  overflow-wrap: break-word;
+}
+
+.project-modal-skill > img {
+  filter: brightness(0) saturate(100%) invert(72%) sepia(100%) saturate(309%)
+    hue-rotate(109deg) brightness(86%) contrast(87%);
+}
+
+.project-modal-skill > p {
+  font-size: var(--fs-sm);
+}
+
+.project-modal-actions > button {
+  font-size: var(--fs-md);
+  color: var(--color-primary);
+}
+
+.project-modal-close::after {
+  mask: url("../assets/icons/close.svg") no-repeat center;
+  mask-size: contain;
+  background-color: currentColor;
+}
+
+.project-modal-next {
+  border: none;
+  color: var(--color-primary);
+}
+
+.project-modal-next::after {
+  mask: url("../assets/icons/arrow-forward.svg") no-repeat center;
+  mask-size: contain;
+  background-color: currentColor;
+}
+
+/* Projects Section */
 .projects {
-  color: whitesmoke;
+  color: var(--color-text);
 }
 
 .project {
-  border-top: 2px solid #3dcfb6;
+  position: relative;
+  border-top: 2px solid var(--color-primary);
+  cursor: pointer;
+}
+
+.project:hover {
+  background-color: rgba(61, 207, 182, 0.35);
 }
 
 .project:nth-last-child(1) {
-  border-bottom: 2px solid #3dcfb6;
+  border-bottom: 2px solid var(--color-primary);
 }
 
 .project-technologies {
@@ -151,7 +230,8 @@ button {
 
 .project-technologies > li:not(:last-child)::after {
   content: "|";
-  display: inline-flex;
+  display: inline-block;
+  transform: translateY(-2px);
   align-items: center;
 }
 

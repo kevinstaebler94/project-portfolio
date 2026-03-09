@@ -11,7 +11,8 @@
    =========================== */
 
 :root {
-  --spacing-xs: 0.5rem;
+  --spacing-xxs: 0.5rem;
+  --spacing-xs: 0.75rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
@@ -20,7 +21,7 @@
   --spacing-3xl: 5rem;
   --spacing-4xl: 10rem;
   --spacing-5xl: 15rem;
-  --color-primary: #3dcfb6;
+  --color-primary: rgb(61, 207, 182);
   --color-text: whitesmoke;
   --color-bg: #1c1c1c;
   --fs-xs: 0.875rem;
@@ -30,10 +31,12 @@
   --fs-xl: 2rem;
   --fs-2xl: 3rem;
   --fs-3xl: 4rem;
-  --fs-4xl: 7.5rem;
+  --fs-4xl: 5rem;
+  --fs-5xl: 7.5rem;
+  --fs-6xl: 8.5rem;
   --br-25: 25px;
   --br-35: 35px;
-  --border: 2px solid white;
+  --border: 2px solid #3dcfb6;
 }
 
 * {
