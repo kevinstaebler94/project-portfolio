@@ -209,8 +209,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: var(--spacing-2xl);
-  padding: calc(var(--spacing-4xl) - 27px) var(--spacing-2xl) var(--spacing-2xl)
-    0;
+  padding: calc(var(--spacing-4xl) - 27px) var(--spacing-2xl) var(--spacing-2xl) 0;
 }
 
 .skills-technology {
