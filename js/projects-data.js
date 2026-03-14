@@ -1,6 +1,6 @@
 const projectList = {
   join: {
-    number: "1",
+    number: "01",
     title: "Join",
     description:
       "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
@@ -14,7 +14,7 @@ const projectList = {
   },
 
   elPolloLoco: {
-    number: "2",
+    number: "02",
     title: "El Pollo Loco",
     description:
       "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen",

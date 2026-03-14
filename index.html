@@ -20,7 +20,7 @@
         <img src="/assets/icons/lang-switch-de.svg" alt="" />
         <a href="#about">About me</a>
         <a href="#skills">Skills</a>
-        <a href="">Projects</a>
+        <a href="#projects">Projects</a>
       </nav>
       <div class="logo-container">
         <img src="assets/images/portfolio-logo.png" alt="" />
@@ -166,10 +166,11 @@
         </div>
       </section>
 
+      <div id="project-modal-overlay"></div>
       <section id="project-modal" class="project-modal dNone">
         <div class="project-modal-wrapper">
           <div class="project-modal-content">
-            <h2 id="project-modal-number" class="project-modal-number">01</h2>
+            <h2 id="project-modal-number" class="project-modal-number"></h2>
             <h3 id="project-modal-title" class="project-modal-title">Join</h3>
             <h4 class="project-modal-subtitle">What is this project about?</h4>
             <p id="project-modal-description" class="project-modal-description">
@@ -191,11 +192,11 @@
       </section>
 
       <section class="projects" id="projects">
+        <h2>Portfolio</h2>
+        <h3>Featured Projects</h3>
+        <p>Explore a selection of my work here - Interact with <br />project to see my skills my skills in action.</p>
         <div class="projects-left">
-          <h2>Portfolio</h2>
-          <h3>Featured Projects</h3>
-          <p>Explore a selection of my work here - Interact with <br />project to see my skills my skills in action.</p>
-          <div onclick="openProjectModal('join')" class="project">
+          <div onclick="openProjectModal('join')" data-project="join" class="project">
             <h4 class="project-title">Join</h4>
             <ul class="project-technologies">
               <li>HTML</li>
@@ -204,7 +205,7 @@
               <li>Firebase</li>
             </ul>
           </div>
-          <div onclick="openProjectModal('elPolloLoco')" class="project">
+          <div onclick="openProjectModal('elPolloLoco')" data-project="elPolloLoco" class="project">
             <h4 class="project-title">El Pollo Loco</h4>
             <ul class="project-technologies">
               <li>HTML</li>
@@ -215,7 +216,7 @@
         </div>
 
         <div class="projects-preview">
-          <img src="" alt="" />
+          <img id="projects-preview-img" src="" alt="" />
         </div>
       </section>
 

@@ -95,14 +95,14 @@ button {
 
 .about-me-wrapper > h3,
 .skills-container > h3,
-.projects-left > h2 {
+.projects > h2 {
   font-size: var(--spacing-md);
   color: var(--color-primary);
 }
 
 .about-me-container > h2,
 .skills-content > h2,
-.projects-left > h3 {
+.projects > h3 {
   font-size: var(--fs-3xl);
   color: var(--color-primary);
 }
@@ -111,7 +111,7 @@ button {
 .skills-description,
 .skills-contact-text,
 .skills-technology > p,
-.projects-left > p {
+.projects > p {
   font-size: var(--fs-md);
   text-align: justify;
   hyphens: auto;
@@ -139,18 +139,16 @@ button {
 
 /* Project Modal Section */
 .project-modal {
-  background: linear-gradient(
-    to top right,
-    #1c1c1c 0%,
-    #1c1c1c 32%,
-    #202c29 42%,
-    #1c3632 52%,
-    #16403a 62%,
-    #104943 72%,
-    #0b4d42 100%
-  );
+  background: linear-gradient(to top right, #1c1c1c 0%, #1c1c1c 32%, #202c29 42%, #1c3632 52%, #16403a 62%, #104943 72%, #0b4d42 100%);
   border-radius: var(--br-25);
   border: var(--border);
+}
+
+.project-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-bg);
+  z-index: 1;
 }
 
 .project-modal-number {
@@ -175,8 +173,7 @@ button {
 }
 
 .project-modal-skill > img {
-  filter: brightness(0) saturate(100%) invert(72%) sepia(100%) saturate(309%)
-    hue-rotate(109deg) brightness(86%) contrast(87%);
+  filter: brightness(0) saturate(100%) invert(72%) sepia(100%) saturate(309%) hue-rotate(109deg) brightness(86%) contrast(87%);
 }
 
 .project-modal-skill > p {
