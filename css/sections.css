@@ -145,10 +145,8 @@ button {
 }
 
 .project-modal-overlay {
-  position: fixed;
   inset: 0;
   background-color: var(--color-bg);
-  z-index: 1;
 }
 
 .project-modal-number {
@@ -168,8 +166,6 @@ button {
 .project-modal-description {
   font-size: var(--fs-md);
   color: var(--color-text);
-  width: 48ch;
-  overflow-wrap: break-word;
 }
 
 .project-modal-skill > img {

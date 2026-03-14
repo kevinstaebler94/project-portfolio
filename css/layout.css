@@ -222,8 +222,9 @@ body {
 
 /* Project Modal section */
 .project-modal {
-  height: 65vh;
-  width: 80%;
+  min-height: 65vh;
+  max-height: 90vh;
+  width: 90%;
   max-width: 1440px;
   background-color: rgb(240, 235, 235);
   position: fixed;
@@ -231,11 +232,20 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  overflow-y: auto;
+}
+
+.project-modal-overlay {
+  position: fixed;
+  max-width: 1440px;
+  margin: 0 auto;
+  z-index: 1;
+  overflow-y: auto;
 }
 
 .project-modal-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(405px, 1fr));
   height: 100%;
   padding: var(--spacing-3xl) var(--spacing-2xl);
   gap: var(--spacing-lg);
@@ -252,12 +262,15 @@ body {
 
 .project-modal-description {
   margin-top: var(--spacing-md);
+  max-width: 48ch;
+  overflow-wrap: break-word;
 }
 
 .project-modal-skills {
   display: flex;
   justify-content: flex-start;
-  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  column-gap: var(--spacing-md);
 }
 
 .project-modal-skill {
@@ -369,9 +382,17 @@ body {
   .skills-technologies {
     padding-right: var(--spacing-xxs);
   }
+
+  .project-modal-wrapper {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
 }
 
 @media (max-width: 1050px) {
+  body {
+    overflow: auto;
+  }
+
   .projects {
     grid-template-columns: 1fr;
     padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-2xl) var(--spacing-2xl);
@@ -385,6 +406,10 @@ body {
 
   .projects-preview {
     display: none;
+  }
+
+  .project-modal-wrapper {
+    padding: var(--spacing-xl) var(--spacing-md);
   }
 }
 
@@ -412,6 +437,16 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: var(--spacing-xl) 0 var(--spacing-xl) 0;
+  }
+
+  .project-modal-content {
+    order: 2;
+  }
+
+  .project-modal-preview {
+    order: 1;
+    width: 95%;
+    margin: 0 auto;
   }
 }
 
