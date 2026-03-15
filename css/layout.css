@@ -19,7 +19,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-xl) var(--spacing-4xl) 0 var(--spacing-4xl);
+  padding: var(--spacing-xl) var(--spacing-xl) 0 var(--spacing-xl);
 }
 
 nav {
@@ -223,7 +223,7 @@ body {
 /* Project Modal section */
 .project-modal {
   min-height: 65vh;
-  max-height: 90vh;
+  max-height: 95vh;
   width: 90%;
   max-width: 1440px;
   background-color: rgb(240, 235, 235);
@@ -439,16 +439,52 @@ body {
     padding: var(--spacing-xl) 0 var(--spacing-xl) 0;
   }
 
+  .project-modal {
+    min-height: 90vh;
+  }
+
+  .project-modal-wrapper {
+    padding: var(--spacing-md) var(--spacing-md);
+  }
+
   .project-modal-content {
     order: 2;
   }
 
-  .project-modal-preview {
-    order: 1;
-    width: 95%;
-    margin: 0 auto;
+  .project-modal-preview > img {
+    margin: var(--spacing-lg) auto 0;
+    max-height: 30vh;
+  }
+
+  .project-modal-subtitle,
+  .project-modal-description {
+    margin-top: var(--spacing-sm);
+  }
+
+  .project-modal-description {
+    max-width: 100%;
+  }
+
+  .project-modal-actions,
+  .project-modal-next--mobile {
+    margin-top: var(--spacing-xl);
+  }
+
+  .project-modal-next--mobile {
+    align-self: flex-end;
   }
 }
 
 @media (max-width: 786px) {
+  .project-modal-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 525px) {
+  .project-modal-actions,
+  .project-modal-next--mobile {
+    justify-content: space-between;
+    padding: 0 var(--spacing-lg);
+  }
 }

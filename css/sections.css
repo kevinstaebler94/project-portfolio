@@ -198,6 +198,10 @@ button {
   background-color: currentColor;
 }
 
+.project-modal-next--mobile {
+  display: none;
+}
+
 /* Projects Section */
 .projects {
   color: var(--color-text);
@@ -236,5 +240,19 @@ button {
 
   .about-me-wrapper > div > h2 {
     font-size: var(--fs-2xl);
+  }
+}
+
+@media (max-width: 993px) {
+  .project-modal-next {
+    display: none;
+  }
+
+  .project-modal-next--mobile {
+    display: inline-flex;
+  }
+
+  .project-modal-number {
+    font-size: var(--fs-4xl);
   }
 }
