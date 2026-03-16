@@ -1,4 +1,5 @@
 let currentProjectIndex = 0;
+let currentCardIndex = 0;
 const projectKeys = Object.keys(projectList);
 
 function getModalElements() {
@@ -79,4 +80,22 @@ function addMouseOut(projects, previewImage) {
       previewImage.src = "";
     });
   });
+}
+
+function renderReferences() {
+  const refContent = document.getElementById("referencesContent");
+  references.forEach((ref) => {
+    refContent.innerHTML += `
+      <div class="references__card">
+        <p class="references__text">${ref.text}</p>
+        <p class="references__author">${ref.author}</p>
+      </div>
+    `;
+  });
+}
+
+function showActiveReference(index) {
+  const cards = document.querySelectorAll(".references__card");
+  cards.forEach((card) => card.classList.remove("references__card--active"));
+  cards[index].classList.add("references__card--active");
 }

@@ -21,7 +21,7 @@
   --spacing-3xl: 5rem;
   --spacing-4xl: 10rem;
   --spacing-5xl: 15rem;
-  --color-primary: rgb(61, 207, 182);
+  --color-primary: #3dcfb6;
   --color-text: whitesmoke;
   --color-bg: #1c1c1c;
   --fs-xs: 0.875rem;
@@ -29,11 +29,12 @@
   --fs-md: 1.25rem;
   --fs-lg: 1.5rem;
   --fs-xl: 2rem;
-  --fs-2xl: 3rem;
-  --fs-3xl: 4rem;
-  --fs-4xl: 5rem;
-  --fs-5xl: 7.5rem;
-  --fs-6xl: 8.5rem;
+  --fs-2xl: 2.5rem;
+  --fs-3xl: 3rem;
+  --fs-4xl: 4rem;
+  --fs-5xl: 5rem;
+  --fs-6xl: 7.5rem;
+  --fs-7xl: 8.5rem;
   --br-25: 25px;
   --br-35: 35px;
   --border: 2px solid #3dcfb6;
@@ -52,16 +53,7 @@ html {
 
 body {
   font-size: 16px;
-  background: linear-gradient(
-    to top right,
-    #1c1c1c 0%,
-    #1c1c1c 32%,
-    #202c29 42%,
-    #1c3632 52%,
-    #16403a 62%,
-    #104943 72%,
-    #0b4d42 100%
-  );
+  background: linear-gradient(to top right, #1c1c1c 0%, #1c1c1c 32%, #202c29 42%, #1c3632 52%, #16403a 62%, #104943 72%, #0b4d42 100%);
 }
 
 a {

@@ -28,11 +28,11 @@ p {
 }
 
 .hero-content-wrapper > h1 {
-  font-size: var(--fs-5xl);
+  font-size: var(--fs-6xl);
 }
 
 .hero-content-wrapper > h2 {
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-3xl);
 }
 
 button {
@@ -42,6 +42,7 @@ button {
   border: 2px solid var(--color-text);
   color: var(--color-text);
   background-color: transparent;
+  cursor: pointer;
 }
 
 .banner {
@@ -103,7 +104,7 @@ button {
 .about-me-container > h2,
 .skills-content > h2,
 .projects > h3 {
-  font-size: var(--fs-3xl);
+  font-size: var(--fs-4xl);
   color: var(--color-primary);
 }
 
@@ -150,12 +151,12 @@ button {
 }
 
 .project-modal-number {
-  font-size: var(--fs-6xl);
+  font-size: var(--fs-7xl);
   color: var(--color-primary);
 }
 
 .project-modal-title {
-  font-size: var(--fs-4xl);
+  font-size: var(--fs-5xl);
 }
 
 .project-modal-subtitle {
@@ -232,6 +233,39 @@ button {
   align-items: center;
 }
 
+/* References Section */
+.references {
+  background-color: var(--color-bg);
+}
+
+.references__card {
+  background-color: rgba(61, 207, 182, 0.35);
+}
+
+.references__card--active {
+  background-color: rgba(61, 207, 183, 0.678);
+  scale: 1.1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.references > h2 {
+  font-size: var(--fs-2xl);
+  color: var(--color-primary);
+}
+
+.references__text {
+  font-size: var(--fs-lg);
+}
+
+.references__author {
+  font-size: var(--fs-md);
+}
+
+.references__author::before {
+  content: "";
+  background-color: var(--color-text);
+}
+
 /* Media Querries */
 @media (max-width: 1200px) {
   /* .about-me-wrapper > h3 {
@@ -239,7 +273,7 @@ button {
   } */
 
   .about-me-wrapper > div > h2 {
-    font-size: var(--fs-2xl);
+    font-size: var(--fs-3xl);
   }
 }
 
@@ -253,6 +287,6 @@ button {
   }
 
   .project-modal-number {
-    font-size: var(--fs-4xl);
+    font-size: var(--fs-5xl);
   }
 }
