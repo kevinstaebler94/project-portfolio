@@ -1,5 +1,5 @@
 let currentProjectIndex = 0;
-let currentCardIndex = 0;
+let currentRefIndex = 0;
 const projectKeys = Object.keys(projectList);
 
 function getModalElements() {
@@ -84,18 +84,34 @@ function addMouseOut(projects, previewImage) {
 
 function renderReferences() {
   const refContent = document.getElementById("referencesContent");
-  references.forEach((ref) => {
+  references.forEach((ref, i) => {
     refContent.innerHTML += `
-      <div class="references__card">
+      <div id="ref-${i}" class="references__card">
         <p class="references__text">${ref.text}</p>
         <p class="references__author">${ref.author}</p>
       </div>
     `;
   });
+  initReferenceButtons();
 }
 
-function showActiveReference(index) {
+function updateReferences() {
   const cards = document.querySelectorAll(".references__card");
-  cards.forEach((card) => card.classList.remove("references__card--active"));
-  cards[index].classList.add("references__card--active");
+  cards.forEach((card, i) => {
+    const refIndex = (currentRefIndex + i) % references.length;
+    card.querySelector(".references__text").innerText = references[refIndex].text;
+    card.querySelector(".references__author").innerText = references[refIndex].author;
+  });
+}
+
+function initReferenceButtons() {
+  document.getElementById("previousCard").addEventListener("click", () => {
+    currentRefIndex = (currentRefIndex - 1 + references.length) % references.length;
+    updateReferences();
+  });
+
+  document.getElementById("nextCard").addEventListener("click", () => {
+    currentRefIndex = (currentRefIndex + 1) % references.length;
+    updateReferences();
+  });
 }

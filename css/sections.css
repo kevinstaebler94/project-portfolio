@@ -242,7 +242,7 @@ button {
   background-color: rgba(61, 207, 182, 0.35);
 }
 
-.references__card--active {
+.references__card:nth-child(2) {
   background-color: rgba(61, 207, 183, 0.678);
   scale: 1.1;
   transition: opacity 0.4s ease-in-out;
