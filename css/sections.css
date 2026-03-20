@@ -27,11 +27,11 @@ p {
   color: whitesmoke;
 }
 
-.hero-content-wrapper > h1 {
+.hero > h1 {
   font-size: var(--fs-6xl);
 }
 
-.hero-content-wrapper > h2 {
+.hero > h2 {
   font-size: var(--fs-3xl);
 }
 
@@ -52,16 +52,16 @@ button {
   white-space: nowrap;
 }
 
-.banner-track {
+.banner__track {
   animation: banner 12s linear infinite;
 }
 
-.status {
+.banner__status {
   color: #3dcfb6;
   font-size: var(--spacing-md);
 }
 
-.dot {
+.banner__dot {
   background: #3dcfb6;
   border-radius: 50%;
 }
@@ -83,58 +83,58 @@ button {
   background-color: var(--color-bg);
 }
 
-.portrait-img {
+.about__portrait-img {
   border-radius: var(--br-25);
 }
 
-.about-me-container,
-.skills-content {
+.about__content,
+.skills__content {
   border: var(--border);
   border-radius: var(--br-25);
   height: fit-content;
 }
 
-.about-me-wrapper > h3,
-.skills-container > h3,
+.about__content-wrapper > h3,
+.skills__container > h3,
 .projects > h2 {
   font-size: var(--spacing-md);
   color: var(--color-primary);
 }
 
-.about-me-container > h2,
-.skills-content > h2,
+.about__content > h2,
+.skills__content > h2,
 .projects > h3 {
   font-size: var(--fs-4xl);
   color: var(--color-primary);
 }
 
-.about-me-container > p,
-.skills-description,
-.skills-contact-text,
-.skills-technology > p,
+.about__content > p,
+.skills__description,
+.skills__contact-text,
+.skills__technology > p,
 .projects > p {
   font-size: var(--fs-md);
   text-align: justify;
   hyphens: auto;
 }
 
-.about-me-container > div > p {
+.about__content > div > p {
   font-size: var(--fs-md);
   color: #d2d5d5;
 }
 
 /* Skills Section */
 
-.skills-cta,
-.project-title {
+.skills__cta,
+.project__title {
   font-size: var(--spacing-lg);
 }
 
-.skills-highlight {
+.skills__highlight {
   color: var(--color-primary);
 }
 
-.skills-technology > p {
+.skills__technology > p {
   text-align: center;
 }
 
@@ -145,61 +145,61 @@ button {
   border: var(--border);
 }
 
-.project-modal-overlay {
+.project-modal__overlay {
   inset: 0;
   background-color: var(--color-bg);
 }
 
-.project-modal-number {
+.project-modal__number {
   font-size: var(--fs-7xl);
   color: var(--color-primary);
 }
 
-.project-modal-title {
+.project-modal__title {
   font-size: var(--fs-5xl);
 }
 
-.project-modal-subtitle {
+.project-modal__subtitle {
   font-size: var(--fs-xl);
   color: var(--color-primary);
 }
 
-.project-modal-description {
+.project-modal__description {
   font-size: var(--fs-md);
   color: var(--color-text);
 }
 
-.project-modal-skill > img {
+.project-modal__skill > img {
   filter: brightness(0) saturate(100%) invert(72%) sepia(100%) saturate(309%) hue-rotate(109deg) brightness(86%) contrast(87%);
 }
 
-.project-modal-skill > p {
+.project-modal__skill > p {
   font-size: var(--fs-sm);
 }
 
-.project-modal-actions > button {
+.project-modal__actions > button {
   font-size: var(--fs-md);
   color: var(--color-primary);
 }
 
-.project-modal-close::after {
+.project-modal__close::after {
   mask: url("../assets/icons/close.svg") no-repeat center;
   mask-size: contain;
   background-color: currentColor;
 }
 
-.project-modal-next {
+.project-modal__next {
   border: none;
   color: var(--color-primary);
 }
 
-.project-modal-next::after {
+.project-modal__next::after {
   mask: url("../assets/icons/arrow-forward.svg") no-repeat center;
   mask-size: contain;
   background-color: currentColor;
 }
 
-.project-modal-next--mobile {
+.project-modal__next--mobile {
   display: none;
 }
 
@@ -222,11 +222,11 @@ button {
   border-bottom: 2px solid var(--color-primary);
 }
 
-.project-technologies {
+.project__technologies {
   list-style: none;
 }
 
-.project-technologies > li:not(:last-child)::after {
+.project__technologies > li:not(:last-child)::after {
   content: "|";
   display: inline-block;
   transform: translateY(-2px);
@@ -268,25 +268,25 @@ button {
 
 /* Media Querries */
 @media (max-width: 1200px) {
-  /* .about-me-wrapper > h3 {
+  /* .about__content-wrapper > h3 {
     font-size: var(--fs-md);
   } */
 
-  .about-me-wrapper > div > h2 {
+  .about__content-wrapper > div > h2 {
     font-size: var(--fs-3xl);
   }
 }
 
 @media (max-width: 993px) {
-  .project-modal-next {
+  .project-modal__next {
     display: none;
   }
 
-  .project-modal-next--mobile {
+  .project-modal__next--mobile {
     display: inline-flex;
   }
 
-  .project-modal-number {
+  .project-modal__number {
     font-size: var(--fs-5xl);
   }
 }
