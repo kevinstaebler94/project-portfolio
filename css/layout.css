@@ -435,6 +435,18 @@ body {
   margin-right: var(--spacing-sm);
 }
 
+/* Contact Section*/
+.contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(405px, 1fr));
+  gap: var(--spacing-sm);
+}
+
+.contact > div {
+  background-color: whitesmoke;
+  height: 25vh;
+}
+
 /* Media Querries */
 @media (max-width: 1200px) {
   .about {
