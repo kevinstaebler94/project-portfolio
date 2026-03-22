@@ -266,6 +266,62 @@ button {
   background-color: var(--color-text);
 }
 
+/* Contact Section */
+.contact {
+  background-color: var(--color-bg);
+}
+
+.contact-info > h2,
+.contact-info > h3,
+.contact-info > h4,
+.contact-info__highlighter,
+.contact-form__highlighter > a {
+  color: var(--color-primary);
+}
+
+.contact-info > h2,
+.contact-info > h4 {
+  font-size: var(--fs-xl);
+}
+
+.contact-info > h3 {
+  font-size: var(--fs-5xl);
+  line-height: 0.8;
+  max-width: 10ch;
+}
+
+.contact-info > h4 {
+  word-spacing: var(--spacing-xxs);
+}
+
+.contact-info > p {
+  font-size: var(--fs-md);
+}
+
+.contact-info__br {
+  display: block;
+}
+
+/* Contact-form */
+.contact-form > input,
+.contact-form > textarea {
+  background-color: var(--color-bg);
+  border: none;
+}
+
+.contact-form > label {
+  color: var(--color-primary);
+  border-top: 2px solid var(--color-primary);
+}
+
+.contact-form > textarea {
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.contact-form__checkbox-wrapper {
+  color: whitesmoke;
+}
+
 /* Media Querries */
 @media (max-width: 1200px) {
   /* .about__content-wrapper > h3 {

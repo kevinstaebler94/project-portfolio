@@ -439,12 +439,55 @@ body {
 .contact {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(405px, 1fr));
-  gap: var(--spacing-sm);
+  gap: var(--spacing-md);
+  padding: var(--spacing-2xl) var(--spacing-xxs) var(--spacing-2xl) var(--spacing-2xl);
 }
 
-.contact > div {
-  background-color: whitesmoke;
-  height: 25vh;
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.contact-info > h3 {
+  margin: var(--spacing-lg) 0 var(--spacing-xl) 0;
+}
+
+.contact-info > h4 {
+  margin-bottom: var(--spacing-xs);
+}
+
+.contact-info > p:first-of-type {
+  margin-bottom: var(--spacing-xs);
+}
+
+.contact-info__highlighter {
+  margin-left: var(--spacing-xxs);
+}
+
+/* Contact-Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form > label {
+  padding: var(--spacing-sm) 0;
+}
+
+.contact-form > input {
+  padding-bottom: var(--spacing-sm);
+}
+
+.contact-form__checkbox-wrapper {
+  margin: var(--spacing-xl) 0;
+}
+
+.submitForm {
+  display: block;
+  width: fit-content;
+  align-self: center;
 }
 
 /* Media Querries */
