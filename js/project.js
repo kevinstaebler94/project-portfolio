@@ -34,7 +34,7 @@ function renderModalSkills(projectKey) {
 
   for (let i = 0; i < projectList[projectKey].languages.length; i++) {
     modalSkills.innerHTML += `
-    <div class="project-modal-skill">
+    <div class="project-modal__skill">
       <img src="${projectList[projectKey].languages[i].icon}" alt="" />
       <p>${projectList[projectKey].languages[i].name}</p>
     </div>

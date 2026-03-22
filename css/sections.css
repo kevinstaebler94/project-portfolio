@@ -307,11 +307,13 @@ button {
 .contact-form > textarea {
   background-color: var(--color-bg);
   border: none;
+  font-size: var(--fs-lg);
 }
 
 .contact-form > label {
   color: var(--color-primary);
   border-top: 2px solid var(--color-primary);
+  font-size: var(--fs-xl);
 }
 
 .contact-form > textarea {
@@ -320,6 +322,64 @@ button {
 
 .contact-form__checkbox-wrapper {
   color: whitesmoke;
+  font-size: var(--fs-md);
+}
+
+input[type="checkbox"] {
+  align-self: center;
+  justify-self: center;
+  accent-color: var(--color-primary);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-bg);
+}
+
+.footer__brand > h2,
+.footer__brand > h3,
+.footer__copyright > h2,
+.footer__navigation > a {
+  font-size: var(--fs-md);
+}
+
+.footer__brand > img {
+  max-height: 50px;
+}
+
+.footer__copyright > h2 {
+  color: var(--color-primary);
+}
+
+.footer__copyright > h2::before {
+  content: "©";
+  transform: translate(-5px, -2px);
+  font-size: var(--fs-md);
+  color: var(--color-primary);
+}
+
+.footer__navigation > a {
+  cursor: pointer;
+}
+
+.footer__navigation > a::before {
+  content: "•";
+  color: var(--color-primary);
+  display: inline-block;
+  transform: translate(-5px, 2px);
+  opacity: 0;
+  font-size: var(--fs-lg);
+}
+
+.footer__navigation > a:hover {
+  color: var(--color-primary);
+}
+
+.footer__navigation > a:hover::before {
+  opacity: 1;
 }
 
 /* Media Querries */
