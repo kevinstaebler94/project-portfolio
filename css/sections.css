@@ -97,7 +97,7 @@ button {
 .about__content-wrapper > h3,
 .skills__container > h3,
 .projects > h2 {
-  font-size: var(--spacing-md);
+  font-size: var(--spacing-lg);
   color: var(--color-primary);
 }
 
@@ -231,6 +231,7 @@ button {
   display: inline-block;
   transform: translateY(-2px);
   align-items: center;
+  color: #3dcfb6;
 }
 
 /* References Section */
@@ -307,7 +308,26 @@ button {
 .contact-form > textarea {
   background-color: var(--color-bg);
   border: none;
+  color: whitesmoke;
   font-size: var(--fs-lg);
+}
+
+.contact-form > input:focus {
+  background-color: var(--color-bg);
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: whitesmoke;
+  font-size: var(--fs-lg);
+}
+
+.contact-form > textarea:focus {
+  background-color: var(--color-bg);
+  outline: none;
+  box-shadow: none;
+  color: whitesmoke;
+  font-size: var(--fs-lg);
+  border-bottom: 2px solid var(--color-primary);
 }
 
 .contact-form > label {
