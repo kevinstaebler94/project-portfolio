@@ -354,6 +354,18 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--color-bg) inset !important;
+  -webkit-text-fill-color: whitesmoke !important;
+}
+
+input:-webkit-autofill::placeholder {
+  -webkit-text-fill-color: #999 !important;
+}
+
 /* Footer */
 footer {
   background-color: var(--color-bg);
