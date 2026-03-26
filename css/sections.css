@@ -363,7 +363,16 @@ input:-webkit-autofill:active {
 }
 
 input:-webkit-autofill::placeholder {
-  -webkit-text-fill-color: #999 !important;
+  -webkit-text-fill-color: rgb(153, 153, 153) !important;
+}
+
+.contact-form__submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.contact-form__submit:not(:disabled) {
+  cursor: pointer;
 }
 
 /* Footer */
