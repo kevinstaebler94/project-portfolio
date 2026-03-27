@@ -11,19 +11,74 @@ const pattern = {
   message: /^[\s\S]{10,500}$/,
 };
 
+const defaultPlaceholders = {
+  name: name.getAttribute("data-default"),
+  email: email.getAttribute("data-default"),
+  message: message.getAttribute("data-default"),
+};
+
 const errorMessages = {
   name: "Oops! It seems your name is missing",
   email: "Hoppla! Your email is required",
   message: "What do you need to develop?",
 };
 
-function inputValidation() {
-  return pattern.name.test(name.value) && pattern.message.test(message.value) && pattern.message.test(message.value) && checkbox.checked;
+function nameValidation() {
+  if (!pattern.name.test(name.value)) {
+    name.classList.add("error");
+    name.placeholder = errorMessages.name;
+    name.value = "";
+    setTimeout(() => {
+      name.classList.remove("error");
+      name.placeholder = defaultPlaceholders.name;
+    }, 3000);
+    return false;
+  } else {
+    name.classList.remove("error");
+    name.placeholder = defaultPlaceholders.name;
+    return true;
+  }
 }
 
-function updateButtonState() {
-  const isValid = inputValidation();
-  submitBtn.disabled = !isValid;
+function emailValidation() {
+  if (!pattern.email.test(email.value)) {
+    email.classList.add("error");
+    email.placeholder = errorMessages.email;
+    email.value = "";
+    setTimeout(() => {
+      email.classList.remove("error");
+      email.placeholder = defaultPlaceholders.email;
+    }, 3000);
+    return false;
+  } else {
+    email.classList.remove("error");
+    email.placeholder = defaultPlaceholders.email;
+    return true;
+  }
+}
+
+function messageValidation() {
+  if (!pattern.message.test(message.value)) {
+    message.classList.add("error");
+    message.placeholder = errorMessages.message;
+    message.value = "";
+    setTimeout(() => {
+      message.classList.remove("error");
+      message.placeholder = defaultPlaceholders.message;
+    }, 3000);
+    return false;
+  } else {
+    message.classList.remove("error");
+    message.placeholder = defaultPlaceholders.message;
+    return true;
+  }
+}
+
+function inputValidation() {
+  const isNameValid = nameValidation();
+  const isEmailValid = emailValidation();
+  const isMessageValid = messageValidation();
+  return isNameValid && isEmailValid && isMessageValid && checkbox.checked;
 }
 
 form.addEventListener("submit", (event) => {
@@ -41,8 +96,3 @@ form.addEventListener("submit", (event) => {
   //   }
   // );
 });
-
-name.addEventListener("input", updateButtonState);
-email.addEventListener("input", updateButtonState);
-message.addEventListener("input", updateButtonState);
-checkbox.addEventListener("change", updateButtonState);

@@ -309,7 +309,7 @@ button {
   background-color: var(--color-bg);
   border: none;
   color: whitesmoke;
-  font-size: var(--fs-lg);
+  font-size: var(--fs-sm);
 }
 
 .contact-form > input:focus {
@@ -318,7 +318,7 @@ button {
   outline: none;
   box-shadow: none;
   color: whitesmoke;
-  font-size: var(--fs-lg);
+  font-size: var(--fs-sm);
 }
 
 .contact-form > textarea:focus {
@@ -373,6 +373,16 @@ input:-webkit-autofill::placeholder {
 
 .contact-form__submit:not(:disabled) {
   cursor: pointer;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-size: var(--fs-sm);
+}
+
+input.error::placeholder,
+textarea.error::placeholder {
+  color: var(--color-error);
 }
 
 /* Footer */
