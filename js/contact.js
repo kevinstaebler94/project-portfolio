@@ -17,15 +17,20 @@ const errorMessages = {
   message: "What do you need to develop?",
 };
 
-function isValid() {
-  return pattern.name.test(name.value) && pattern.email.test(email.value) && pattern.message.test(message.value) && checkbox.checked;
+function inputValidation() {
+  return pattern.name.test(name.value) && pattern.message.test(message.value) && pattern.message.test(message.value) && checkbox.checked;
 }
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  if (!isValid()) return;
-  console.log("Mail gesendet");
+function updateButtonState() {
+  const isValid = inputValidation();
+  submitBtn.disabled = !isValid;
+}
 
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (!inputValidation()) return;
+  console.log("Mail gesendet");
+  form.reset();
   // emailjs.sendForm("service_urv966s", "template_6ro37zj", form).then(
   //   function () {
   //     alert("Nachricht erfolgreich gesendet!");
@@ -36,3 +41,8 @@ form.addEventListener("submit", function (event) {
   //   }
   // );
 });
+
+name.addEventListener("input", updateButtonState);
+email.addEventListener("input", updateButtonState);
+message.addEventListener("input", updateButtonState);
+checkbox.addEventListener("change", updateButtonState);
