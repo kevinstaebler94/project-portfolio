@@ -11,6 +11,7 @@
    =========================== */
 
 :root {
+  --spacing-xxxs: 0.25rem;
   --spacing-xxs: 0.5rem;
   --spacing-xs: 0.75rem;
   --spacing-sm: 1rem;
