@@ -19,7 +19,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-xl) var(--spacing-xl) 0 var(--spacing-xl);
+  padding: var(--spacing-xs) var(--spacing-xl) 0 var(--spacing-xl);
 }
 
 .header__nav {
@@ -63,40 +63,52 @@ body {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-  overflow-x: hidden;
 }
 
 .hero {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: var(--spacing-lg);
-  padding-top: var(--spacing-5xl);
+  padding-top: var(--spacing-4xl);
   margin: 0 auto;
-  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
 }
 
-.hero > h1 {
-  order: 2;
+.hero__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  margin-bottom: clamp(80px, 18vh, 200px);
 }
-.hero > h2 {
+
+.hero__main > h1 {
+  order: 2;
+  padding-bottom: var(--spacing-lg);
+}
+
+.hero__main > h2 {
   order: 1;
 }
 
-.hero__buttons {
+.hero__main-buttons {
   order: 3;
   display: flex;
   gap: var(--spacing-lg);
-  padding-bottom: var(--spacing-4xl);
 }
 
 .banner {
-  order: 4;
+  /* order: 4; */
   width: 120%;
   height: 50px;
   display: flex;
   align-items: center;
+  position: absolute;
+  bottom: 5%;
+  z-index: 2;
 }
 
 .banner__track {
@@ -118,6 +130,65 @@ body {
   display: flex;
   align-items: center;
   gap: var(--spacing-2xl);
+}
+
+.hero__side-elements {
+  order: 5;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  width: 100%;
+  height: auto;
+}
+
+.hero__side-left {
+  position: relative;
+  left: 5%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero__side-left::after {
+  content: "";
+  width: 1px;
+  height: 200px;
+  background-color: var(--color-primary);
+  display: block;
+}
+
+.hero__side-right {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero__side-right::after {
+  content: "";
+  width: 1px;
+  height: 200px;
+  background-color: var(--color-text);
+  display: block;
+}
+
+.hero__mail {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  white-space: nowrap;
+  transform: rotate(180deg);
+}
+
+.hero__social-icons {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-sm);
 }
 
 /* About Section Layout */

@@ -66,11 +66,11 @@ p {
   color: whitesmoke;
 }
 
-.hero > h1 {
+.hero__main > h1 {
   font-size: var(--fs-6xl);
 }
 
-.hero > h2 {
+.hero__main > h2 {
   font-size: var(--fs-3xl);
 }
 
