@@ -114,6 +114,18 @@ button {
   }
 }
 
+.hero__main-buttons > a {
+  font-size: var(--fs-md);
+  padding: var(--spacing-xs) var(--spacing-lg);
+  border-radius: var(--br-35);
+  border: 2px solid var(--color-text);
+  color: var(--color-text);
+  background-color: transparent;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+}
+
 /* About Section Styling */
 
 .about,
