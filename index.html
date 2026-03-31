@@ -14,12 +14,14 @@
     <header>
       <nav class="header__nav">
         <div class="lang-switch" role="group" aria-label="Language switch">
-          <button class="lang-switch__option is-active" type="button" aria-pressed="true">EN</button>
+          <button class="lang-switch__option lang-switch__option--active" type="button" aria-pressed="true">EN</button>
           <button class="lang-switch__option" type="button" aria-pressed="false">DE</button>
         </div>
-        <a href="#about">About me</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
+        <div class="header__menu">
+          <a href="#about">About me</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+        </div>
       </nav>
       <div class="header__logo">
         <img src="assets/images/portfolio-logo.png" alt="" />
@@ -35,13 +37,11 @@
           <a href="#projects">
             <span class="slide-wrapper">
               <span class="slide-text">Check my work</span>
-              <span class="slide-text">Check my work</span>
             </span>
           </a>
 
           <a href="#contact">
             <span class="slide-wrapper">
-              <span class="slide-text">Contact me</span>
               <span class="slide-text">Contact me</span>
             </span>
           </a>
@@ -311,10 +311,12 @@
         <h2 class="footer__copyright-title">Kevin Stäbler 2026</h2>
       </div>
       <div class="footer__navigation">
-        <a href="#" class="footer__link">Github</a>
-        <a href="#" class="footer__link">LinkedIn</a>
+        <a href="https://github.com/kevinstaebler94" class="footer__link" target="_blank" rel="noopener noreferrer">Github</a>
+        <a href="https://www.linkedin.com/in/kevin-stäbler-162866226" class="footer__link" target="_blank" rel="noopener noreferrer"
+          >LinkedIn
+        </a>
         <a href="#" class="footer__link">Email</a>
-        <a href="#" class="footer__link footer__link--legal">Legal Notice</a>
+        <a href="legal.html" class="footer__link footer__link--legal">Legal Notice</a>
       </div>
     </footer>
 
