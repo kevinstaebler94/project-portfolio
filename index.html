@@ -18,9 +18,9 @@
           <button class="lang-switch__option" type="button" aria-pressed="false">DE</button>
         </div>
         <div class="header__menu">
-          <a href="#about">About me</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
+          <a data-i18n="header.about" href="#about">About me</a>
+          <a data-i18n="header.skills" href="#skills">Skills</a>
+          <a data-i18n="header.projects" href="#projects">Projects</a>
         </div>
       </nav>
       <div class="header__logo">
@@ -36,37 +36,58 @@
         <div class="hero__main-buttons">
           <a href="#projects">
             <span class="slide-wrapper">
-              <span class="slide-text">Check my work</span>
+              <span data-i18n="hero.button_left" class="slide-text">Check my work</span>
             </span>
           </a>
 
           <a href="#contact">
             <span class="slide-wrapper">
-              <span class="slide-text">Contact me</span>
+              <span data-i18n="hero.button_right" class="slide-text">Contact me</span>
             </span>
           </a>
         </div>
         <div class="banner">
           <div class="banner__track">
             <p class="banner__status">
-              <span class="banner__dot"></span>Available for remote work <span class="banner__dot"></span> Frontend Developer
-              <span class="banner__dot"></span> Based in Stolberg
               <span class="banner__dot"></span>
-              Open to work
+              <span data-i18n="banner.remote">Available for remote work</span>
+
+              <span class="banner__dot"></span>
+              <span data-i18n="banner.job">Frontend Developer</span>
+
+              <span class="banner__dot"></span>
+              <span data-i18n="banner.location">Based in Stolberg</span>
+
+              <span class="banner__dot"></span>
+              <span data-="banner.status">Open to work</span>
             </p>
 
             <p class="banner__status">
-              <span class="banner__dot"></span>Available for remote work <span class="banner__dot"></span> Frontend Developer
-              <span class="banner__dot"></span> Based in Stolberg
               <span class="banner__dot"></span>
-              Open to work
+              <span data-i18n="banner.remote">Available for remote work</span>
+
+              <span class="banner__dot"></span>
+              <span data-i18n="banner.job">Frontend Developer</span>
+
+              <span class="banner__dot"></span>
+              <span data-i18n="banner.location">Based in Stolberg</span>
+
+              <span class="banner__dot"></span>
+              <span data-="banner.status">Open to work</span>
             </p>
 
             <p class="banner__status">
-              <span class="banner__dot"></span>Available for remote work <span class="banner__dot"></span> Frontend Developer
-              <span class="banner__dot"></span> Based in Stolberg
               <span class="banner__dot"></span>
-              Open to work
+              <span data-i18n="banner.remote">Available for remote work</span>
+
+              <span class="banner__dot"></span>
+              <span data-i18n="banner.job">Frontend Developer</span>
+
+              <span class="banner__dot"></span>
+              <span data-i18n="banner.location">Based in Stolberg</span>
+
+              <span class="banner__dot"></span>
+              <span data-="banner.status">Open to work</span>
             </p>
           </div>
         </div>
@@ -93,22 +114,24 @@
           </div>
         </div>
         <div class="about__content-wrapper">
-          <h3>Who I Am</h3>
+          <h3 data-i18n="about.subtitle">Who I Am</h3>
           <div class="about__content">
-            <h2>About me</h2>
-            <p>
+            <h2 data-i18n="about.title">About me</h2>
+            <p data-i18n="about.description">
               Hey there, I'm Kevin — a frontend developer in transition based in North Rhine-Westphalia, Germany. I’m passionate about
               building scalable web applications and creating structured systems from scratch. I’m especially drawn to the logical and
               architectural side of development, where clean code and maintainability define long-term quality. Continuous learning and deep
               understanding drive my growth every day.
             </p>
             <div>
-              <p>📍 Based in North Rhine-Westphalia, Germany Open to on-site collaboration, with optional remote flexibility.</p>
-              <p>
+              <p data-i18n="about.location">
+                📍 Based in North Rhine-Westphalia, Germany Open to on-site collaboration, with optional remote flexibility.
+              </p>
+              <p data-i18n="about.focus">
                 🧠 Strong focus on continuous improvement Currently specializing in Angular and TypeScript Practice-driven learning approach
                 (project-based development)
               </p>
-              <p>
+              <p data-i18n="about.strenghts">
                 Structured and analytical problem-solving ✔ Clean, scalable architecture mindset ✔ Persistent, reliable and team-oriented
               </p>
             </div>
@@ -118,10 +141,10 @@
 
       <section class="skills" id="skills">
         <div class="skills__container">
-          <h3>Technologies</h3>
+          <h3 data-i18n="skills.subtitle">Technologies</h3>
           <div class="skills__content">
-            <h2>Skill Set</h2>
-            <p class="skills__description">
+            <h2 data-i18n="skills.title">Skill Set</h2>
+            <p data-i18n="skills.description" class="skills__description">
               Over the past 1.5 years, I have built a solid foundation in front-end development through intensive, project-based training.
               From the beginning, I focused on applying theory directly in practice. I have developed a fully functional drag-and-drop task
               board with Firebase integration and an object-oriented jump-and-run game. Working on team projects has strengthened my
@@ -129,7 +152,12 @@
               TypeScript, building on strong skills in HTML, CSS, JavaScript, and REST APIs. I am motivated, reliable, and committed to
               continuously growing as a Frontend Developer.
             </p>
-            <p class="skills__cta">You need<span class="skills__highlight">another skill?</span></p>
+
+            <p class="skills__cta">
+              <span data-i18n="skills.cta_prefix">You need</span>
+              <span class="skills__highlight" data-i18n="skills.cta_highlight">another skill?</span>
+            </p>
+
             <p class="skills__contact-text">Feel free to contact me. I look forward to expanding on my previous knowledge</p>
             <button class="skills__button">Let's talk</button>
           </div>
@@ -198,8 +226,8 @@
           <div class="project-modal__content">
             <h2 id="project-modal-number" class="project-modal__number"></h2>
             <h3 id="project-modal-title" class="project-modal__title">Join</h3>
-            <h4 class="project-modal__subtitle">What is this project about?</h4>
-            <p id="project-modal-description" class="project-modal__description">
+            <h4 data-i18n="modal.subtitle" class="project-modal__subtitle">What is this project about?</h4>
+            <p data-i18n="modal.description" id="project-modal-description" class="project-modal__description">
               Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and
               categories.
             </p>
@@ -208,20 +236,24 @@
               <button>Github</button>
               <button>Live Test</button>
             </div>
-            <button onclick="showNextProject()" class="project-modal__next project-modal__next--mobile">Next project</button>
+            <button data-i18n="modal.next" onclick="showNextProject()" class="project-modal__next project-modal__next--mobile">
+              Next project
+            </button>
           </div>
           <div class="project-modal__preview">
             <button onclick="closeProjectModal()" class="project-modal__close"></button>
             <img id="project-modal-img" src="assets/images/join-img.svg" alt="" />
-            <button onclick="showNextProject()" class="project-modal__next">Next project</button>
+            <button data-i18n="modal.next" onclick="showNextProject()" class="project-modal__next">Next project</button>
           </div>
         </div>
       </section>
 
       <section class="projects" id="projects">
         <h2>Portfolio</h2>
-        <h3>Featured Projects</h3>
-        <p>Explore a selection of my work here - Interact with <br />project to see my skills my skills in action.</p>
+        <h3 data-i18n="projects.subtitle">Featured Projects</h3>
+        <p data-i18n="projects.description">
+          Explore a selection of my work here - Interact with <br />project to see my skills my skills in action.
+        </p>
         <div class="projects__left">
           <div onclick="openProjectModal('join')" data-project="join" class="project">
             <h4 class="project__title">Join</h4>
@@ -248,7 +280,7 @@
       </section>
 
       <section class="references" id="references">
-        <h2>What my colleagues say about me</h2>
+        <h2 data-i18n="references.title">What my colleagues say about me</h2>
         <div class="references__content" id="referencesContent"></div>
         <div class="references__actions">
           <button id="previousCard">
@@ -265,39 +297,60 @@
 
       <section class="contact" id="contact">
         <div class="contact-info">
-          <h2>Contact me</h2>
-          <h3>Let's work together</h3>
-          <h4>Got a problem to solve?</h4>
+          <h2 data-i18n="contact.title">Contact me</h2>
+          <h3 data-i18n="contact.subtitle">Let's work together</h3>
+          <h4 data-i18n="contact.question">Got a problem to solve?</h4>
           <p>
-            Encourage people to contact you and describe what role you are interested in.
-            <span class="contact-info__br">Show that you will add value to their projects through your work.</span>
+            <span data-i18n="contact.description_1">Encourage people to contact you and describe what role you are interested in.</span>
+
+            <span class="contact-info__br" data-i18n="contact.description_1"
+              >Show that you will add value to their projects through your work.</span
+            >
           </p>
-          <p>Need a Frontend developer?<span class="contact-info__highlighter">Let's talk!</span></p>
+          <p>
+            <span data-i18n="contact.cta_prefix">Need a Frontend developer?</span>
+            <span class="contact-info__highlighter" data-i18n="contact.cta_highlight">Let's talk!</span>
+          </p>
         </div>
         <form class="contact-form" id="contactForm">
-          <label for="name">What's your name?</label>
-          <input type="text" id="name" name="from_name" placeholder="Your name goes here" data-default="Your name goes here" />
+          <label data-i18n="contact.form.name_label" for="name">What's your name?</label>
+          <input
+            data-i18n-placeholder="contact.form.name_placeholder"
+            type="text"
+            id="name"
+            name="from_name"
+            placeholder="Your name goes here"
+            data-default="Your name goes here"
+          />
 
-          <label for="email">What's your email?</label>
-          <input type="text" id="email" name="from_email" placeholder="youremail@email.com" data-default="youremail@email.com" />
+          <label data-i18n="contact.form.email_label" for="email">What's your email?</label>
+          <input
+            data-i18n-placeholder="contact.form.email_placeholder"
+            type="text"
+            id="email"
+            name="from_email"
+            placeholder="youremail@email.com"
+            data-default="youremail@email.com"
+          />
 
-          <label for="message">How can I help you?</label>
+          <label data-i18n="contact.form.message_label" for="message">How can I help you?</label>
           <textarea
+            data-i18n-placeholder="contact.form.message_placeholder"
             id="message"
             name="message"
             placeholder="Hello Kevin, I am interested in..."
             data-default="Hello Kevin, I am interested in..."
           ></textarea>
 
-          <div class="contact-form__checkbox-wrapper">
-            <input type="checkbox" id="privacy" name="privacy" />
-            <label for="privacy">
-              I've read the <span class="contact-form__highlighter"><a href="#">privacy policy</a></span> and agree to the processing of my
-              data as outlined.
-            </label>
-          </div>
+          <label for="privacy">
+            <span data-i18n="contact.form.privacy_prefix">I've read the</span>
+            <span class="contact-form__highlighter">
+              <a href="#" data-i18n="contact.form.privacy_link">privacy policy</a>
+            </span>
+            <span data-i18n="contact.form.privacy_suffix">and agree to the processing of my data as outlined.</span>
+          </label>
 
-          <button id="submitBtn" class="contact-form__submit" type="submit">Say Hello</button>
+          <button data-i18n="contact.form.submit" id="submitBtn" class="contact-form__submit" type="submit">Say Hello</button>
         </form>
       </section>
     </main>
@@ -320,6 +373,7 @@
       </div>
     </footer>
 
+    <script src="js/translation.js"></script>
     <script src="js/projects-data.js"></script>
     <script src="js/reference-data.js"></script>
     <script src="js/project.js"></script>
