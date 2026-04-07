@@ -87,8 +87,8 @@ function renderReferences() {
   references.forEach((ref, i) => {
     refContent.innerHTML += `
       <div id="ref-${i}" class="references__card">
-        <p class="references__text">${ref.text}</p>
-        <p class="references__author">${ref.author}</p>
+        <p data-i18n="references.texts.${i}" class="references__text">${ref.text}</p>
+        <p data-i18n="references.authors.${i}" class="references__author">${ref.author}</p>
       </div>
     `;
   });
@@ -96,11 +96,15 @@ function renderReferences() {
 }
 
 function updateReferences() {
+  const isDE = document.getElementById("lang-switch-de").classList.contains("lang-switch__option--active");
+  const lang = isDE ? "de" : "en";
+  const refTranslations = getTranslations()[lang].references;
+
   const cards = document.querySelectorAll(".references__card");
   cards.forEach((card, i) => {
     const refIndex = (currentRefIndex + i) % references.length;
-    card.querySelector(".references__text").innerText = references[refIndex].text;
-    card.querySelector(".references__author").innerText = references[refIndex].author;
+    card.querySelector(".references__text").innerText = refTranslations.texts[refIndex];
+    card.querySelector(".references__author").innerText = refTranslations.authors[refIndex];
   });
 }
 
