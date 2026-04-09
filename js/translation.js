@@ -83,8 +83,9 @@ function getDe() {
         privacy_prefix: "Ich habe die ",
         privacy_link: "Datenschutzerklärung",
         privacy_suffix: " gelesen und stimme der Verarbeitung meiner Daten zu.",
+        privacy_validation: "Bitte stimmen Sie der Datenschutzerklärung zu.",
 
-        submit: "Nachricht senden",
+        submit: "Sag Hallo",
       },
     },
   };
@@ -172,6 +173,7 @@ function getEn() {
         privacy_prefix: "I've read the ",
         privacy_link: "privacy policy",
         privacy_suffix: " and agree to the processing of my data as outlined.",
+        privacy_validation: "Please accept the privacy policy",
 
         submit: "Say Hello",
       },
@@ -202,7 +204,6 @@ function getValue(obj, path) {
     if (result == null) return undefined;
     result = result[keys[i]];
   }
-
   return result;
 }
 

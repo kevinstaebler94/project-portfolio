@@ -19,12 +19,19 @@
   background-color: transparent;
   box-shadow: 0 0 18px rgba(61, 207, 182, 0.2);
   overflow: hidden;
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.lang-switch:has(.lang-switch__option:hover) {
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.7);
 }
 
 .lang-switch__option {
   border: none;
   background: transparent;
-  color: rgba(61, 207, 182, 0.8);
+  color: #3dcfb757;
   font-size: var(--fs-sm);
   line-height: 1;
   border-radius: 999px;
@@ -33,7 +40,7 @@
     color 0.22s ease;
 }
 
-.lang-switch__option:hover {
+.lang-switch:has(.lang-switch__option--active:hover) .lang-switch__option:not(.lang-switch__option--active) {
   color: var(--color-primary);
 }
 
@@ -411,12 +418,56 @@ button {
 }
 
 input[type="checkbox"] {
-  align-self: center;
-  justify-self: center;
-  accent-color: var(--color-primary);
+  top: 3px;
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
   width: 20px;
   height: 20px;
   cursor: pointer;
+  appearance: none;
+  position: relative;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: var(--color-primary);
+  position: absolute;
+  top: -5px;
+  left: 0;
+  font-size: var(--fs-md);
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(46, 204, 113, 0.2);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+  z-index: 1;
+}
+
+input[type="checkbox"]:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  color: var(--color-primary);
+}
+
+.privacy > span:not(.contact-form__highlighter):not(.privacy__validation) {
+  font-size: var(--fs-md);
+  color: whitesmoke;
+}
+
+.contact-form__highlighter {
+  font-size: var(--fs-md);
+}
+
+.privacy__validation {
+  font-size: var(--fs-sm);
+  color: transparent;
 }
 
 input:-webkit-autofill,
@@ -429,6 +480,11 @@ input:-webkit-autofill:active {
 
 input:-webkit-autofill::placeholder {
   -webkit-text-fill-color: rgb(153, 153, 153) !important;
+}
+
+.contact-form__submit::after {
+  content: ";)";
+  margin-left: 5px;
 }
 
 .contact-form__submit:disabled {

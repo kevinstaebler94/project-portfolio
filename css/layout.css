@@ -566,7 +566,7 @@ body {
   flex-direction: column;
 }
 
-.contact-form > label {
+.contact-form > label:not(.privacy) {
   padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-lg);
 }
 
@@ -590,10 +590,19 @@ body {
   margin-left: var(--spacing-xs);
 }
 
+.privacy {
+  padding-top: var(--spacing-lg);
+}
+
+.privacy__validation {
+  padding: var(--spacing-sm) 0 var(--spacing-lg) 0;
+}
+
 .contact-form__submit {
   display: block;
   width: fit-content;
   align-self: center;
+  margin-top: var(--spacing-2xl);
 }
 
 /* Footer */

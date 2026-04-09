@@ -3,6 +3,7 @@ const name = document.getElementById("name");
 const email = document.getElementById("email");
 const message = document.getElementById("message");
 const checkbox = document.getElementById("privacy");
+const errorMessage = document.getElementById("errorMessage");
 const submitBtn = document.getElementById("submitBtn");
 
 const pattern = {
@@ -83,7 +84,14 @@ function inputValidation() {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (!inputValidation()) return;
+  if (!inputValidation()) {
+    errorMessage.style.color = "#b86363";
+    setTimeout(() => {
+      errorMessage.style.color = "transparent";
+    }, 3000);
+
+    return;
+  }
   console.log("Mail gesendet");
   form.reset();
   // emailjs.sendForm("service_urv966s", "template_6ro37zj", form).then(
