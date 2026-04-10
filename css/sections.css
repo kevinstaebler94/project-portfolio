@@ -121,17 +121,64 @@ button {
   }
 }
 
-.hero__main-buttons > a {
+.hero__button,
+.hero__button {
   font-size: var(--fs-md);
-  padding: var(--spacing-xs) var(--spacing-lg);
   border-radius: var(--br-35);
   border: 2px solid var(--color-text);
   color: var(--color-text);
   background-color: transparent;
   cursor: pointer;
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
+  white-space: nowrap;
+  transition:
+    color 300ms ease,
+    border-color 300ms ease;
+}
+
+.hero__button--left:hover,
+.hero__button--right:hover {
+  border: 2px solid var(--color-primary);
+}
+
+.hero__button--left:hover .slide-text-1 {
+  animation: slideOut 2000ms linear infinite;
+  color: var(--color-primary);
+}
+
+.hero__button--left:hover .slide-text-2 {
+  animation: slideIn 2000ms linear infinite;
+}
+
+.hero__button--right:hover .slide-text-1 {
+  animation: slideOut 2000ms linear infinite;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.hero__button--right:hover .slide-text-2 {
+  animation: slideIn 2000ms linear infinite;
+}
+
+.slide-text-2 {
+  color: var(--color-primary);
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-350%);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(350%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 /* About Section Styling */

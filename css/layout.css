@@ -94,6 +94,50 @@ body {
   order: 3;
   display: flex;
   gap: var(--spacing-lg);
+  width: 100%;
+  justify-content: center;
+}
+
+.hero__button--left,
+.hero__button--right {
+  padding: var(--spacing-xs) var(--spacing-lg);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  height: 50px;
+  width: 100%;
+}
+
+.hero__button--left {
+  max-width: 200px;
+}
+
+.hero__button--left .slide-text-1 {
+  position: absolute;
+  transform: translateX(0%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.hero__button--left .slide-text-2 {
+  position: absolute;
+  transform: translateX(350%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.hero__button--right {
+  max-width: 150px;
+}
+
+.hero__button--right .slide-text-1 {
+  position: absolute;
+  transform: translateX(0%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.hero__button--right .slide-text-2 {
+  position: absolute;
+  transform: translateX(350%);
+  transition: transform 0.4s ease-in-out;
 }
 
 .banner {
