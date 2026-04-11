@@ -47,7 +47,7 @@ function getDe() {
 
     projects: {
       subtitle: "Ausgewählte Projekte",
-      description: "Hier findest du eine Auswahl meiner Projekte – interagiere mit ihnen...",
+      description: "Hier findest du eine Auswahl meiner Projekte – probiere sie aus und sieh meine Fähigkeiten in der Praxis.",
       modal: {
         subtitle: "Worum geht es in diesem Projekt?",
         next: "Nächstes Projekt",

@@ -154,6 +154,17 @@ body {
   transition: transform 0.4s ease-in-out;
 }
 
+.icon {
+  display: inline-block;
+  position: relative;
+}
+
+.icon .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .banner {
   /* order: 4; */
   width: 120%;

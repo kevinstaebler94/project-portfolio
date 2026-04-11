@@ -81,6 +81,40 @@ p {
   font-size: var(--fs-8xl);
 }
 
+.hero__mail p {
+  cursor: pointer;
+}
+
+.hero__mail p:hover {
+  color: var(--color-primary);
+}
+
+.hero__social-icons > a {
+  position: relative;
+}
+
+.icon .hover {
+  opacity: 0;
+}
+
+.icon .hover:hover {
+  opacity: 1;
+}
+
+.icon .default:hover {
+  opacity: 0;
+}
+
+.hero__social-icons > a:hover::after {
+  content: "•";
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(115%, 10%);
+  color: var(--color-primary);
+  font-size: var(--fs-lg);
+}
+
 button {
   font-size: var(--fs-md);
   padding: var(--spacing-xs) var(--spacing-lg);
