@@ -37,9 +37,12 @@ function getDe() {
     skills: {
       subtitle: "Technologien",
       title: "Fähigkeiten",
-      description: "In den letzten 1,5 Jahren habe ich mir durch projektbasiertes Lernen ein solides Fundament aufgebaut...",
+      description:
+        "Über die letzten 1,5 Jahre habe ich mir durch intensives, projektbasiertes Lernen eine solide Grundlage in der Frontend-Entwicklung aufgebaut. Von Anfang an lag mein Fokus darauf, theoretisches Wissen direkt praktisch anzuwenden. Dabei habe ich unter anderem ein vollständig funktionsfähiges Drag-and-Drop-Task-Board mit Firebase-Integration sowie ein objektorientiertes Jump-and-Run-Spiel entwickelt. Die Arbeit an Teamprojekten hat mein Verständnis für strukturierte Arbeitsabläufe und Clean-Code-Prinzipien deutlich gestärkt. Aktuell vertiefe ich meine Kenntnisse in Angular und TypeScript und baue dabei auf fundierten Fähigkeiten in HTML, CSS, JavaScript und REST-APIs auf.Ich bin motiviert, zuverlässig und habe den Anspruch, mich kontinuierlich als Frontend-Entwickler weiterzuentwickeln.",
       cta_prefix: "Du brauchst ",
       cta_highlight: "noch eine Fähigkeit?",
+      contact_text: "Nimm gerne Kontakt mit mir auf. Ich freue mich darauf, meine Kenntnisse weiter auszubauen.",
+      button: "Lass uns sprechen",
     },
 
     projects: {
@@ -130,6 +133,8 @@ function getEn() {
         "Over the past 1.5 years, I have built a solid foundation in front-end development through intensive, project-based training. From the beginning, I focused on applying theory directly in practice. I have developed a fully functional drag-and-drop task board with Firebase integration and an object-oriented jump-and-run game. Working on team projects has strengthened my understanding of structured workflows and clean code principles. Currently, I am deepening my knowledge in Angular and TypeScript, building on strong skills in HTML, CSS, JavaScript, and REST APIs. I am motivated, reliable, and committed to continuously growing as a Frontend Developer.",
       cta_prefix: "You need ",
       cta_highlight: "another skill?",
+      contact_text: "Feel free to contact me. I look forward to expanding on my previous knowledge.",
+      button: "Let's talk",
     },
 
     projects: {

@@ -122,7 +122,8 @@ button {
 }
 
 .hero__button,
-.hero__button {
+.hero__button,
+.skills__button {
   font-size: var(--fs-md);
   border-radius: var(--br-35);
   border: 2px solid var(--color-text);
@@ -136,7 +137,8 @@ button {
 }
 
 .hero__button--left:hover,
-.hero__button--right:hover {
+.hero__button--right:hover,
+.skills__button:hover {
   border: 2px solid var(--color-primary);
 }
 
@@ -152,7 +154,6 @@ button {
 .hero__button--right:hover .slide-text-1 {
   animation: slideOut 2000ms linear infinite;
   color: var(--color-primary);
-  border-color: var(--color-primary);
 }
 
 .hero__button--right:hover .slide-text-2 {
@@ -242,6 +243,15 @@ button {
 
 .skills__technology > p {
   text-align: center;
+}
+
+.skills__button:hover .slide-text-1 {
+  animation: slideOut 2000ms linear infinite;
+  color: var(--color-primary);
+}
+
+.skills__button:hover .slide-text-2 {
+  animation: slideIn 2000ms linear infinite;
 }
 
 /* Project Modal Section */

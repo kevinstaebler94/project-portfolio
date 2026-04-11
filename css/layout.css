@@ -98,8 +98,18 @@ body {
   justify-content: center;
 }
 
+.hero__button--left .slide-text-1,
+.hero__button--left .slide-text-2,
+.hero__button--right .slide-text-1,
+.hero__button--right .slide-text-2 {
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
 .hero__button--left,
-.hero__button--right {
+.hero__button--right,
+.skills__button {
   padding: var(--spacing-xs) var(--spacing-lg);
   display: inline-block;
   position: relative;
@@ -110,6 +120,10 @@ body {
 
 .hero__button--left {
   max-width: 200px;
+}
+
+.skills__button {
+  max-width: 150px;
 }
 
 .hero__button--left .slide-text-1 {
@@ -348,6 +362,18 @@ body {
   justify-content: start;
   align-items: center;
   gap: var(--spacing-sm);
+}
+
+.skills__button .slide-text-1 {
+  position: absolute;
+  transform: translateX(0%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.skills__button .slide-text-2 {
+  position: absolute;
+  transform: translateX(350%);
+  transition: transform 0.4s ease-in-out;
 }
 
 /* Project Modal section */
