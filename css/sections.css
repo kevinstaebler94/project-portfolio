@@ -13,6 +13,10 @@
    =========================== */
 
 /* Header & Navigation Styling */
+header {
+  font-family: var(--fira);
+}
+
 .lang-switch {
   border: 1px solid var(--color-primary);
   border-radius: 999px;
@@ -32,7 +36,7 @@
   border: none;
   background: transparent;
   color: #3dcfb757;
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
   line-height: 1;
   border-radius: 999px;
   transition:
@@ -75,14 +79,21 @@ p {
 
 .hero__main > h1 {
   font-size: var(--fs-3xl);
+  font-family: var(--fira);
 }
 
 .hero__main > h2 {
   font-size: var(--fs-8xl);
+  font-family: var(--karla);
+}
+
+.hero__main-buttons .slide-text {
+  font-family: var(--karla);
 }
 
 .hero__mail p {
   cursor: pointer;
+  font-family: var(--karla);
 }
 
 .hero__mail p:hover {
@@ -109,7 +120,7 @@ p {
   content: "•";
   position: absolute;
   right: 0;
-  top: 0;
+  top: 10%;
   transform: translate(115%, 10%);
   color: var(--color-primary);
   font-size: var(--fs-lg);
@@ -139,6 +150,8 @@ button {
 .banner__status {
   color: #3dcfb6;
   font-size: var(--spacing-md);
+  font-family: var(--karla);
+  font-weight: 350;
 }
 
 .banner__dot {
@@ -159,6 +172,7 @@ button {
 .hero__button,
 .skills__button {
   font-size: var(--fs-md);
+  font-family: var(--karla);
   border-radius: var(--br-35);
   border: 2px solid var(--color-text);
   color: var(--color-text);
@@ -216,6 +230,40 @@ button {
   }
 }
 
+.image-wrapper {
+  border: 2px solid var(--color-primary);
+  border-radius: var(--br-25);
+  padding: var(--spacing-md) var(--spacing-xxs);
+  margin-bottom: var(--spacing-sm);
+  cursor: pointer;
+}
+
+.image-wrapper > img {
+  height: 25px;
+}
+
+.image-wrapper > img:hover {
+  animation: bounce 1250ms linear infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(50%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 /* About Section Styling */
 
 .about,
@@ -238,7 +286,9 @@ button {
 .about__content-wrapper > h3,
 .skills__container > h3,
 .projects > h2 {
-  font-size: var(--spacing-lg);
+  font-size: var(--fs-xl);
+  font-family: var(--karla);
+  font-weight: 500;
   color: var(--color-primary);
 }
 
@@ -246,6 +296,7 @@ button {
 .skills__content > h2,
 .projects > h3 {
   font-size: var(--fs-4xl);
+  font-family: var(--fira);
   color: var(--color-primary);
 }
 
@@ -254,7 +305,8 @@ button {
 .skills__contact-text,
 .skills__technology > p,
 .projects > p {
-  font-size: var(--fs-md);
+  font-size: var(--fs-ssm);
+  font-family: var(--karla);
   text-align: justify;
   hyphens: auto;
 }
@@ -324,7 +376,7 @@ button {
 }
 
 .project-modal__skill > p {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
 }
 
 .project-modal__actions > button {
@@ -472,7 +524,7 @@ button {
   background-color: var(--color-bg);
   border: none;
   color: whitesmoke;
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
 }
 
 .contact-form > input:focus {
@@ -481,7 +533,7 @@ button {
   outline: none;
   box-shadow: none;
   color: whitesmoke;
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
 }
 
 .contact-form > textarea:focus {
@@ -489,7 +541,7 @@ button {
   outline: none;
   box-shadow: none;
   color: whitesmoke;
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
   border-bottom: 2px solid var(--color-primary);
 }
 
@@ -570,7 +622,7 @@ input[type="checkbox"]:hover::before {
 }
 
 .privacy__validation {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
   color: transparent;
 }
 
@@ -598,7 +650,7 @@ input:-webkit-autofill::placeholder {
 
 input::placeholder,
 textarea::placeholder {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
 }
 
 input.error::placeholder,

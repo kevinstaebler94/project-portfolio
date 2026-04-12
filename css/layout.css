@@ -116,6 +116,7 @@ header {
 .hero__button--left .slide-text-2,
 .hero__button--right .slide-text-1,
 .hero__button--right .slide-text-2 {
+  top: 15%;
   left: 0;
   right: 0;
   text-align: center;
@@ -190,6 +191,10 @@ header {
   position: relative;
 }
 
+.icon > img {
+  width: 40px;
+  height: 40px;
+}
 .icon .hover {
   position: absolute;
   top: 0;
@@ -221,8 +226,8 @@ header {
 }
 
 .banner__dot {
-  height: 10px;
-  width: 10px;
+  height: 5px;
+  width: 5px;
   display: flex;
   align-items: center;
   gap: var(--spacing-2xl);
@@ -249,7 +254,7 @@ header {
 
 .hero__side-left::after {
   content: "";
-  width: 1px;
+  width: 1.5px;
   height: 250px;
   background-color: var(--color-primary);
   display: block;
@@ -267,7 +272,7 @@ header {
 
 .hero__side-right::after {
   content: "";
-  width: 1px;
+  width: 1.5px;
   height: 200px;
   background-color: var(--color-text);
   display: block;
@@ -404,6 +409,14 @@ header {
   justify-content: start;
   align-items: center;
   gap: var(--spacing-sm);
+}
+
+.skills__button .slide-text-1,
+.skills__button .slide-text-2 {
+  top: 15%;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 .skills__button .slide-text-1 {
