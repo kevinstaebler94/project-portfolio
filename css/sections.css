@@ -489,7 +489,7 @@ button {
   outline: none;
   box-shadow: none;
   color: whitesmoke;
-  font-size: var(--fs-lg);
+  font-size: var(--fs-sm);
   border-bottom: 2px solid var(--color-primary);
 }
 
@@ -506,6 +506,19 @@ button {
 .contact-form__checkbox-wrapper {
   color: whitesmoke;
   font-size: var(--fs-md);
+}
+
+.contact-form__submit:not(:disabled):hover .slide-text-1 {
+  animation: slideOut 2000ms linear infinite;
+  color: var(--color-primary);
+}
+
+.contact-form__submit:not(:disabled):hover .slide-text-2 {
+  animation: slideIn 2000ms linear infinite;
+}
+
+.contact-form__submit:not(:disabled):hover {
+  border: 2px solid var(--color-primary);
 }
 
 input[type="checkbox"] {
@@ -573,18 +586,14 @@ input:-webkit-autofill::placeholder {
   -webkit-text-fill-color: rgb(153, 153, 153) !important;
 }
 
-.contact-form__submit::after {
-  content: ";)";
-  margin-left: 5px;
-}
-
 .contact-form__submit:disabled {
-  cursor: not-allowed;
+  cursor: default;
   opacity: 0.5;
 }
 
 .contact-form__submit:not(:disabled) {
   cursor: pointer;
+  opacity: 1;
 }
 
 input::placeholder,

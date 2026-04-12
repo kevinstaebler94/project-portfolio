@@ -24,7 +24,8 @@
         </div>
       </nav>
       <div class="header__logo">
-        <img src="assets/images/portfolio-logo.png" alt="" />
+        <img class="header__logo-image header__logo-image--default" src="assets/images/portfolio-logo.png" alt="" />
+        <img class="header__logo-image header__logo-image--hover" src="assets/images/portfolio-logo-reverse.png" alt="" />
       </div>
     </header>
     <main>
@@ -370,7 +371,12 @@
             >Please accept the privacy policy.</span
           >
 
-          <button data-i18n="contact.form.submit" id="submitBtn" class="contact-form__submit" type="submit">Say Hello</button>
+          <button disabled id="submitBtn" class="contact-form__submit" type="submit">
+            <span class="slide-wrapper">
+              <span data-i18n="contact.form.submit" class="slide-text slide-text-1">Say Hello</span>
+              <span data-i18n="contact.form.submit" class="slide-text slide-text-2">Say Hello</span>
+            </span>
+          </button>
         </form>
       </section>
     </main>
