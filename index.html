@@ -132,17 +132,28 @@
               architectural side of development, where clean code and maintainability define long-term quality. Continuous learning and deep
               understanding drive my growth every day.
             </p>
-            <div>
-              <p data-i18n="about.location">
-                📍 Based in North Rhine-Westphalia, Germany Open to on-site collaboration, with optional remote flexibility.
-              </p>
-              <p data-i18n="about.focus">
-                🧠 Strong focus on continuous improvement Currently specializing in Angular and TypeScript Practice-driven learning approach
-                (project-based development)
-              </p>
-              <p data-i18n="about.strengths">
-                Structured and analytical problem-solving ✔ Clean, scalable architecture mindset ✔ Persistent, reliable and team-oriented
-              </p>
+            <div class="about__details">
+              <div class="about__location-wrapper">
+                <img src="assets/icons/location-icon.svg" alt="" />
+                <p data-i18n="about.location">
+                  Based in North Rhine-Westphalia, Germany Open to on-site collaboration, with optional remote flexibility.
+                </p>
+              </div>
+
+              <div class="about__focus-wrapper">
+                <img src="assets/icons/mind-icon.svg" alt="" />
+                <p data-i18n="about.focus">
+                  Strong focus on continuous improvement Currently specializing in Angular and TypeScript Practice-driven learning approach
+                  (project-based development)
+                </p>
+              </div>
+
+              <div class="about__strengths-wrapper">
+                <img src="assets/icons/check-icon.svg" alt="" />
+                <p data-i18n="about.strengths">
+                  Structured and analytical problem-solving, clean, scalable architecture mindset, persistent, reliable, and team-oriented
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -170,7 +181,7 @@
             <p data-i18n="skills.contact_text" class="skills__contact-text">
               Feel free to contact me. I look forward to expanding on my previous knowledge.
             </p>
-            <a class="skills__button" href="#contact">
+            <a id="skills-button" class="skills__button skills__button--en" href="#contact">
               <span class="slide-wrapper">
                 <span data-i18n="skills.button" class="slide-text slide-text-1">Let's talk</span>
                 <span data-i18n="skills.button" class="slide-text slide-text-2">Let's talk</span>
@@ -350,13 +361,13 @@
           />
 
           <label data-i18n="contact.form.message_label" for="message">How can I help you?</label>
-          <textarea
+          <input
             data-i18n-placeholder="contact.form.message_placeholder"
             id="message"
             name="message"
             placeholder="Hello Kevin, I am interested in..."
             data-default="Hello Kevin, I am interested in..."
-          ></textarea>
+          ></input>
 
           <label class="privacy" for="privacy">
             <input type="checkbox" id="privacy" />

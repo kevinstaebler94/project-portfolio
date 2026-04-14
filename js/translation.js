@@ -28,17 +28,23 @@ function getDe() {
     about: {
       subtitle: "Wer ich bin",
       title: "Über mich",
-      description: "Hey, ich bin Kevin – ein angehender Frontend Developer aus Nordrhein-Westfalen...",
-      location: "📍 Standort Nordrhein-Westfalen, Deutschland. Offen für Vor-Ort-Zusammenarbeit mit optionaler Remote-Möglichkeit.",
-      focus: "🧠 Starker Fokus auf kontinuierliche Weiterentwicklung. Aktuell spezialisiere ich mich auf Angular und TypeScript.",
-      strengths: "✔ Strukturierte und analytische Problemlösung ✔ Saubere Architektur ✔ Teamorientiert",
+      description:
+        "Ich bin Kevin, ein angehender Frontend-Entwickler aus Stolberg - Nordrhein-Westfalen. Meine Leidenschaft ist es, skalierbare Webanwendungen zu entwickeln und strukturierte Systeme von Grund auf aufzubauen. Besonders interessiert mich die logische und architektonische Seite der Softwareentwicklung, bei der sauberer Code und Wartbarkeit eine große Rolle für die langfristige Qualität spielen. Mir ist wichtig, die Dinge nicht nur umzusetzen, sondern sie auch wirklich zu verstehen. Deshalb arbeite ich kontinuierlich daran, mein Wissen zu erweitern und mich fachlich weiterzuentwickeln.",
+
+      location: "Ansässig in Stolberg, Nordrhein-Westfalen, Deutschland. Offen für die Arbeit vor Ort, mit optionaler Remote-Flexibilität.",
+
+      focus:
+        "Starker Fokus auf kontinuierliche Verbesserung. Aktuell spezialisiert auf Angular und TypeScript. Praxisorientierter Lernansatz durch projektbasierte Entwicklung.",
+
+      strengths:
+        "Strukturiertes und analytisches Denken, mit Fokus auf saubere und skalierbare Architekturen. Ich arbeite zuverlässig, bleibe dran und lege großen Wert auf gute Zusammenarbeit im Team.",
     },
 
     skills: {
       subtitle: "Technologien",
       title: "Fähigkeiten",
       description:
-        "Über die letzten 1,5 Jahre habe ich mir durch intensives, projektbasiertes Lernen eine solide Grundlage in der Frontend-Entwicklung aufgebaut. Von Anfang an lag mein Fokus darauf, theoretisches Wissen direkt praktisch anzuwenden. Dabei habe ich unter anderem ein vollständig funktionsfähiges Drag-and-Drop-Task-Board mit Firebase-Integration sowie ein objektorientiertes Jump-and-Run-Spiel entwickelt. Die Arbeit an Teamprojekten hat mein Verständnis für strukturierte Arbeitsabläufe und Clean-Code-Prinzipien deutlich gestärkt. Aktuell vertiefe ich meine Kenntnisse in Angular und TypeScript und baue dabei auf fundierten Fähigkeiten in HTML, CSS, JavaScript und REST-APIs auf.Ich bin motiviert, zuverlässig und habe den Anspruch, mich kontinuierlich als Frontend-Entwickler weiterzuentwickeln.",
+        "In den letzten 1,5 Jahren habe ich mir durch intensives, projektbasiertes Lernen eine solide Grundlage in der Frontend-Entwicklung aufgebaut. Von Anfang an war es mir wichtig, Theorie direkt in die Praxis umzusetzen. Dabei habe ich unter anderem ein voll funktionsfähiges Drag-and-Drop-Task-Board mit Firebase-Anbindung sowie ein objektorientiertes Jump-and-Run-Spiel entwickelt. Durch die Arbeit an Teamprojekten konnte ich mein Verständnis für strukturierte Abläufe und saubere Code-Prinzipien weiter stärken. Aktuell vertiefe ich meine Kenntnisse in Angular und TypeScript und baue dabei auf einem starken Fundament in HTML, CSS, JavaScript und REST-APIs auf. Ich arbeite zuverlässig, bin motiviert und habe den Anspruch, mich kontinuierlich als Frontend-Entwickler weiterzuentwickeln.",
       cta_prefix: "Du brauchst ",
       cta_highlight: "noch eine Fähigkeit?",
       contact_text: "Nimm gerne Kontakt mit mir auf. Ich freue mich darauf, meine Kenntnisse weiter auszubauen.",
@@ -118,12 +124,14 @@ function getEn() {
       subtitle: "Who I Am",
       title: "About me",
       description:
-        "Hey there, I'm Kevin — a frontend developer in transition based in North Rhine-Westphalia, Germany. I'm passionate about building scalable web applications and creating structured systems from scratch. I'm especially drawn to the logical and architectural side of development, where clean code and maintainability define long-term quality. Continuous learning and deep understanding drive my growth every day.",
-      location: "📍 Based in North Rhine-Westphalia, Germany. Open to on-site collaboration, with optional remote flexibility.",
+        "Hey there, I'm Kevin — a frontend developer in transition based in Stolberg - North Rhine-Westphalia, Germany. I'm passionate about building scalable web applications and creating structured systems from scratch. I'm especially drawn to the logical and architectural side of development, where clean code and maintainability define long-term quality. Continuous learning and deep understanding drive my growth every day.",
+
+      location: "Based in Stolberg - North Rhine-Westphalia, Germany Open to on-site collaboration, with optional remote flexibility.",
+
       focus:
-        "🧠 Strong focus on continuous improvement. Currently specializing in Angular and TypeScript. Practice-driven learning approach (project-based development).",
-      strengths:
-        "✔ Structured and analytical problem-solving ✔ Clean, scalable architecture mindset ✔ Persistent, reliable and team-oriented",
+        "Strong focus on continuous improvement Currently specializing in Angular and TypeScript Practice-driven learning approach (project-based development).",
+
+      strengths: "Structured and analytical problem-solving, clean, scalable architecture mindset, persistent, reliable, and team-oriented",
     },
 
     skills: {
@@ -215,16 +223,21 @@ function getValue(obj, path) {
 function switchLang() {
   const en = document.getElementById("lang-switch-en");
   const de = document.getElementById("lang-switch-de");
+  const skillsBtn = document.getElementById("skills-button");
 
   en.addEventListener("click", () => {
     de.classList.remove("lang-switch__option--active");
     en.classList.add("lang-switch__option--active");
+    skillsBtn.classList.remove("skills__button--de");
+    skillsBtn.classList.add("skills__button--en");
     setLanguage("en");
   });
 
   de.addEventListener("click", () => {
     en.classList.remove("lang-switch__option--active");
     de.classList.add("lang-switch__option--active");
+    skillsBtn.classList.remove("skills__button--en");
+    skillsBtn.classList.add("skills__button--de");
     setLanguage("de");
   });
 }

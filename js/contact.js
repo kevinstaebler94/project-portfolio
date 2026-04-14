@@ -76,7 +76,7 @@ function isCheckboxChecked() {
 function showCheckboxError() {
   errorMessage.style.color = "#b86363";
 
-  setTimeout(function () {
+  setTimeout(() => {
     errorMessage.style.color = "transparent";
   }, 3000);
 }
