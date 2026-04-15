@@ -92,7 +92,7 @@ function renderReferences() {
       </div>
     `;
   });
-  initReferenceButtons();
+  initReferenceButtons(references);
 }
 
 function updateReferences() {
@@ -108,14 +108,27 @@ function updateReferences() {
   });
 }
 
-function initReferenceButtons() {
+function initReferenceButtons(ref) {
   document.getElementById("previousCard").addEventListener("click", () => {
     currentRefIndex = (currentRefIndex - 1 + references.length) % references.length;
     updateReferences();
+    renderReferenceDots(ref);
   });
 
   document.getElementById("nextCard").addEventListener("click", () => {
     currentRefIndex = (currentRefIndex + 1) % references.length;
     updateReferences();
+    renderReferenceDots(ref);
   });
+}
+
+function renderReferenceDots(ref) {
+  const container = document.getElementById("activeIndex");
+  container.innerHTML = "";
+
+  for (let i = 0; i < ref.length; i++) {
+    container.innerHTML += `
+    <div class="dot ${i === currentRefIndex ? "dot--active" : "dot"}"></div>
+    `;
+  }
 }

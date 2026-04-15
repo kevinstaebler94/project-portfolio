@@ -74,8 +74,8 @@ function getDe() {
       title: "Kontakt",
       subtitle: "Lass uns zusammenarbeiten",
       question: "Hast du ein Problem zu lösen?",
-      description_1: "Melde dich gerne bei mir und beschreibe dein Projekt.",
-      description_2: "Ich liefere saubere, skalierbare und wartbare Frontend-Lösungen.",
+      description_1: "Melde dich gerne und lass mich wissen, woran ihr gerade arbeitet.",
+      description_2: "Ich arbeite gerne im Team und freue mich darauf, mich in zukünftige Projekte einzubringen.",
       cta_prefix: "Du suchst einen Frontend Developer? ",
       cta_highlight: "Lass uns sprechen!",
 
@@ -168,8 +168,8 @@ function getEn() {
       title: "Contact me",
       subtitle: "Let's work together",
       question: "Got a problem to solve?",
-      description_1: "Feel free to reach out and let me know what kind of role or project you have in mind.",
-      description_2: "I’m confident I can add value to your team through clean, scalable and maintainable frontend solutions.",
+      description_1: "Feel free to reach out and share what kind of role or project you’re working on.",
+      description_2: "I’m a team player who would love to support your team on future projects.",
       cta_prefix: "Need a Frontend developer? ",
       cta_highlight: "Let's talk!",
 

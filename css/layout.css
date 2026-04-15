@@ -116,7 +116,7 @@ header {
 .hero__button--left .slide-text-2,
 .hero__button--right .slide-text-1,
 .hero__button--right .slide-text-2 {
-  top: 15%;
+  top: 22%;
   left: 0;
   right: 0;
   text-align: center;
@@ -206,7 +206,6 @@ header {
 }
 
 .banner {
-  /* order: 4; */
   width: 120%;
   height: 65px;
   display: flex;
@@ -302,7 +301,7 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(425px, 1fr));
   gap: var(--spacing-2xl);
   align-items: start;
-  padding: 0 var(--spacing-sm) var(--spacing-2xl) var(--spacing-2xl);
+  padding: 0 var(--spacing-xl) var(--spacing-2xl) var(--spacing-2xl);
 }
 
 .about__portrait-wrapper {
@@ -347,7 +346,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: end;
+  align-items: center;
 }
 
 .about__content-wrapper > h3,
@@ -401,7 +400,6 @@ header {
 .skills {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(485px, 1fr));
-  gap: var(--spacing-md);
 }
 
 .skills__container {
@@ -415,8 +413,8 @@ header {
 .skills__technologies {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: var(--spacing-2xl);
-  padding: calc(var(--spacing-4xl) - 13px) var(--spacing-2xl) var(--spacing-2xl) 0;
+  padding: calc(var(--spacing-4xl) - 20px) var(--spacing-md) var(--spacing-2xl) 0;
+  column-gap: var(--spacing-md);
 }
 
 .skills__technology {
@@ -425,6 +423,7 @@ header {
   justify-content: start;
   align-items: center;
   gap: var(--spacing-sm);
+  height: 220px;
 }
 
 .skills__contact-text {
@@ -433,7 +432,7 @@ header {
 
 .skills__button .slide-text-1,
 .skills__button .slide-text-2 {
-  top: 15%;
+  top: 22%;
   left: 0;
   right: 0;
   text-align: center;
@@ -581,6 +580,14 @@ header {
   margin-bottom: var(--spacing-xs);
 }
 
+.projects > p {
+  max-width: 45ch;
+}
+
+.contact-info > p {
+  max-width: 65ch;
+}
+
 .projects__left > div {
   grid-column: 1;
 }
@@ -660,6 +667,12 @@ header {
   border: none;
 }
 
+.references__selected-index {
+  display: flex;
+  justify-content: space-around;
+  width: 100px;
+}
+
 .references__actions > img {
   margin: 0 var(--spacing-sm);
 }
@@ -682,8 +695,8 @@ header {
 .contact {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(405px, 1fr));
-  gap: var(--spacing-md);
-  padding: var(--spacing-2xl);
+  column-gap: var(--spacing-xl);
+  padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-2xl) var(--spacing-2xl);
 }
 
 .contact-info {

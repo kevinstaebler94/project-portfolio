@@ -48,14 +48,14 @@
 
 @font-face {
   font-family: "firacode";
-  src: url("assets/fonts/FiraCode-VariableFont_wght.ttf") format("truetype");
+  src: url("../assets/fonts/FiraCode-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "karla";
-  src: url("assets/fonts/Karla-VariableFont_wght.ttf") format("truetype");
+  src: url("../assets/fonts/Karla-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
 }

@@ -333,7 +333,16 @@ button {
   font-family: var(--fira);
   font-weight: 400;
   hyphens: auto;
+  max-width: 10ch;
   text-align: center;
+}
+
+.skills__technology > img {
+  transition: 0.5s ease-in-out;
+}
+
+.skills__technology > img:hover {
+  transform: scale(1.2);
 }
 
 .skills__button:hover .slide-text-1 {
@@ -495,6 +504,19 @@ button {
   background-color: var(--color-text);
 }
 
+.dot {
+  height: 8px;
+  width: 8px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.dot--active {
+  background-color: var(--color-primary);
+  transform: scale(1.2);
+}
+
 /* Contact Section */
 .contact {
   background-color: var(--color-bg);
@@ -519,7 +541,8 @@ button {
   font-size: var(--fs-5xl);
   font-weight: 700;
   line-height: 0.8;
-  max-width: 10ch;
+  max-width: 11ch;
+  hyphens: auto;
 }
 
 .contact-info > h4 {
@@ -530,7 +553,7 @@ button {
 
 .contact-info > p {
   font-family: var(--karla);
-  font-size: var(--fs-md);
+  font-size: var(--fs-sm);
 }
 
 .contact-info__br {
@@ -680,9 +703,9 @@ footer {
 
 .footer__brand > h2,
 .footer__brand > h3,
-.footer__copyright > h2,
 .footer__navigation > a {
-  font-size: var(--fs-md);
+  font-size: var(--fs-sm);
+  font-family: var(--fira);
 }
 
 .footer__brand > img {
@@ -690,6 +713,8 @@ footer {
 }
 
 .footer__copyright > h2 {
+  font-size: var(--fs-sm);
+  font-family: var(--karla);
   color: var(--color-primary);
 }
 
