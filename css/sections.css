@@ -319,7 +319,7 @@ button {
 
 .skills__cta,
 .project__title {
-  font-size: var(--fs-xl);
+  font-size: var(--fs-lg);
   font-family: var(--fira);
   font-weight: 700;
 }
@@ -481,6 +481,14 @@ button {
   background-color: rgba(61, 207, 183, 0.678);
   scale: 1.1;
   transition: opacity 0.4s ease-in-out;
+  position: relative;
+}
+
+.references__card:nth-child(2)::after {
+  content: url("../assets/icons/quotes.svg");
+  position: absolute;
+  top: -4%;
+  left: -8%;
 }
 
 .references > h2 {
@@ -698,7 +706,7 @@ input.error::placeholder {
 
 /* Footer */
 footer {
-  background-color: var(--color-bg);
+  background-color: transparent;
 }
 
 .footer__brand > h2,

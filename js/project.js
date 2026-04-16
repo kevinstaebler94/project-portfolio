@@ -57,27 +57,30 @@ function showNextProject() {
 
 function initHoverImagePreview() {
   let projects = document.querySelectorAll(".project[data-project]");
+  let ImageContainer = document.getElementById("projects-preview");
   let previewImage = document.getElementById("projects-preview-img");
 
-  addMouseOver(projects, previewImage);
-  addMouseOut(projects, previewImage);
+  addMouseOver(projects, ImageContainer, previewImage);
+  addMouseOut(projects, ImageContainer, previewImage);
 }
 
-function addMouseOver(projects, previewImage) {
+function addMouseOver(projects, ImageContainer, previewImage) {
   projects.forEach((project) => {
     project.addEventListener("mouseover", () => {
       const key = project.dataset.project;
       if (projectList[key]) {
         previewImage.src = projectList[key].image;
+        ImageContainer.classList.add("projects__preview--active");
       }
     });
   });
 }
 
-function addMouseOut(projects, previewImage) {
+function addMouseOut(projects, ImageContainer, previewImage) {
   projects.forEach((project) => {
     project.addEventListener("mouseout", () => {
       previewImage.src = "";
+      ImageContainer.classList.remove("projects__preview--active");
     });
   });
 }
