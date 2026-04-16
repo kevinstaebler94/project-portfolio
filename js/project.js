@@ -14,8 +14,12 @@ function getModalElements() {
 }
 
 function openProjectModal(projectKey) {
+  if (!projectList || !projectList[projectKey]) return;
+
   currentProjectIndex = projectKeys.indexOf(projectKey);
   const modalData = getModalElements();
+
+  if (!modalData.modal || !modalData.overlay) return;
 
   modalData.number.innerText = projectList[projectKey].number;
   modalData.title.innerText = projectList[projectKey].title;
@@ -30,6 +34,8 @@ function openProjectModal(projectKey) {
 
 function renderModalSkills(projectKey) {
   const modalSkills = document.getElementById("project-modal-skills");
+  if (!modalSkills || !projectList || !projectList[projectKey]) return;
+
   modalSkills.innerHTML = "";
 
   for (let i = 0; i < projectList[projectKey].languages.length; i++) {
@@ -45,6 +51,9 @@ function renderModalSkills(projectKey) {
 function closeProjectModal() {
   const modal = document.getElementById("project-modal");
   const overlay = document.getElementById("project-modal-overlay");
+
+  if (!modal || !overlay) return;
+
   modal.classList.add("dNone");
   overlay.classList.remove("project-modal-overlay");
   document.body.style.overflow = "";
@@ -60,14 +69,20 @@ function initHoverImagePreview() {
   let ImageContainer = document.getElementById("projects-preview");
   let previewImage = document.getElementById("projects-preview-img");
 
+  if (projects.length === 0 || !ImageContainer || !previewImage) return;
+
   addMouseOver(projects, ImageContainer, previewImage);
   addMouseOut(projects, ImageContainer, previewImage);
 }
 
 function addMouseOver(projects, ImageContainer, previewImage) {
-  projects.forEach((project) => {
-    project.addEventListener("mouseover", () => {
+  projects.forEach(function (project) {
+    if (project.dataset.listener) return;
+    project.dataset.listener = "true";
+
+    project.addEventListener("mouseover", function () {
       const key = project.dataset.project;
+
       if (projectList[key]) {
         previewImage.src = projectList[key].image;
         ImageContainer.classList.add("projects__preview--active");
@@ -77,8 +92,11 @@ function addMouseOver(projects, ImageContainer, previewImage) {
 }
 
 function addMouseOut(projects, ImageContainer, previewImage) {
-  projects.forEach((project) => {
-    project.addEventListener("mouseout", () => {
+  projects.forEach(function (project) {
+    if (project.dataset.listenerOut) return;
+    project.dataset.listenerOut = "true";
+
+    project.addEventListener("mouseout", function () {
       previewImage.src = "";
       ImageContainer.classList.remove("projects__preview--active");
     });
@@ -87,7 +105,11 @@ function addMouseOut(projects, ImageContainer, previewImage) {
 
 function renderReferences() {
   const refContent = document.getElementById("referencesContent");
-  references.forEach((ref, i) => {
+  if (!refContent) return;
+
+  refContent.innerHTML = "";
+
+  references.forEach(function (ref, i) {
     refContent.innerHTML += `
       <div id="ref-${i}" class="references__card">
         <p data-i18n="references.texts.${i}" class="references__text">${ref.text}</p>
@@ -95,38 +117,59 @@ function renderReferences() {
       </div>
     `;
   });
+
   initReferenceButtons(references);
 }
 
 function updateReferences() {
-  const isDE = document.getElementById("lang-switch-de").classList.contains("lang-switch__option--active");
-  const lang = isDE ? "de" : "en";
-  const refTranslations = getTranslations()[lang].references;
+  const langBtn = document.getElementById("lang-switch-de");
+  if (!langBtn) return;
 
+  const isDE = langBtn.classList.contains("lang-switch__option--active");
+  const lang = isDE ? "de" : "en";
+
+  const translations = getTranslations();
+  if (!translations[lang]) return;
+
+  const refTranslations = translations[lang].references;
   const cards = document.querySelectorAll(".references__card");
-  cards.forEach((card, i) => {
+
+  if (cards.length === 0) return;
+
+  cards.forEach(function (card, i) {
     const refIndex = (currentRefIndex + i) % references.length;
-    card.querySelector(".references__text").innerText = refTranslations.texts[refIndex];
-    card.querySelector(".references__author").innerText = refTranslations.authors[refIndex];
+
+    const text = card.querySelector(".references__text");
+    const author = card.querySelector(".references__author");
+
+    if (text) text.innerText = refTranslations.texts[refIndex];
+    if (author) author.innerText = refTranslations.authors[refIndex];
   });
 }
 
 function initReferenceButtons(ref) {
-  document.getElementById("previousCard").addEventListener("click", () => {
+  const prev = document.getElementById("previousCard");
+  const next = document.getElementById("nextCard");
+
+  if (!prev || !next) return;
+
+  prev.onclick = function () {
     currentRefIndex = (currentRefIndex - 1 + references.length) % references.length;
     updateReferences();
     renderReferenceDots(ref);
-  });
+  };
 
-  document.getElementById("nextCard").addEventListener("click", () => {
+  next.onclick = function () {
     currentRefIndex = (currentRefIndex + 1) % references.length;
     updateReferences();
     renderReferenceDots(ref);
-  });
+  };
 }
 
 function renderReferenceDots(ref) {
   const container = document.getElementById("activeIndex");
+  if (!container) return;
+
   container.innerHTML = "";
 
   for (let i = 0; i < ref.length; i++) {

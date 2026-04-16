@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/legal.css" />
     <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/legal.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/project.css" />
     <link rel="stylesheet" href="css/sections.css" />
 
     <title>Legal Notice</title>
   </head>
-  <body>
+  <div id="cursor" class="cursor"></div>
+  <body class="legal-body">
     <header>
       <nav class="header__nav">
         <div class="lang-switch" role="group" aria-label="Language switch">
@@ -131,7 +132,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="footer footer--legal">
       <div class="footer__brand">
         <img src="assets/images/portfolio-logo.png" alt="" />
         <h2>Web Developer</h2>
@@ -147,5 +148,15 @@
         <a href="#" class="footer__link footer__link--legal">Legal Notice</a>
       </div>
     </footer>
+
+    <script src="js/translation.js"></script>
+    <script src="js/projects-data.js"></script>
+    <script src="js/reference-data.js"></script>
+    <script src="js/project.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      emailjs.init("61fPEDi_V4mIvXeEm");
+    </script>
   </body>
 </html>

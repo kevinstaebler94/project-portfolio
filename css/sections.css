@@ -77,9 +77,14 @@ p {
   color: whitesmoke;
 }
 
+.hero {
+  background: linear-gradient(to top right, #1c1c1c 0%, #1c1c1c 36%, #202c29 45%, #1c3632 52%, #16403a 62%, #104943 72%, #0b4d42 100%);
+}
+
 .hero__main > h1 {
   font-size: var(--fs-3xl);
   font-family: var(--fira);
+  font-weight: 400;
 }
 
 .hero__main > h2 {
@@ -705,8 +710,8 @@ input.error::placeholder {
 }
 
 /* Footer */
-footer {
-  background-color: transparent;
+.footer--home {
+  background-color: var(--color-bg);
 }
 
 .footer__brand > h2,

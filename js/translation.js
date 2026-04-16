@@ -197,8 +197,9 @@ function getEn() {
 function setLanguage(lang) {
   const obj = getTranslations();
   const texts = obj[lang];
-  const elements = document.querySelectorAll("[data-i18n]");
+  if (!texts) return;
 
+  const elements = document.querySelectorAll("[data-i18n]");
   elements.forEach((element) => {
     const key = element.getAttribute("data-i18n");
     const value = getValue(texts, key);
@@ -224,6 +225,8 @@ function switchLang() {
   const en = document.getElementById("lang-switch-en");
   const de = document.getElementById("lang-switch-de");
   const skillsBtn = document.getElementById("skills-button");
+
+  if (!en || !de || !skillsBtn) return;
 
   en.addEventListener("click", () => {
     de.classList.remove("lang-switch__option--active");
