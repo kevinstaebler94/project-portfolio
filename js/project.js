@@ -1,5 +1,6 @@
 let currentProjectIndex = 0;
 let currentRefIndex = 0;
+let currentLang = "en";
 const projectKeys = Object.keys(projectList);
 
 function getModalElements() {
@@ -23,7 +24,7 @@ function openProjectModal(projectKey) {
 
   modalData.number.innerText = projectList[projectKey].number;
   modalData.title.innerText = projectList[projectKey].title;
-  modalData.description.innerText = projectList[projectKey].description;
+  modalData.description.innerText = projectList[projectKey].description[currentLang];
   modalData.image.src = projectList[projectKey].image;
 
   renderModalSkills(projectKey);
