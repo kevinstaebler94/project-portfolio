@@ -44,6 +44,10 @@
   --border: 2px solid #3dcfb6;
   --fira: "firacode", monospace;
   --karla: "karla", system-ui, sans-serif;
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1024px;
+  --bp-large: 1440px;
 }
 
 @font-face {
@@ -80,6 +84,13 @@ body {
   cursor: default;
 }
 
+h1,
+h2,
+h3,
+p {
+  color: var(--color-text);
+}
+
 a {
   color: var(--color-text);
   text-decoration: none;
@@ -88,6 +99,16 @@ a {
 img {
   max-width: 100%;
   display: block;
+}
+
+button {
+  font-size: var(--fs-md);
+  padding: var(--spacing-xs) var(--spacing-lg);
+  border-radius: var(--br-35);
+  border: 2px solid var(--color-text);
+  color: var(--color-text);
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .dNone {

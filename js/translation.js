@@ -138,6 +138,11 @@ function getDe() {
       contact_info: "Bei Fragen oder Mitteilungen kontaktieren Sie uns bitte unter Kontakt-E-Mail.",
       date: "Datum: 26. Juli 2025",
     },
+
+    footer: {
+      legal: "Impressum",
+      home: "Startseite",
+    },
   };
 }
 
@@ -271,6 +276,11 @@ function getEn() {
         "You agree to indemnify, defend and hold harmless us, the listed students, the Developer Akademie, and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or relating to your use of Portfolio and/or your breach of this Legal Notice.",
       contact_info: "For any questions or notices, please contact us at Contact Email.",
       date: "Date: July 26, 2025",
+    },
+
+    footer: {
+      legal: "Legal Notice",
+      home: "Home",
     },
   };
 }

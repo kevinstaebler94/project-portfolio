@@ -1,0 +1,109 @@
+.references {
+  background-color: var(--color-bg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.references__card {
+  background-color: rgba(61, 207, 182, 0.35);
+  min-width: 632px;
+  min-height: 250px;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--br-25);
+  padding: var(--spacing-lg) var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.references__card:nth-child(2) {
+  background-color: rgba(61, 207, 183, 0.678);
+  scale: 1.1;
+  transition: opacity 0.4s ease-in-out;
+  position: relative;
+}
+
+.references__card:nth-child(2)::after {
+  content: url("../assets/icons/quotes.svg");
+  position: absolute;
+  top: -4%;
+  left: -8%;
+}
+
+.references > h2 {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: var(--spacing-2xl) 0 var(--spacing-xl) 0;
+  align-self: center;
+}
+
+.references__text {
+  font-family: var(--karla);
+  font-size: var(--fs-md);
+}
+
+.references__author {
+  font-family: var(--karla);
+  font-size: var(--fs-sm);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.references__author::before {
+  content: "";
+  background-color: var(--color-text);
+  display: inline-block;
+  flex: 1;
+  height: 1px;
+  vertical-align: middle;
+  margin-right: var(--spacing-sm);
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.dot--active {
+  background-color: var(--color-primary);
+  transform: scale(1.2);
+}
+
+.references__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: var(--spacing-xl);
+}
+
+.references__content:nth-child(2) {
+  justify-content: center;
+  gap: calc(var(--spacing-3xl) + var(--spacing-sm));
+}
+
+.references__actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--spacing-xl) 0;
+}
+
+.references__actions > button {
+  border: none;
+}
+
+.references__selected-index {
+  display: flex;
+  justify-content: space-around;
+  width: 100px;
+}
+
+.references__actions > img {
+  margin: 0 var(--spacing-sm);
+}

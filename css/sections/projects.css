@@ -1,0 +1,119 @@
+.projects {
+  color: var(--color-text);
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  padding: var(--spacing-3xl) 0 var(--spacing-2xl) var(--spacing-2xl);
+  background-color: var(--color-bg);
+}
+
+.project {
+  position: relative;
+  border-top: 2px solid var(--color-primary);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg);
+}
+
+.project:hover {
+  background-color: rgba(61, 207, 182, 0.35);
+}
+
+.project:nth-last-child(1) {
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.project__technologies {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project__technologies > li {
+  font-family: var(--karla);
+  font-weight: 400;
+}
+
+.project__technologies > li:not(:last-child)::after {
+  content: "|";
+  display: inline-block;
+  transform: translateY(-2px);
+  align-items: center;
+  color: #3dcfb6;
+  padding: 0 var(--spacing-xxs);
+}
+
+.projects h2,
+.projects h3,
+.projects p {
+  grid-column: 1 / -1;
+}
+
+.projects > h2 {
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--fs-xl);
+  font-family: var(--karla);
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.projects > p {
+  max-width: 45ch;
+  font-size: var(--fs-sm);
+  font-family: var(--karla);
+  hyphens: auto;
+}
+
+.projects__left > div {
+  grid-column: 1;
+}
+
+.projects__preview {
+  grid-column: 2;
+  position: relative;
+}
+
+.projects__preview-img {
+  padding-left: var(--spacing-xl);
+  width: 88%;
+  position: relative;
+  z-index: 2;
+}
+
+.projects__preview::before {
+  opacity: 0;
+}
+
+.projects__preview--active::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  bottom: -21px;
+  left: 81px;
+  border-radius: 35px;
+  background-image: url("../../assets/images/portrait-bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+}
+
+.projects > h3 {
+  font-size: var(--fs-4xl);
+  font-family: var(--fira);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.projects > p {
+  margin-bottom: var(--spacing-md);
+}
+
+.project__title {
+  font-size: var(--fs-lg);
+  font-family: var(--fira);
+  font-weight: 700;
+}

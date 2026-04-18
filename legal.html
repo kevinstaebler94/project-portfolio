@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/sections/legal.css" />
     <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/legal.css" />
-    <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/project.css" />
-    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/keyframes.css" />
+    <link rel="stylesheet" href="css/sections/footer.css" />
+    <link rel="stylesheet" href="css/sections/header.css" />
 
     <title>Legal Notice</title>
   </head>
@@ -20,13 +20,14 @@
           <button id="lang-switch-de" class="lang-switch__option" type="button" aria-pressed="false">DE</button>
         </div>
         <div class="header__menu">
-          <a href="#about">About me</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
+          <a data-i18n="header.about" href="#about">About me</a>
+          <a data-i18n="header.skills" href="#skills">Skills</a>
+          <a data-i18n="header.projects" href="#projects">Projects</a>
         </div>
       </nav>
       <div class="header__logo">
-        <img src="assets/images/portfolio-logo.png" alt="" />
+        <img class="header__logo-image header__logo-image--default" src="assets/images/portfolio-logo.png" alt="" />
+        <img class="header__logo-image header__logo-image--hover" src="assets/images/portfolio-logo-reverse.png" alt="" />
       </div>
     </header>
 
@@ -142,10 +143,10 @@
         <h2 class="footer__copyright-title">Kevin Stäbler 2026</h2>
       </div>
       <div class="footer__navigation">
-        <a href="#" class="footer__link">Github</a>
-        <a href="#" class="footer__link">LinkedIn</a>
-        <a href="#" class="footer__link">Email</a>
-        <a href="#" class="footer__link footer__link--legal">Legal Notice</a>
+        <a href="https://github.com/kevinstaebler94" class="footer__link">Github</a>
+        <a href="https://www.linkedin.com/in/kevin-stäbler-162866226" class="footer__link">LinkedIn</a>
+        <a href="index.html#contact" class="footer__link">Email</a>
+        <a data-i18n="footer.home" href="index.html" class="footer__link footer__link--legal">Home</a>
       </div>
     </footer>
 
