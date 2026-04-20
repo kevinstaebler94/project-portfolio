@@ -50,6 +50,8 @@
   --bp-large: 1440px;
 }
 
+/* clamp(min, 4vw, max)*/
+
 @font-face {
   font-family: "firacode";
   src: url("../assets/fonts/FiraCode-VariableFont_wght.ttf") format("truetype");
@@ -68,6 +70,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: 1px solid red;
 }
 
 html {
@@ -115,7 +118,7 @@ button {
   display: none;
 }
 
-.cursor {
+/* .cursor {
   position: fixed;
   width: 200px;
   height: 200px;
@@ -124,4 +127,4 @@ button {
   transform: translate(-50%, -50%);
   z-index: 999;
   background: radial-gradient(circle, rgba(45, 212, 191, 0.4) 0%, transparent 70%);
-}
+} */

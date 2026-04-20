@@ -1,7 +1,8 @@
 .projects {
   color: var(--color-text);
   display: grid;
-  grid-template-columns: 1fr 400px;
+  /* grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); */
+  grid-template-columns: 1.25fr 0.5fr;
   padding: var(--spacing-3xl) 0 var(--spacing-2xl) var(--spacing-2xl);
   background-color: var(--color-bg);
 }
@@ -53,7 +54,8 @@
 
 .projects > h2 {
   margin-bottom: var(--spacing-xs);
-  font-size: var(--fs-xl);
+  font-size: clamp(var(--fs-xl), 5vw, var(--fs-3xl));
+  /* font-size: var(--fs-xl); */
   font-family: var(--karla);
   font-weight: 500;
   color: var(--color-primary);
@@ -76,8 +78,8 @@
 }
 
 .projects__preview-img {
-  padding-left: var(--spacing-xl);
-  width: 88%;
+  width: 95%;
+  height: 95%;
   position: relative;
   z-index: 2;
 }
@@ -86,19 +88,19 @@
   opacity: 0;
 }
 
-.projects__preview--active::before {
+/* .projects__preview--active::before {
   content: "";
   position: absolute;
   top: 20px;
-  right: 20px;
-  bottom: -21px;
-  left: 81px;
+  left: 45px;
+  right: 35px;
+  bottom: 5px;
   border-radius: 35px;
   background-image: url("../../assets/images/portrait-bg.svg");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 1;
-}
+} */
 
 .projects > h3 {
   font-size: var(--fs-4xl);
@@ -116,4 +118,32 @@
   font-size: var(--fs-lg);
   font-family: var(--fira);
   font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .projects {
+    padding: 0 var(--spacing-lg) var(--spacing-2xl) var(--spacing-lg);
+  }
+
+  .projects__preview {
+    display: none;
+  }
+
+  .projects__left {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 969px) {
+  .projects {
+    /* grid-template-columns: 1fr; */
+    padding: 0 var(--spacing-xs) var(--spacing-2xl) var(--spacing-xs);
+  }
+
+  .projects > *,
+  .projects > p {
+    max-width: 612px;
+    width: 100%;
+    justify-self: center;
+  }
 }
