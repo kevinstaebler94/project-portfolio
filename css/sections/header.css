@@ -3,7 +3,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-xs) var(--spacing-xl) 0 var(--spacing-xl);
+  padding: var(--spacing-sm) var(--spacing-xl) 0 var(--spacing-xl);
   font-family: var(--fira);
 }
 
@@ -82,6 +82,13 @@ header {
   cursor: pointer;
 }
 
+.header__logo-image--mobile {
+  display: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
 .header__logo-image--hover {
   position: absolute;
   top: 0;
@@ -99,4 +106,42 @@ header {
 .header__logo .header__menu {
   display: flex;
   gap: var(--spacing-md);
+}
+
+.header__burger {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.header__burger-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header__burger-image--default {
+  opacity: 1;
+}
+
+.header__burger-image--hover {
+  opacity: 0;
+}
+
+.header__burger-image--default:hover {
+  opacity: 0;
+}
+
+.header__burger-image--hover:hover {
+  opacity: 1;
+}
+
+@media (max-width: 969px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__burger {
+    display: flex;
+  }
 }

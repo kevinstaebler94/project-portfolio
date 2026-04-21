@@ -147,3 +147,20 @@
     justify-self: center;
   }
 }
+
+@media (max-width: 635px) {
+  .project {
+    flex-direction: column;
+    align-items: start;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .project__title {
+    padding-bottom: var(--spacing-xs);
+  }
+
+  .project__technologies > li {
+    font-size: var(--fs-sm);
+  }
+}
