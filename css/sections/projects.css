@@ -1,7 +1,6 @@
 .projects {
   color: var(--color-text);
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); */
   grid-template-columns: 1.25fr 0.5fr;
   padding: var(--spacing-3xl) 0 var(--spacing-2xl) var(--spacing-2xl);
   background-color: var(--color-bg);
@@ -35,15 +34,16 @@
 .project__technologies > li {
   font-family: var(--karla);
   font-weight: 400;
+  font-size: clamp(var(--fs-sm), 4vw, var(--fs-md));
 }
 
 .project__technologies > li:not(:last-child)::after {
   content: "|";
   display: inline-block;
-  transform: translateY(-2px);
+  transform: translateY(0);
   align-items: center;
   color: #3dcfb6;
-  padding: 0 var(--spacing-xxs);
+  padding: 0 clamp(var(--spacing-xxxs), 1.5vw, var(--spacing-xs));
 }
 
 .projects h2,
@@ -54,8 +54,7 @@
 
 .projects > h2 {
   margin-bottom: var(--spacing-xs);
-  font-size: clamp(var(--fs-xl), 5vw, var(--fs-3xl));
-  /* font-size: var(--fs-xl); */
+  font-size: clamp(var(--fs-lg), 5vw, var(--fs-xl));
   font-family: var(--karla);
   font-weight: 500;
   color: var(--color-primary);
@@ -63,9 +62,8 @@
 
 .projects > p {
   max-width: 45ch;
-  font-size: var(--fs-sm);
+  font-size: clamp(var(--fs-xs), 3vw, var(--fs-sm));
   font-family: var(--karla);
-  hyphens: auto;
 }
 
 .projects__left > div {
@@ -88,22 +86,18 @@
   opacity: 0;
 }
 
-/* .projects__preview--active::before {
+.projects__preview--active::before {
   content: "";
   position: absolute;
-  top: 20px;
-  left: 45px;
-  right: 35px;
-  bottom: 5px;
   border-radius: 35px;
   background-image: url("../../assets/images/portrait-bg.svg");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 1;
-} */
+}
 
 .projects > h3 {
-  font-size: var(--fs-4xl);
+  font-size: clamp(var(--fs-2xl), 5vw, var(--fs-4xl));
   font-family: var(--fira);
   font-weight: 700;
   color: var(--color-primary);
@@ -115,9 +109,9 @@
 }
 
 .project__title {
-  font-size: var(--fs-lg);
+  font-size: clamp(var(--fs-lg), 4vw, var(--fs-xl));
   font-family: var(--fira);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 @media (max-width: 1024px) {
@@ -136,15 +130,7 @@
 
 @media (max-width: 969px) {
   .projects {
-    /* grid-template-columns: 1fr; */
     padding: 0 var(--spacing-xs) var(--spacing-2xl) var(--spacing-xs);
-  }
-
-  .projects > *,
-  .projects > p {
-    max-width: 612px;
-    width: 100%;
-    justify-self: center;
   }
 }
 
@@ -158,9 +144,5 @@
 
   .project__title {
     padding-bottom: var(--spacing-xs);
-  }
-
-  .project__technologies > li {
-    font-size: var(--fs-sm);
   }
 }

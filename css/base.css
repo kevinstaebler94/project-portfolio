@@ -26,6 +26,7 @@
   --color-text: whitesmoke;
   --color-bg: #1c1c1c;
   --color-error: #c56a6a;
+  --fs-xxs: 15px;
   --fs-xs: 1rem;
   --fs-sm: 1.125rem;
   --fs-ssm: 1.125rem;
@@ -49,8 +50,6 @@
   --bp-desktop: 1024px;
   --bp-large: 1440px;
 }
-
-/* clamp(min, 4vw, max)*/
 
 @font-face {
   font-family: "firacode";

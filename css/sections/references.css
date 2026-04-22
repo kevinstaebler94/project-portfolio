@@ -8,46 +8,54 @@
 .references__card {
   background-color: rgba(61, 207, 182, 0.35);
   width: 100%;
-  min-height: 250px;
+  min-height: 300px;
   border: 2px solid var(--color-primary);
   border-radius: var(--br-25);
-  padding: var(--spacing-lg) var(--spacing-md);
+  padding: clamp(var(--spacing-xs), 2.5vw, var(--spacing-lg)) clamp(var(--spacing-xs), 2.5vw, var(--spacing-md));
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  flex: 0 0 50%;
+  justify-content: space-evenly;
+  flex: 0 0 clamp(250px, 50%, 550px);
 }
 
 .references__card:nth-child(2) {
   background-color: rgba(61, 207, 183, 0.678);
-  scale: 1.1;
+  scale: 1.2;
   transition: opacity 0.4s ease-in-out;
   position: relative;
 }
 
 .references__card:nth-child(2)::after {
-  content: url("../../assets/icons/quotes.svg");
+  content: "";
+  display: block;
+  position: absolute;
+  width: clamp(60px, 5.5vw, 70px);
+  height: clamp(60px, 5.5vw, 70px);
+  background: url("../../assets/icons/quotes.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
   top: -4%;
-  left: -8%;
+  left: -1%;
 }
 
 .references > h2 {
-  font-size: var(--fs-xl);
+  font-size: clamp(var(--fs-lg), 6.5vw, var(--fs-xl));
   font-weight: 700;
   color: var(--color-primary);
-  margin: var(--spacing-2xl) 0 var(--spacing-xl) 0;
-  align-self: center;
+  margin: var(--spacing-lg) 0 var(--spacing-3xl) 0;
+  text-align: center;
+  width: 100%;
 }
 
 .references__text {
   font-family: var(--karla);
-  font-size: var(--fs-md);
+  font-size: clamp(var(--fs-xxs), 3vw, var(--fs-md));
 }
 
 .references__author {
   font-family: var(--karla);
-  font-size: var(--fs-sm);
+  font-size: clamp(var(--fs-xxs), 3vw, var(--fs-sm));
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -59,6 +67,7 @@
   display: inline-block;
   flex: 1;
   height: 1px;
+  min-width: 25%;
   vertical-align: middle;
   margin-right: var(--spacing-sm);
 }
@@ -85,7 +94,7 @@
 
 .references__content:nth-child(2) {
   justify-content: center;
-  gap: calc(var(--spacing-3xl) + var(--spacing-sm));
+  gap: clamp(var(--spacing-xl), 10vw, calc(var(--spacing-3xl) + var(--spacing-sm)));
 }
 
 .references__actions {
@@ -113,8 +122,12 @@
   .references__content {
     gap: 0;
   }
+}
 
-  .references__card {
-    flex: 0 0 80%;
+@media (max-width: 400px) {
+  .references > h2 {
+    max-width: 21ch;
+    text-align: center;
+    align-self: center;
   }
 }

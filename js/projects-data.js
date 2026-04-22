@@ -13,7 +13,7 @@ const projectList = {
       { name: "JavaScript", icon: "assets/icons/JavaScript.svg" },
       { name: "Firebase", icon: "assets/icons/Firebase.svg" },
     ],
-    image: "assets/images/join-img.svg",
+    image: "../../assets/images/join-img.svg",
   },
 
   elPolloLoco: {

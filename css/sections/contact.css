@@ -1,7 +1,7 @@
 .contact {
   background-color: var(--color-bg);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(405px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(413px, 1fr));
   column-gap: var(--spacing-xl);
   padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-2xl) var(--spacing-2xl);
 }
@@ -16,13 +16,13 @@
 
 .contact-info > h2 {
   font-family: var(--karla);
-  font-size: var(--fs-xl);
+  font-size: clamp(var(--fs-lg), 5vw, var(--fs-xl));
   font-weight: 500;
 }
 
 .contact-info > h3 {
   font-family: var(--fira);
-  font-size: var(--fs-5xl);
+  font-size: clamp(var(--fs-2xl), 5vw, var(--fs-4xl));
   font-weight: 700;
   line-height: 0.8;
   max-width: 11ch;
@@ -32,14 +32,14 @@
 
 .contact-info > h4 {
   font-family: var(--fira);
-  font-size: var(--fs-xl);
+  font-size: clamp(var(--fs-lg), 5vw, var(--fs-xl));
   font-weight: 700;
   margin-bottom: var(--spacing-xs);
 }
 
 .contact-info > p {
   font-family: var(--karla);
-  font-size: var(--fs-sm);
+  font-size: clamp(var(--fs-xxs), 3vw, var(--fs-sm));
 }
 
 .contact-info__br {
@@ -67,7 +67,7 @@
   color: var(--color-primary);
   border-top: 2px solid var(--color-primary);
   font-family: var(--fira);
-  font-size: var(--fs-lg);
+  font-size: clamp(var(--fs-md), 4vw, var(--fs-lg));
   font-weight: 500;
 }
 
@@ -155,13 +155,13 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px var(--color-bg) inset !important;
   -webkit-text-fill-color: whitesmoke !important;
-  font-size: var(--fs-md);
+  font-size: var(--fs-xs);
   font-family: var(--karla);
 }
 
 input:-webkit-autofill::placeholder {
   -webkit-text-fill-color: rgb(153, 153, 153) !important;
-  font-size: var(--fs-md);
+  font-size: var(--fs-xs);
   font-family: var(--karla);
 }
 
@@ -176,13 +176,13 @@ input:-webkit-autofill::placeholder {
 }
 
 input::placeholder {
-  font-size: var(--fs-md);
+  font-size: var(--fs-xs);
   font-family: var(--karla);
 }
 
 input.error::placeholder {
   color: var(--color-error);
-  font-size: var(--fs-md);
+  font-size: var(--fs-xs);
   font-family: var(--karla);
 }
 
@@ -261,4 +261,33 @@ input.error::placeholder {
 
 .contact-info > p {
   max-width: 65ch;
+}
+
+@media (max-width: 969px) {
+  .contact {
+    grid-template-columns: none;
+    padding: var(--spacing-2xl) var(--spacing-sm);
+  }
+
+  .contact-info {
+    margin-bottom: var(--spacing-2xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form > label:not(.privacy) {
+    padding: var(--spacing-sm) var(--spacing-xs);
+  }
+
+  .contact-form > input {
+    padding: 0 0 var(--spacing-sm) var(--spacing-xs);
+  }
+
+  .privacy > span:not(.contact-form__highlighter):not(.privacy__validation) {
+    font-size: var(--fs-xxs);
+  }
+
+  .contact-form__highlighter {
+    font-size: var(--fs-xxs);
+  }
 }

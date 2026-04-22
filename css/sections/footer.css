@@ -80,3 +80,41 @@
 .footer__navigation > a:hover::before {
   opacity: 1;
 }
+
+@media (max-width: 969px) {
+  .footer--home {
+    flex-wrap: wrap;
+    padding: var(--spacing-2xl) var(--spacing-sm);
+  }
+
+  .footer__brand {
+    order: 1;
+    flex: 2;
+    height: 150px;
+  }
+
+  .footer__navigation {
+    order: 2;
+    flex: 1;
+    text-align: left;
+    height: 150px;
+    padding-left: clamp(var(--spacing-lg), 4vw, var(--spacing-2xl));
+  }
+
+  .footer__copyright {
+    order: 3;
+    flex: 0 0 100%;
+    text-align: center;
+    margin-top: var(--spacing-lg);
+  }
+
+  .footer__brand > img {
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__brand {
+    flex: 1;
+  }
+}
