@@ -141,7 +141,13 @@ header {
     display: none;
   }
 
-  .header__burger {
+  .header__burger,
+  .header__return {
     display: flex;
+  }
+
+  .header__return {
+    margin-top: var(--spacing-lg);
+    height: 25px;
   }
 }

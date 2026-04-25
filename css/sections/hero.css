@@ -271,13 +271,14 @@
 .image-wrapper {
   border: 2px solid var(--color-primary);
   border-radius: var(--br-25);
-  padding: var(--spacing-md) var(--spacing-xxs);
+  /* padding: var(--spacing-md) var(--spacing-xxs); */
+  padding: clamp(var(--spacing-sm), 4.5vw, var(--spacing-md)) clamp(var(--spacing-xxxs), 4.5vw, var(--spacing-xxs));
   margin-bottom: var(--spacing-sm);
   cursor: pointer;
 }
 
 .image-wrapper > img {
-  height: 25px;
+  height: clamp(15px, 5vw, 25px);
 }
 
 .image-wrapper > img {
@@ -291,6 +292,11 @@
 
   .icon > img:first-of-type {
     display: inline-block;
+  }
+
+  .icon > img {
+    width: 30px;
+    height: 30px;
   }
 }
 
