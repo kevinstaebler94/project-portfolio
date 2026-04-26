@@ -266,8 +266,8 @@
         </div>
       </section>
 
-      <div id="project-modal-overlay"></div>
-      <section id="project-modal" class="project-modal dNone">
+      <div id="project-modal-overlay" class="project-modal__overlay dNone"></div>
+      <section id="project-modal" class="project-modal ">
         <div class="project-modal__wrapper">
           <div class="project-modal__content">
             <h2 id="project-modal-number" class="project-modal__number"></h2>
@@ -281,10 +281,10 @@
             <div class="project-modal__actions">
               <button>Github</button>
               <button>Live Test</button>
-            </div>
-            <button data-i18n="modal.next" onclick="showNextProject()" class="project-modal__next project-modal__next--mobile">
+              <button data-i18n="modal.next" onclick="showNextProject()" class="project-modal__next project-modal__next--mobile">
               Next project
             </button>
+            </div>
           </div>
           <div class="project-modal__preview">
             <button onclick="closeProjectModal()" class="project-modal__close"></button>

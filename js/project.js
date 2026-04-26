@@ -29,7 +29,7 @@ function openProjectModal(projectKey) {
 
   renderModalSkills(projectKey);
   modalData.modal.classList.remove("dNone");
-  modalData.overlay.classList.add("project-modal-overlay");
+  modalData.overlay.classList.remove("dNone");
   document.body.style.overflow = "hidden";
 }
 
@@ -56,7 +56,7 @@ function closeProjectModal() {
   if (!modal || !overlay) return;
 
   modal.classList.add("dNone");
-  overlay.classList.remove("project-modal-overlay");
+  overlay.classList.add("dNone");
   document.body.style.overflow = "";
 }
 
