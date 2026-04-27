@@ -148,7 +148,7 @@
   /* font-size: var(--fs-md); */
   font-size: clamp(var(--fs-sm), 4vw, var(--fs-md));
   color: var(--color-primary);
-  padding: clamp(var(--spacing-xs), 2vw, var(--spacing-sm)) clamp(var(--spacing-md), 2vw, var(--spacing-lg));
+  padding: clamp(var(--spacing-xs), 2vw, var(--spacing-sm)) clamp(var(--spacing-sm), 2vw, var(--spacing-lg));
 }
 
 .project-modal__next--mobile {
@@ -177,7 +177,7 @@
     flex-wrap: wrap;
   }
 
-  .project-modal__next--mobile {
+  .project-modal__next-wrapper {
     flex: 1 1 100%;
     display: flex;
     justify-content: flex-end;

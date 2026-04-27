@@ -2,6 +2,7 @@ function init() {
   initHoverImagePreview();
   renderReferences();
   switchLang();
+  initBurgerMenu();
   document.addEventListener("mousemove", moveCursor);
 }
 
@@ -11,6 +12,15 @@ function moveCursor(event) {
 
   cursor.style.left = event.clientX + "px";
   cursor.style.top = event.clientY + "px";
+}
+
+function toggleBurgerMenu() {
+  document.body.classList.toggle("menu-open");
+}
+
+function initBurgerMenu() {
+  const button = document.getElementById("burger-button");
+  button.addEventListener("click", toggleBurgerMenu);
 }
 
 document.addEventListener("DOMContentLoaded", init);

@@ -14,11 +14,25 @@
     <link rel="stylesheet" href="css/sections/projects.css">
     <link rel="stylesheet" href="css/sections/references.css">
     <link rel="stylesheet" href="css/sections/skills.css">
+    <link rel="stylesheet" href="css/sections/burger.css">
 
     <title>Portfolio</title>
   </head>
   <body>
     <div class="cursor" id="cursor"></div>
+    <div class="burger-menu">
+      <div class="burger-menu__content">
+          <a data-i18n="header.about" href="#about">About me</a>
+          <a data-i18n="header.skills" href="#skills">Skills</a>
+          <a data-i18n="header.projects" href="#projects">Projects</a>
+          <div class="lang-switch lang-switch--mobile" role="group" aria-label="Language switch">
+          <button id="lang-switch-en" class="lang-switch__option lang-switch__option--active" type="button" aria-pressed="true">EN</button>
+          <button id="lang-switch-de" class="lang-switch__option" type="button" aria-pressed="false">DE</button>
+        </div>
+        </div>
+
+        
+    </div>
     <header>
       <nav class="header__nav">
         <div class="lang-switch" role="group" aria-label="Language switch">
@@ -36,7 +50,7 @@
         <img class="header__logo-image header__logo-image--hover" src="assets/images/portfolio-logo-reverse.png" alt="" />
       </div>
 
-      <div class="header__burger dNone">
+      <div class="header__burger dNone" id="burger-button">
         <img class="header__burger-image header__burger-image--default" src="assets/icons/burger-default.svg" alt="">
         <img class="header__burger-image header__burger-image--hover" src="assets/icons/burger-pressed.svg" alt="">
       </div>
@@ -281,9 +295,11 @@
             <div class="project-modal__actions">
               <button>Github</button>
               <button>Live Test</button>
-              <button data-i18n="modal.next" onclick="showNextProject()" class="project-modal__next project-modal__next--mobile">
+              <div class="project-modal__next-wrapper">
+                <button data-i18n="modal.next" onclick="showNextProject()" class="project-modal__next project-modal__next--mobile">
               Next project
             </button>
+              </div>
             </div>
           </div>
           <div class="project-modal__preview">
