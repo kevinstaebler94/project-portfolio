@@ -15,7 +15,13 @@ function moveCursor(event) {
 }
 
 function toggleBurgerMenu() {
-  document.body.classList.toggle("menu-open");
+  const body = document.body;
+
+  if (body.classList.contains("burger-menu--open")) {
+    body.classList.remove("burger-menu--open");
+  } else {
+    body.classList.add("burger-menu--open");
+  }
 }
 
 function initBurgerMenu() {

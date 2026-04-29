@@ -1,3 +1,11 @@
+body.burger-menu--open {
+  overflow: hidden;
+}
+
+body.burger-menu--open .burger-menu {
+  transform: translateX(0);
+}
+
 .burger-menu {
   height: 250px;
   width: 250px;
@@ -8,6 +16,8 @@
   z-index: 9999;
   border: var(--border);
   border-radius: var(--br-35);
+  transform: translateX(150%);
+  transition: transform 500ms ease-in-out;
 }
 
 .burger-menu__content {

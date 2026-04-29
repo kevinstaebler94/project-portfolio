@@ -87,10 +87,6 @@ body {
   position: relative;
 }
 
-body.burger-open {
-  overflow: hidden;
-}
-
 h1,
 h2,
 h3,
