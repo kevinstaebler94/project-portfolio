@@ -1,8 +1,8 @@
 function init() {
   initHoverImagePreview();
   renderReferences();
-  switchLang();
   initBurgerMenu();
+  switchLang();
   document.addEventListener("mousemove", moveCursor);
 }
 
@@ -26,6 +26,8 @@ function toggleBurgerMenu() {
 
 function initBurgerMenu() {
   const button = document.getElementById("burger-button");
+
+  if (!button) return;
   button.addEventListener("click", toggleBurgerMenu);
 }
 

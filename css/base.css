@@ -119,6 +119,10 @@ button {
   display: none;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 /* .cursor {
   position: fixed;
   width: 200px;

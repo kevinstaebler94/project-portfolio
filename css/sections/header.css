@@ -110,6 +110,7 @@ header {
 
 .header__burger {
   position: relative;
+  z-index: 6;
   width: 40px;
   height: 40px;
 }
@@ -149,5 +150,10 @@ header {
   .header__return {
     margin-top: var(--spacing-lg);
     height: 25px;
+  }
+
+  .burger-menu__content > a {
+    width: 110px; /* gleiche Breite für alle Elemente */
+    text-align: left;
   }
 }

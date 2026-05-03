@@ -329,7 +329,6 @@ function getValue(obj, path) {
 function switchLang() {
   const en = document.getElementById("lang-switch-en");
   const de = document.getElementById("lang-switch-de");
-  const skillsBtn = document.getElementById("skills-button");
 
   if (!en || !de) return;
 
