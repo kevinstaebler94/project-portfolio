@@ -99,16 +99,24 @@ function validateForm() {
     valid = false;
   }
 
-  // if (!isCheckboxChecked()) {
-  //   showCheckboxError();
-  //   valid = false;
-  // }
+  if (!isCheckboxChecked()) {
+    showCheckboxError();
+    valid = false;
+  }
 
   return valid;
 }
 
-addEventListener("change", () => {
-  submitBtn.disabled = !submitBtn.disabled;
+function toggleButton() {
+  submitBtn.disabled = !checkbox.checked;
+}
+
+form.addEventListener("change", toggleButton);
+
+name.addEventListener("blur", () => {
+  if (!isNameValid()) {
+    showNameError();
+  }
 });
 
 form.addEventListener("submit", (event) => {
