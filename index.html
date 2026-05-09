@@ -152,7 +152,7 @@
       <section class="about" id="about">
         <div class="about__portrait-wrapper">
           <div class="about__portrait-container">
-            <img src="assets/images/profile-picture.jpg" alt="" class="about__portrait-img" />
+            <img src="assets/images/avatar.PNG" alt="" class="about__portrait-img" />
           </div>
         </div>
         <div class="about__content-wrapper">
@@ -345,8 +345,9 @@
         <h2 data-i18n="references.title">What my colleagues say about me</h2>
         <div class="references__content" id="referencesContent"></div>
         <div class="references__actions">
-          <button id="previousCard">
-            <img src="/assets/icons/arrow-left.svg" alt="" />
+          <button class="arrowButton arrowButton--previous" id="previousCard">
+            <img class="arrowButton__icon arrowButton__icon--default" src="/assets/icons/arrow-back.svg" alt="" />
+            <img class="arrowButton__icon arrowButton__icon--hover" src="/assets/icons/arrow-back-hover.svg" alt="" />
           </button>
           <div class="references__selected-index" id="activeIndex">
             <div class="dot"></div>
@@ -354,8 +355,9 @@
             <div class="dot"></div>
           </div>
           
-          <button id="nextCard">
-            <img src="/assets/icons/arrow-right.svg" alt="" />
+          <button class="arrowButton arrowButton--next" id="nextCard">
+            <img class="arrowButton__icon arrowButton__icon--default" src="/assets/icons/arrow-forward.svg" alt="" />
+            <img class="arrowButton__icon arrowButton__icon--hover" src="/assets/icons/arrow-forward-hover.svg" alt="" />
           </button>
         </div>
       </section>
