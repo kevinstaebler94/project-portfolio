@@ -77,11 +77,11 @@ function initHoverImagePreview() {
 }
 
 function addMouseOver(projects, ImageContainer, previewImage) {
-  projects.forEach(function (project) {
+  projects.forEach((project) => {
     if (project.dataset.listener) return;
     project.dataset.listener = "true";
 
-    project.addEventListener("mouseover", function () {
+    project.addEventListener("mouseover", () => {
       const key = project.dataset.project;
 
       if (projectList[key]) {
@@ -97,7 +97,7 @@ function addMouseOut(projects, ImageContainer, previewImage) {
     if (project.dataset.listenerOut) return;
     project.dataset.listenerOut = "true";
 
-    project.addEventListener("mouseout", function () {
+    project.addEventListener("mouseout", () => {
       previewImage.src = "";
       ImageContainer.classList.remove("projects__preview--active");
     });
@@ -110,7 +110,7 @@ function renderReferences() {
 
   refContent.innerHTML = "";
 
-  references.forEach(function (ref, i) {
+  references.forEach((ref, i) => {
     refContent.innerHTML += `
       <div id="ref-${i}" class="references__card">
         <p data-i18n="references.texts.${i}" class="references__text">${ref.text}</p>
@@ -118,7 +118,6 @@ function renderReferences() {
       </div>
     `;
   });
-
   initReferenceButtons(references);
 }
 
@@ -149,8 +148,8 @@ function updateReferences() {
 }
 
 function initReferenceButtons(ref) {
-  const prev = document.getElementById("previousCard");
-  const next = document.getElementById("nextCard");
+  const prev = document.getElementById("previousRef");
+  const next = document.getElementById("nextRef");
 
   if (!prev || !next) return;
 

@@ -110,6 +110,7 @@
   height: 15px;
   border: none;
   background: transparent;
+  cursor: pointer;
 }
 
 .arrowButton__icon {
@@ -118,18 +119,37 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition:
+    transform 200ms ease-in-out,
+    opacity 200ms ease-in-out;
 }
 
 .arrowButton__icon--default {
   opacity: 1;
+  transform: scale(1) translateX(0);
 }
 
 .arrowButton__icon--hover {
   opacity: 0;
+  transform: scale(1) translateX(0);
 }
 
-.arrowButton__icon--hover:hover {
+.arrowButton--previous:hover .arrowButton__icon--default {
+  opacity: 0;
+}
+
+.arrowButton--previous:hover .arrowButton__icon--hover {
   opacity: 1;
+  transform: scale(1.1) translateX(-5px);
+}
+
+.arrowButton--next:hover .arrowButton__icon--default {
+  opacity: 0;
+}
+
+.arrowButton--next:hover .arrowButton__icon--hover {
+  opacity: 1;
+  transform: scale(1.1) translateX(5px);
 }
 
 .references__selected-index {
