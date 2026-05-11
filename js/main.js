@@ -3,7 +3,7 @@ function init() {
   renderReferences();
   initBurgerMenu();
   switchLang();
-  initReferenceButtons(ref);
+  initReferenceButtons();
 }
 
 function toggleBurgerMenu() {

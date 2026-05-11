@@ -8,11 +8,30 @@
     <link rel="stylesheet" href="css/keyframes.css" />
     <link rel="stylesheet" href="css/sections/footer.css" />
     <link rel="stylesheet" href="css/sections/header.css" />
+    <link rel="stylesheet" href="css/sections/burger.css" />
 
     <title>Legal Notice</title>
   </head>
-  <div id="cursor" class="cursor"></div>
-  <body class="legal-body">
+  <body>
+    <div class="burger-menu" id="burger">
+      <div class="burger-menu__content">
+        <a data-i18n="header.about" href="index.html#about">About me</a>
+        <a data-i18n="header.skills" href="index.html#skills">Skills</a>
+        <a data-i18n="header.projects" href="index.html#projects">Projects</a>
+        <div class="lang-switch lang-switch--mobile" role="group" aria-label="Language switch">
+          <button
+            data-lang="en"
+            id="lang-switch-en"
+            class="lang-switch__option lang-switch__option--active"
+            type="button"
+            aria-pressed="true"
+          >
+            EN
+          </button>
+          <button data-lang="de" id="lang-switch-de" class="lang-switch__option" type="button" aria-pressed="false">DE</button>
+        </div>
+      </div>
+    </div>
     <header>
       <nav class="header__nav">
         <div class="lang-switch" role="group" aria-label="Language switch">
@@ -20,26 +39,26 @@
           <button id="lang-switch-de" class="lang-switch__option" type="button" aria-pressed="false">DE</button>
         </div>
         <div class="header__menu">
-          <a data-i18n="header.about" href="#about">About me</a>
-          <a data-i18n="header.skills" href="#skills">Skills</a>
-          <a data-i18n="header.projects" href="#projects">Projects</a>
+          <a data-i18n="header.about" href="index.html#about">About me</a>
+          <a data-i18n="header.skills" href="index.html#skills">Skills</a>
+          <a data-i18n="header.projects" href="index.html#projects">Projects</a>
         </div>
       </nav>
       <div class="header__logo">
-        <img class="header__logo-image header__logo-image--default" src="assets/images/portfolio-logo.png" alt="" />
-        <img class="header__logo-image header__logo-image--hover" src="assets/images/portfolio-logo-reverse.png" alt="" />
+        <img class="header__logo-image header__logo-image--default desktop" src="assets/images/name-default.png" alt="" />
 
-        <div class="header__return dNone">
-          <img src="assets/icons/arrow-left.svg" alt="" class="header__return-image" />
-        </div>
+        <img class="header__logo-image header__logo-image--hover desktop" src="assets/images/name-hover.png" alt="" />
+
+        <img class="header__logo-image header__logo-image--default mobile" src="assets/images/initials-default.png" alt="" />
+
+        <img class="header__logo-image header__logo-image--hover mobile" src="assets/images/initials-hover.png" alt="" />
       </div>
 
-      <div class="header__burger dNone">
+      <div class="header__burger dNone" id="burger-button">
         <img class="header__burger-image header__burger-image--default" src="assets/icons/burger-default.svg" alt="" />
         <img class="header__burger-image header__burger-image--hover" src="assets/icons/burger-pressed.svg" alt="" />
       </div>
     </header>
-
     <main class="legal-notice">
       <h1 class="legal-notice__title" data-i18n="legal.title">Legal Notice</h1>
 
@@ -144,7 +163,7 @@
 
     <footer class="footer footer--legal">
       <div class="footer__brand">
-        <img src="assets/images/portfolio-logo.png" alt="" />
+        <img src="assets/images/name-default.png" alt="" />
         <h2>Web Developer</h2>
         <h3>Stolberg Germany</h3>
       </div>

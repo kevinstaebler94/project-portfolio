@@ -117,8 +117,8 @@ function renderReferences() {
         <p data-i18n="references.authors.${i}" class="references__author">${ref.author}</p>
       </div>
     `;
+    initReferenceButtons(ref);
   });
-  initReferenceButtons(references);
 }
 
 function updateReferences() {
@@ -147,32 +147,32 @@ function updateReferences() {
   });
 }
 
-function initReferenceButtons(ref) {
+function initReferenceButtons() {
   const prev = document.getElementById("previousRef");
   const next = document.getElementById("nextRef");
 
   if (!prev || !next) return;
 
-  prev.onclick = function () {
+  prev.onclick = () => {
     currentRefIndex = (currentRefIndex - 1 + references.length) % references.length;
     updateReferences();
-    renderReferenceDots(ref);
+    renderReferenceDots();
   };
 
   next.onclick = function () {
     currentRefIndex = (currentRefIndex + 1) % references.length;
     updateReferences();
-    renderReferenceDots(ref);
+    renderReferenceDots();
   };
 }
 
-function renderReferenceDots(ref) {
+function renderReferenceDots() {
   const container = document.getElementById("activeIndex");
   if (!container) return;
 
   container.innerHTML = "";
 
-  for (let i = 0; i < ref.length; i++) {
+  for (let i = 0; i < references.length; i++) {
     container.innerHTML += `
     <div class="dot ${i === currentRefIndex ? "dot--active" : "dot"}"></div>
     `;

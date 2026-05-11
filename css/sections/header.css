@@ -7,6 +7,10 @@ header {
   font-family: var(--fira);
 }
 
+.mobile {
+  display: none;
+}
+
 .header__nav {
   display: flex;
   justify-content: space-around;
@@ -82,24 +86,18 @@ header {
   cursor: pointer;
 }
 
-.header__logo-image--mobile {
-  display: none;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
 .header__logo-image--hover {
   position: absolute;
   top: 0;
+  left: 0;
   opacity: 0;
 }
 
-.header__logo-image--default:hover {
+.header__logo:hover .header__logo-image--default {
   opacity: 0;
 }
 
-.header__logo-image--hover:hover {
+.header__logo:hover .header__logo-image--hover {
   opacity: 1;
 }
 
@@ -153,7 +151,19 @@ header {
   }
 
   .burger-menu__content > a {
-    width: 110px; /* gleiche Breite für alle Elemente */
+    width: 110px;
     text-align: left;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .header__logo-image {
+    width: auto;
   }
 }
