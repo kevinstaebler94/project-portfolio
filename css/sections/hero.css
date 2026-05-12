@@ -70,14 +70,14 @@
 .hero__button--right .slide-text-1 {
   position: absolute;
   transform: translateX(0%);
-  transition: transform 0.4s ease-in-out;
+  transition: transform 125ms ease-in-out;
 }
 
 .hero__button--left .slide-text-2,
 .hero__button--right .slide-text-2 {
   position: absolute;
   transform: translateX(350%);
-  transition: transform 0.4s ease-in-out;
+  transition: transform 125ms ease-in-out;
 }
 
 .hero__button--right {
@@ -244,8 +244,8 @@
   cursor: pointer;
   white-space: nowrap;
   transition:
-    color 300ms ease,
-    border-color 300ms ease;
+    color 125ms ease,
+    border-color 125ms ease;
 }
 
 .hero__button--left:hover,
@@ -271,7 +271,6 @@
 .image-wrapper {
   border: 2px solid var(--color-primary);
   border-radius: var(--br-25);
-  /* padding: var(--spacing-md) var(--spacing-xxs); */
   padding: clamp(var(--spacing-sm), 4.5vw, var(--spacing-md)) clamp(var(--spacing-xxxs), 4.5vw, var(--spacing-xxs));
   margin-bottom: var(--spacing-sm);
   cursor: pointer;
@@ -297,6 +296,7 @@
   .icon > img {
     width: 30px;
     height: 30px;
+    display: inline-block;
   }
 }
 

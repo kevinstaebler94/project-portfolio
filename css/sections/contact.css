@@ -51,6 +51,7 @@
   background-color: var(--color-bg);
   border: none;
   color: whitesmoke;
+  font-family: var(--karla);
   font-size: var(--fs-xs);
 }
 
@@ -123,7 +124,7 @@ input[type="checkbox"]::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.2s ease;
+  transition: transform 125ms ease;
   z-index: 1;
 }
 
@@ -146,7 +147,22 @@ input[type="checkbox"]:hover::before {
 .privacy__validation {
   font-size: var(--fs-xs);
   color: transparent;
-  padding: var(--spacing-sm) 0 var(--spacing-lg) 0;
+  padding: var(--spacing-sm) 0 var(--spacing-xs) 0;
+}
+
+.approval__message {
+  font-size: var(--fs-xs);
+  padding-bottom: var(--spacing-md);
+  color: transparent;
+  transform: translateX(100%);
+}
+
+.approval__message--show {
+  animation: approvalMessageIn 500ms ease-in-out forwards;
+}
+
+.approval__message--hide {
+  animation: approvalMessageOut 500ms ease-in-out forwards;
 }
 
 input:-webkit-autofill,
@@ -157,6 +173,10 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: whitesmoke !important;
   font-size: var(--fs-xs);
   font-family: var(--karla);
+  min-height: 25px;
+  line-height: normal;
+  border: inherit;
+  box-sizing: border-box;
 }
 
 input:-webkit-autofill::placeholder {
@@ -250,13 +270,13 @@ input.error::placeholder {
 .contact-form__submit .slide-text-1 {
   position: absolute;
   transform: translateX(0%);
-  transition: transform 0.4s ease-in-out;
+  transition: transform 125ms ease-in-out;
 }
 
 .contact-form__submit .slide-text-2 {
   position: absolute;
   transform: translateX(350%);
-  transition: transform 0.4s ease-in-out;
+  transition: transform 125ms ease-in-out;
 }
 
 .contact-info > p {

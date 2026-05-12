@@ -2,6 +2,7 @@ const form = document.getElementById("contactForm");
 const name = document.getElementById("name");
 const email = document.getElementById("email");
 const message = document.getElementById("message");
+const approval = document.getElementById("approvalMessage");
 const checkbox = document.getElementById("privacy");
 const errorMessage = document.getElementById("errorMessage");
 const submitBtn = document.getElementById("submitBtn");
@@ -20,7 +21,7 @@ const defaultPlaceholders = {
 
 const errorMessages = {
   name: "Oops! It seems your name is missing",
-  email: "Hoppla! Your email is required",
+  email: "Oops! Your email is required",
   message: "What do you need to develop?",
 };
 
@@ -51,6 +52,16 @@ function showEmailError() {
   setTimeout(() => {
     email.classList.remove("error");
     email.placeholder = defaultPlaceholders.email;
+  }, 3000);
+}
+
+function showApprovalMessage() {
+  approval.classList.remove("approval__message--hide");
+  approval.classList.add("approval__message--show");
+
+  setTimeout(() => {
+    approval.classList.remove("approval__message--show");
+    approval.classList.add("approval__message--hide");
   }, 3000);
 }
 
@@ -119,11 +130,28 @@ name.addEventListener("blur", () => {
   }
 });
 
+email.addEventListener("blur", () => {
+  if (!isEmailValid()) {
+    showEmailError();
+  }
+});
+
+message.addEventListener("blur", () => {
+  if (!isMessageValid()) {
+    showMessageError();
+  }
+});
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (!validateForm()) return;
-  console.log("Mail gesendet");
+  if (!validateForm()) {
+    checkbox.checked = false;
+    toggleButton();
+    return;
+  }
+  showApprovalMessage();
   form.reset();
+
   // emailjs.sendForm("service_urv966s", "template_6ro37zj", form).then(
   //   function () {
   //     alert("Nachricht erfolgreich gesendet!");

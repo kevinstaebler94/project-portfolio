@@ -4,6 +4,7 @@ function init() {
   initBurgerMenu();
   switchLang();
   initReferenceButtons();
+  console.log(checkbox, "Test");
 }
 
 function toggleBurgerMenu() {

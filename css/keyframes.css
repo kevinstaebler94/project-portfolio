@@ -42,3 +42,27 @@
     transform: translateY(0);
   }
 }
+
+@keyframes approvalMessageIn {
+  from {
+    transform: translateX(100%);
+    color: transparent;
+  }
+
+  to {
+    transform: translateX(0);
+    color: var(--color-primary);
+  }
+}
+
+@keyframes approvalMessageOut {
+  from {
+    transform: translateX(0);
+    color: var(--color-primary);
+  }
+
+  to {
+    transform: translateX(100%);
+    color: transparent;
+  }
+}

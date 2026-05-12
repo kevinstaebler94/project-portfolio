@@ -25,7 +25,7 @@ body.burger-menu--open .burger-menu {
   border: var(--border);
   border-radius: var(--br-35);
   transform: translateX(150%);
-  transition: transform 500ms ease-in-out;
+  transition: transform 300ms ease-in-out;
 }
 
 .burger-menu__content {

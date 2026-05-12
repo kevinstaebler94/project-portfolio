@@ -28,8 +28,8 @@ header {
   box-shadow: 0 0 18px rgba(61, 207, 182, 0.2);
   overflow: hidden;
   transition:
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
+    box-shadow 125ms ease,
+    border-color 125ms ease;
 }
 
 .lang-switch__option {
@@ -41,8 +41,8 @@ header {
   line-height: 1;
   border-radius: 999px;
   transition:
-    background-color 0.22s ease,
-    color 0.22s ease;
+    background-color 125ms ease,
+    color 125ms ease;
 }
 
 .lang-switch:has(.lang-switch__option:hover) {

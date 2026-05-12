@@ -72,13 +72,13 @@
 .skills__button .slide-text-1 {
   position: absolute;
   transform: translateX(0%);
-  transition: transform 0.4s ease-in-out;
+  transition: transform 125ms ease-in-out;
 }
 
 .skills__button .slide-text-2 {
   position: absolute;
   transform: translateX(350%);
-  transition: transform 0.4s ease-in-out;
+  transition: transform 125ms ease-in-out;
 }
 
 .skills__cta {
@@ -102,7 +102,7 @@
 }
 
 .skills__technology > img {
-  transition: 0.5s ease-in-out;
+  transition: transform 125ms ease-in-out;
 }
 
 .skills__technology > img:hover {

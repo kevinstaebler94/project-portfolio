@@ -141,7 +141,7 @@
             </div>
             <div class="hero__social-icons">
               <a class="icon" href="#contact" target="_blank" rel="noopener noreferrer"
-                ><img class="default dNone" src="assets/icons/mail.svg" alt="" /> <img class="hover" src="assets/icons/mail-hover.svg" alt=""
+                ><img class="default dNone" src="assets/icons/mail.svg" alt="" /> <img class="hover dNone" src="assets/icons/mail-hover.svg" alt=""
               /></a>
 
               <a class="icon" href="https://github.com/kevinstaebler94" target="_blank" rel="noopener noreferrer"
@@ -430,6 +430,10 @@
             >Please accept the privacy policy.</span
           >
 
+           <span id="approvalMessage" class="approval__message" data-i18n="contact.form.approval_message"
+            >Your message has been sent successfully.</span
+          >
+
           <button disabled id="submitBtn" class="contact-form__submit" type="submit">
             <span class="slide-wrapper">
               <span data-i18n="contact.form.submit" class="slide-text slide-text-1">Say Hello</span>
@@ -462,6 +466,7 @@
     <script src="js/projects-data.js"></script>
     <script src="js/reference-data.js"></script>
     <script src="js/project.js"></script>
+    <script src="js/contact.js"></script>
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
