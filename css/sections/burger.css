@@ -40,9 +40,3 @@ body.burger-menu--open .burger-menu {
 .burger-menu__content > a {
   font-size: var(--fs-lg);
 }
-
-/* .lang-switch--mobile {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-} */

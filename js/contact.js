@@ -13,75 +13,58 @@ const pattern = {
   message: /^[\s\S]{10,500}$/,
 };
 
-const defaultPlaceholders = {
-  name: name.getAttribute("data-default"),
-  email: email.getAttribute("data-default"),
-  message: message.getAttribute("data-default"),
-};
+function getCurrentTexts() {
+  return getTranslations()[currentLang];
+}
 
-const errorMessages = {
-  name: "Oops! It seems your name is missing",
-  email: "Oops! Your email is required",
-  message: "What do you need to develop?",
-};
+function updatePlaceholders() {
+  const texts = getCurrentTexts();
+
+  name.placeholder = texts.contact.form.name_placeholder;
+  email.placeholder = texts.contact.form.email_placeholder;
+  message.placeholder = texts.contact.form.message_placeholder;
+}
 
 function isNameValid() {
   return pattern.name.test(name.value);
-}
-
-function showNameError() {
-  name.classList.add("error");
-  name.placeholder = errorMessages.name;
-  name.value = "";
-
-  setTimeout(() => {
-    name.classList.remove("error");
-    name.placeholder = defaultPlaceholders.name;
-  }, 3000);
 }
 
 function isEmailValid() {
   return pattern.email.test(email.value);
 }
 
-function showEmailError() {
-  email.classList.add("error");
-  email.placeholder = errorMessages.email;
-  email.value = "";
-
-  setTimeout(() => {
-    email.classList.remove("error");
-    email.placeholder = defaultPlaceholders.email;
-  }, 3000);
-}
-
-function showApprovalMessage() {
-  approval.classList.remove("approval__message--hide");
-  approval.classList.add("approval__message--show");
-
-  setTimeout(() => {
-    approval.classList.remove("approval__message--show");
-    approval.classList.add("approval__message--hide");
-  }, 3000);
-}
-
 function isMessageValid() {
   return pattern.message.test(message.value);
 }
 
-function showMessageError() {
-  message.classList.add("error");
-  message.placeholder = errorMessages.message;
-  message.value = "";
+function isCheckboxChecked() {
+  return checkbox.checked;
+}
+
+function showInputError(input, text) {
+  input.classList.add("error");
+  input.placeholder = text;
+  input.value = "";
 
   setTimeout(() => {
-    message.classList.remove("error");
-    message.placeholder = defaultPlaceholders.message;
+    input.classList.remove("error");
+    updatePlaceholders();
   }, 3000);
 }
 
-function isCheckboxChecked() {
-  return checkbox.checked;
+function showNameError() {
+  const texts = getCurrentTexts();
+  showInputError(name, texts.contact.form.name_error);
+}
+
+function showEmailError() {
+  const texts = getCurrentTexts();
+  showInputError(email, texts.contact.form.email_error);
+}
+
+function showMessageError() {
+  const texts = getCurrentTexts();
+  showInputError(message, texts.contact.form.message_error);
 }
 
 function showCheckboxError() {
@@ -89,6 +72,20 @@ function showCheckboxError() {
 
   setTimeout(() => {
     errorMessage.style.color = "transparent";
+  }, 3000);
+}
+
+function showApprovalMessage() {
+  const texts = getCurrentTexts();
+
+  approval.innerText = texts.contact.form.approval_message;
+
+  approval.classList.remove("approval__message--hide");
+  approval.classList.add("approval__message--show");
+
+  setTimeout(() => {
+    approval.classList.remove("approval__message--show");
+    approval.classList.add("approval__message--hide");
   }, 3000);
 }
 
@@ -144,21 +141,24 @@ message.addEventListener("blur", () => {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+
   if (!validateForm()) {
     checkbox.checked = false;
     toggleButton();
     return;
   }
+
   showApprovalMessage();
   form.reset();
+  updatePlaceholders();
 
-  // emailjs.sendForm("service_urv966s", "template_6ro37zj", form).then(
-  //   function () {
-  //     alert("Nachricht erfolgreich gesendet!");
-  //     form.reset();
-  //   },
-  //   function (error) {
-  //     alert("Etwas ist schiefgelaufen: " + error.text);
-  //   }
-  // );
+  emailjs.sendForm("service_urv966s", "template_6ro37zj", form).then(
+    function () {
+      alert("Nachricht erfolgreich gesendet!");
+      form.reset();
+    },
+    function (error) {
+      alert("Etwas ist schiefgelaufen: " + error.text);
+    }
+  );
 });

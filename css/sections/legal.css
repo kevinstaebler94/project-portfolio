@@ -3,7 +3,6 @@
 }
 
 .legal-notice {
-  /* height: 100vh; */
   padding: 0 clamp(var(--spacing-lg), 9.5vw, var(--spacing-4xl));
   font-family: var(--karla);
 }

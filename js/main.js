@@ -1,10 +1,9 @@
 function init() {
   initHoverImagePreview();
-  renderReferences();
   initBurgerMenu();
-  switchLang();
   initReferenceButtons();
-  console.log(checkbox, "Test");
+  renderReferences();
+  switchLang();
 }
 
 function toggleBurgerMenu() {

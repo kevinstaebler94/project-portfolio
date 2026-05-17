@@ -9,7 +9,7 @@ function getDe() {
   return {
     header: {
       about: "Über mich",
-      skills: "Skills",
+      skills: "Fähigkeiten",
       projects: "Projekte",
     },
 
@@ -95,6 +95,11 @@ function getDe() {
         privacy_validation: "Bitte stimmen Sie der Datenschutzerklärung zu.",
 
         submit: "Sag Hallo",
+
+        name_error: "Oops! Bitte gib deinen Namen ein",
+        email_error: "Oops! Bitte gib deine E-Mail ein",
+        message_error: "Was möchtest du entwickeln?",
+        approval_message: "Nachricht erfolgreich gesendet",
       },
     },
 
@@ -108,11 +113,11 @@ function getDe() {
     legal: {
       title: "Impressum",
       imprint_title: "Impressum",
-      imprint_name: "Studentennamenliste",
-      imprint_address: "Adresse des Betreibers – z. B. einer der Studenten",
-      imprint_city: "Postleitzahl und Stadt",
+      imprint_name: "Kevin Stäbler",
+      imprint_address: "August-Prym-Straße 4",
+      imprint_city: "52223 Stolberg",
       contact_title: "Kontakt",
-      email: "E-Mail: E-Mail",
+      email: "E-Mail: kevinstaebler1994@outlook.de",
       terms_title: "Nutzungsbedingungen",
       terms_text:
         "Durch den Zugriff auf und die Nutzung von Portfolio (Produkt) erkennen Sie die folgenden Bedingungen und alle dazugehörigen Richtlinien an. Wir, die aufgeführten Studenten, können die Bedingungen jederzeit ohne vorherige Ankündigung aktualisieren.",
@@ -235,6 +240,11 @@ function getEn() {
         privacy_validation: "Please accept the privacy policy",
 
         submit: "Say Hello",
+
+        name_error: "Oops! It seems your name is missing",
+        email_error: "Oops! Your email is required",
+        message_error: "What do you need to develop?",
+        approval_message: "Message sent successfully",
       },
     },
 
@@ -247,11 +257,11 @@ function getEn() {
     legal: {
       title: "Legal Notice",
       imprint_title: "Imprint",
-      imprint_name: "Student Names List",
-      imprint_address: "Address of the JOIN operator - e.g. one of the students",
-      imprint_city: "Postcode and city",
+      imprint_name: "Kevin Stäbler",
+      imprint_address: "August-Prym-Straße 4",
+      imprint_city: "52223 Stolberg",
       contact_title: "Exploring the Board",
-      email: "Email: Email",
+      email: "Email: kevinstaebler1994@outlook.de",
       terms_title: "Acceptance of terms",
       terms_text:
         "By accessing and using Portfolio (Product), you acknowledge and agree to the following terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to you from time to time. We, the listed students, may update or change the terms and conditions from time to time without notice.",
@@ -287,20 +297,28 @@ function getEn() {
 
 function setLanguage(lang) {
   currentLang = lang;
-  const obj = getTranslations();
-  const texts = obj[lang];
+  const texts = getTranslations()[lang];
+
   if (!texts) return;
 
-  const elements = document.querySelectorAll("[data-i18n]");
+  updateElements("[data-i18n]", texts, "textContent");
+  updateElements("[data-i18n-placeholder]", texts, "placeholder");
+
+  document.documentElement.lang = lang;
+  updateProjectModal();
+}
+
+function updateElements(selector, texts, property) {
+  const elements = document.querySelectorAll(selector);
+
   elements.forEach((element) => {
-    const key = element.getAttribute("data-i18n");
+    const key = element.dataset.i18n || element.dataset.i18nPlaceholder;
     const value = getValue(texts, key);
 
     if (value !== undefined) {
-      element.textContent = value;
+      element[property] = value;
     }
   });
-  updateProjectModal();
 }
 
 function updateProjectModal() {
@@ -311,7 +329,6 @@ function updateProjectModal() {
   const project = projectList[key];
 
   document.getElementById("project-modal-title").innerText = project.title[currentLang];
-
   document.getElementById("project-modal-description").innerText = project.description[currentLang];
 }
 
@@ -327,28 +344,31 @@ function getValue(obj, path) {
 }
 
 function switchLang() {
-  const en = document.getElementById("lang-switch-en");
-  const de = document.getElementById("lang-switch-de");
+  const btns = document.querySelectorAll("[data-lang]");
+  const skillsBtn = document.getElementById("skills-button");
 
-  if (!en || !de) return;
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const lang = btn.dataset.lang;
 
-  en.addEventListener("click", () => {
-    de.classList.remove("lang-switch__option--active");
-    en.classList.add("lang-switch__option--active");
-    if (skillsBtn) {
-      skillsBtn.classList.remove("skills__button--de");
-      skillsBtn.classList.add("skills__button--en");
-    }
-    setLanguage("en");
+      btns.forEach((b) => {
+        b.classList.remove("lang-switch__option--active");
+      });
+
+      document.querySelectorAll(`[data-lang='${lang}']`).forEach((b) => {
+        b.classList.add("lang-switch__option--active");
+      });
+
+      updateSkillsButton(skillsBtn, lang);
+      setLanguage(lang);
+    });
   });
+}
 
-  de.addEventListener("click", () => {
-    en.classList.remove("lang-switch__option--active");
-    de.classList.add("lang-switch__option--active");
-    if (skillsBtn) {
-      skillsBtn.classList.remove("skills__button--en");
-      skillsBtn.classList.add("skills__button--de");
-    }
-    setLanguage("de");
-  });
+function updateSkillsButton(button, lang) {
+  if (!button) return;
+
+  button.classList.remove("skills__button--de");
+  button.classList.remove("skills__button--en");
+  button.classList.add(`skills__button--${lang}`);
 }

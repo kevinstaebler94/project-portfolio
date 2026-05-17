@@ -1,6 +1,7 @@
 let currentProjectIndex = 0;
 let currentRefIndex = 0;
 let currentLang = "en";
+
 const projectKeys = Object.keys(projectList);
 
 function getModalElements() {
@@ -28,6 +29,7 @@ function openProjectModal(projectKey) {
   modalData.image.src = projectList[projectKey].image;
 
   renderModalSkills(projectKey);
+
   modalData.modal.classList.remove("dNone");
   modalData.overlay.classList.remove("dNone");
   document.body.style.overflow = "hidden";
@@ -35,18 +37,19 @@ function openProjectModal(projectKey) {
 
 function renderModalSkills(projectKey) {
   const modalSkills = document.getElementById("project-modal-skills");
-  if (!modalSkills || !projectList || !projectList[projectKey]) return;
+
+  if (!modalSkills || !projectList[projectKey]) return;
 
   modalSkills.innerHTML = "";
 
-  for (let i = 0; i < projectList[projectKey].languages.length; i++) {
+  projectList[projectKey].languages.forEach((language) => {
     modalSkills.innerHTML += `
-    <div class="project-modal__skill">
-      <img src="${projectList[projectKey].languages[i].icon}" alt="" />
-      <p>${projectList[projectKey].languages[i].name}</p>
-    </div>
+      <div class="project-modal__skill">
+        <img src="${language.icon}" alt="" />
+        <p>${language.name}</p>
+      </div>
     `;
-  }
+  });
 }
 
 function closeProjectModal() {
@@ -57,55 +60,63 @@ function closeProjectModal() {
 
   modal.classList.add("dNone");
   overlay.classList.add("dNone");
+
   document.body.style.overflow = "";
 }
 
 function showNextProject() {
   currentProjectIndex = (currentProjectIndex + 1) % projectKeys.length;
+
   openProjectModal(projectKeys[currentProjectIndex]);
 }
 
 function initHoverImagePreview() {
-  let projects = document.querySelectorAll(".project[data-project]");
-  let ImageContainer = document.getElementById("projects-preview");
-  let previewImage = document.getElementById("projects-preview-img");
+  const projects = document.querySelectorAll(".project[data-project]");
+  const imageContainer = document.getElementById("projects-preview");
+  const previewImage = document.getElementById("projects-preview-img");
 
-  if (projects.length === 0 || !ImageContainer || !previewImage) return;
+  if (!projects.length || !imageContainer || !previewImage) {
+    return;
+  }
 
-  addMouseOver(projects, ImageContainer, previewImage);
-  addMouseOut(projects, ImageContainer, previewImage);
+  addMouseOver(projects, imageContainer, previewImage);
+  addMouseOut(projects, imageContainer, previewImage);
 }
 
-function addMouseOver(projects, ImageContainer, previewImage) {
+function addMouseOver(projects, imageContainer, previewImage) {
   projects.forEach((project) => {
     if (project.dataset.listener) return;
+
     project.dataset.listener = "true";
 
     project.addEventListener("mouseover", () => {
       const key = project.dataset.project;
 
-      if (projectList[key]) {
-        previewImage.src = projectList[key].image;
-        ImageContainer.classList.add("projects__preview--active");
-      }
+      if (!projectList[key]) return;
+
+      previewImage.src = projectList[key].image;
+      imageContainer.classList.add("projects__preview--active");
     });
   });
 }
 
-function addMouseOut(projects, ImageContainer, previewImage) {
-  projects.forEach(function (project) {
+function addMouseOut(projects, imageContainer, previewImage) {
+  projects.forEach((project) => {
     if (project.dataset.listenerOut) return;
+
     project.dataset.listenerOut = "true";
 
     project.addEventListener("mouseout", () => {
       previewImage.src = "";
-      ImageContainer.classList.remove("projects__preview--active");
+
+      imageContainer.classList.remove("projects__preview--active");
     });
   });
 }
 
 function renderReferences() {
   const refContent = document.getElementById("referencesContent");
+
   if (!refContent) return;
 
   refContent.innerHTML = "";
@@ -113,37 +124,34 @@ function renderReferences() {
   references.forEach((ref, i) => {
     refContent.innerHTML += `
       <div id="ref-${i}" class="references__card">
-        <p data-i18n="references.texts.${i}" class="references__text">${ref.text}</p>
-        <p data-i18n="references.authors.${i}" class="references__author">${ref.author}</p>
+        <p class="references__text">
+          ${ref.text}
+        </p>
+
+        <p class="references__author">
+          ${ref.author}
+        </p>
       </div>
     `;
-    initReferenceButtons(ref);
   });
+
+  updateReferences();
+  renderReferenceDots();
 }
 
 function updateReferences() {
-  const langBtn = document.getElementById("lang-switch-de");
-  if (!langBtn) return;
-
-  const isDE = langBtn.classList.contains("lang-switch__option--active");
-  const lang = isDE ? "de" : "en";
-
   const translations = getTranslations();
-  if (!translations[lang]) return;
-
-  const refTranslations = translations[lang].references;
+  const refs = translations[currentLang].references;
   const cards = document.querySelectorAll(".references__card");
 
-  if (cards.length === 0) return;
+  if (!cards.length) return;
 
-  cards.forEach(function (card, i) {
-    const refIndex = (currentRefIndex + i) % references.length;
-
+  cards.forEach((card, i) => {
+    const index = (currentRefIndex + i) % references.length;
     const text = card.querySelector(".references__text");
     const author = card.querySelector(".references__author");
-
-    if (text) text.innerText = refTranslations.texts[refIndex];
-    if (author) author.innerText = refTranslations.authors[refIndex];
+    text.innerText = refs.texts[index];
+    author.innerText = refs.authors[index];
   });
 }
 
@@ -155,12 +163,14 @@ function initReferenceButtons() {
 
   prev.onclick = () => {
     currentRefIndex = (currentRefIndex - 1 + references.length) % references.length;
+
     updateReferences();
     renderReferenceDots();
   };
 
-  next.onclick = function () {
+  next.onclick = () => {
     currentRefIndex = (currentRefIndex + 1) % references.length;
+
     updateReferences();
     renderReferenceDots();
   };
@@ -168,13 +178,17 @@ function initReferenceButtons() {
 
 function renderReferenceDots() {
   const container = document.getElementById("activeIndex");
+
   if (!container) return;
 
   container.innerHTML = "";
 
   for (let i = 0; i < references.length; i++) {
     container.innerHTML += `
-    <div class="dot ${i === currentRefIndex ? "dot--active" : "dot"}"></div>
+      <div class="
+        dot
+        ${i === currentRefIndex ? "dot--active" : ""}
+      "></div>
     `;
   }
 }

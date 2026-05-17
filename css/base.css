@@ -1,15 +1,3 @@
-/* ===========================
-   BASE - Grundlegende Styles
-   ===========================
-   Hier gehören:
-   - Resets (*-Selector)
-   - body, html Styles
-   - Grundlegende Typografie
-   - Globale Farben & Variablen
-   - Link-Styles (a-Tag)
-   - Font-Imports
-   =========================== */
-
 :root {
   --spacing-xxxs: 0.25rem;
   --spacing-xxs: 0.5rem;
@@ -69,7 +57,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* outline: 1px solid red; */
 }
 
 html {
