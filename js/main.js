@@ -1,3 +1,7 @@
+/**
+ * Initializes the application by calling all setup functions.
+ * Runs once the DOM is fully loaded.
+ */
 function init() {
   initHoverImagePreview();
   initBurgerMenu();
@@ -6,6 +10,10 @@ function init() {
   switchLang();
 }
 
+/**
+ * Toggles the burger menu open/closed by adding or removing
+ * the `burger-menu--open` class on the body element.
+ */
 function toggleBurgerMenu() {
   const body = document.body;
 
@@ -16,6 +24,10 @@ function toggleBurgerMenu() {
   }
 }
 
+/**
+ * Finds the burger button and attaches a click handler
+ * that calls {@link toggleBurgerMenu}.
+ */
 function initBurgerMenu() {
   const button = document.getElementById("burger-button");
 

@@ -40,6 +40,7 @@
 .project-modal__subtitle {
   margin-top: var(--spacing-sm);
   font-size: clamp(var(--fs-lg), 5vw, var(--fs-xl));
+  font-family: var(--fira);
   color: var(--color-primary);
 }
 
@@ -48,6 +49,7 @@
   max-width: 48ch;
   overflow-wrap: break-word;
   font-size: clamp(var(--fs-sm), 4vw, var(--fs-md));
+  font-family: var(--karla);
   color: var(--color-text);
 }
 
@@ -124,6 +126,7 @@
   padding: 0;
   border: none;
   color: var(--color-primary);
+  font-family: var(--karla);
 }
 
 .project-modal__next:hover {
@@ -150,20 +153,24 @@
 
 .project-modal__number {
   font-size: clamp(var(--fs-5xl), 10vw, var(--fs-6xl));
+  font-family: var(--karla);
   color: var(--color-primary);
 }
 
 .project-modal__title {
   font-size: var(--fs-5xl);
+  font-family: var(--fira);
   font-size: clamp(var(--fs-3xl), 10vw, var(--fs-4xl));
 }
 
 .project-modal__skill > p {
   font-size: var(--fs-xs);
+  font-family: var(--karla);
 }
 
 .project-modal__actions > button {
   font-size: clamp(var(--fs-sm), 4vw, var(--fs-md));
+  font-family: var(--karla);
   color: var(--color-text);
   padding: clamp(var(--spacing-xs), 2vw, var(--spacing-sm)) clamp(var(--spacing-sm), 2vw, var(--spacing-lg));
   transition:

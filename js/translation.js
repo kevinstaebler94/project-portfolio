@@ -1,3 +1,7 @@
+/**
+ * Returns the full translations object containing all languages.
+ * @returns {{ de: object, en: object }} Translation map keyed by language code.
+ */
 function getTranslations() {
   return {
     de: getDe(),
@@ -5,6 +9,10 @@ function getTranslations() {
   };
 }
 
+/**
+ * Returns all German (de) UI strings.
+ * @returns {object} Nested translation object for the German language.
+ */
 function getDe() {
   return {
     header: {
@@ -151,6 +159,10 @@ function getDe() {
   };
 }
 
+/**
+ * Returns all English (en) UI strings.
+ * @returns {object} Nested translation object for the English language.
+ */
 function getEn() {
   return {
     header: {
@@ -295,6 +307,11 @@ function getEn() {
   };
 }
 
+/**
+ * Applies the given language to all translatable DOM elements
+ * and updates the `lang` attribute on the html element.
+ * @param {'de'|'en'} lang - The language code to activate.
+ */
 function setLanguage(lang) {
   currentLang = lang;
   const texts = getTranslations()[lang];
@@ -308,6 +325,13 @@ function setLanguage(lang) {
   updateProjectModal();
 }
 
+/**
+ * Updates a DOM property (e.g. `textContent` or `placeholder`) on all
+ * elements matching the given selector using the provided translations.
+ * @param {string} selector - CSS selector for target elements.
+ * @param {object} texts - Flat or nested translation object.
+ * @param {string} property - The DOM element property to set (e.g. `'textContent'`).
+ */
 function updateElements(selector, texts, property) {
   const elements = document.querySelectorAll(selector);
 
@@ -321,6 +345,10 @@ function updateElements(selector, texts, property) {
   });
 }
 
+/**
+ * Re-renders the title and description of the currently open project modal
+ * in the active language. Does nothing if the modal is hidden.
+ */
 function updateProjectModal() {
   const modal = document.getElementById("project-modal");
   if (!modal || modal.classList.contains("dNone")) return;
@@ -332,6 +360,12 @@ function updateProjectModal() {
   document.getElementById("project-modal-description").innerText = project.description[currentLang];
 }
 
+/**
+ * Retrieves a deeply nested value from an object using dot-notation.
+ * @param {object} obj - The object to traverse.
+ * @param {string} path - Dot-separated key path (e.g. `'contact.form.submit'`).
+ * @returns {*} The resolved value, or `undefined` if the path doesn't exist.
+ */
 function getValue(obj, path) {
   const keys = path.split(".");
   let result = obj;
@@ -343,6 +377,11 @@ function getValue(obj, path) {
   return result;
 }
 
+/**
+ * Registers click handlers on all `[data-lang]` buttons.
+ * On click, marks the selected language as active across all matching buttons
+ * and calls {@link setLanguage} with the chosen language code.
+ */
 function switchLang() {
   const btns = document.querySelectorAll("[data-lang]");
   const skillsBtn = document.getElementById("skills-button");
@@ -365,6 +404,11 @@ function switchLang() {
   });
 }
 
+/**
+ * Swaps the language-specific modifier class on the skills CTA button.
+ * @param {HTMLElement|null} button - The skills button element.
+ * @param {'de'|'en'} lang - The currently active language code.
+ */
 function updateSkillsButton(button, lang) {
   if (!button) return;
 

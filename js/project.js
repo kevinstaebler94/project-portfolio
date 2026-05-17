@@ -4,6 +4,10 @@ let currentLang = "en";
 
 const projectKeys = Object.keys(projectList);
 
+/**
+ * Collects and returns all relevant project modal DOM elements.
+ * @returns {{ modal: HTMLElement, number: HTMLElement, title: HTMLElement, description: HTMLElement, image: HTMLImageElement, overlay: HTMLElement }}
+ */
 function getModalElements() {
   return {
     modal: document.getElementById("project-modal"),
@@ -15,6 +19,10 @@ function getModalElements() {
   };
 }
 
+/**
+ * Opens the project modal and populates it with data for the given project.
+ * @param {string} projectKey - Key of the project in `projectList` (e.g. `'join'`).
+ */
 function openProjectModal(projectKey) {
   if (!projectList || !projectList[projectKey]) return;
 
@@ -35,6 +43,10 @@ function openProjectModal(projectKey) {
   document.body.style.overflow = "hidden";
 }
 
+/**
+ * Renders the skill/language icons inside the project modal for a given project.
+ * @param {string} projectKey - Key of the project in `projectList`.
+ */
 function renderModalSkills(projectKey) {
   const modalSkills = document.getElementById("project-modal-skills");
 
@@ -52,6 +64,9 @@ function renderModalSkills(projectKey) {
   });
 }
 
+/**
+ * Closes the project modal and restores normal page scroll.
+ */
 function closeProjectModal() {
   const modal = document.getElementById("project-modal");
   const overlay = document.getElementById("project-modal-overlay");
@@ -64,12 +79,20 @@ function closeProjectModal() {
   document.body.style.overflow = "";
 }
 
+/**
+ * Advances to the next project in the list and opens its modal.
+ * Wraps around to the first project after the last one.
+ */
 function showNextProject() {
   currentProjectIndex = (currentProjectIndex + 1) % projectKeys.length;
 
   openProjectModal(projectKeys[currentProjectIndex]);
 }
 
+/**
+ * Initializes the hover image preview for all project cards.
+ * Attaches `mouseover` and `mouseout` listeners to show/hide the preview image.
+ */
 function initHoverImagePreview() {
   const projects = document.querySelectorAll(".project[data-project]");
   const imageContainer = document.getElementById("projects-preview");
@@ -83,6 +106,13 @@ function initHoverImagePreview() {
   addMouseOut(projects, imageContainer, previewImage);
 }
 
+/**
+ * Adds `mouseover` event listeners to project cards that show the preview image.
+ * Skips cards that already have the listener attached.
+ * @param {NodeList} projects - Project card elements.
+ * @param {HTMLElement} imageContainer - Container element for the preview image.
+ * @param {HTMLImageElement} previewImage - The preview `<img>` element.
+ */
 function addMouseOver(projects, imageContainer, previewImage) {
   projects.forEach((project) => {
     if (project.dataset.listener) return;
@@ -100,6 +130,13 @@ function addMouseOver(projects, imageContainer, previewImage) {
   });
 }
 
+/**
+ * Adds `mouseout` event listeners to project cards that hide the preview image.
+ * Skips cards that already have the listener attached.
+ * @param {NodeList} projects - Project card elements.
+ * @param {HTMLElement} imageContainer - Container element for the preview image.
+ * @param {HTMLImageElement} previewImage - The preview `<img>` element.
+ */
 function addMouseOut(projects, imageContainer, previewImage) {
   projects.forEach((project) => {
     if (project.dataset.listenerOut) return;
@@ -114,6 +151,10 @@ function addMouseOut(projects, imageContainer, previewImage) {
   });
 }
 
+/**
+ * Renders all reference cards into the DOM and initializes
+ * the reference display with translated text and navigation dots.
+ */
 function renderReferences() {
   const refContent = document.getElementById("referencesContent");
 
@@ -139,6 +180,10 @@ function renderReferences() {
   renderReferenceDots();
 }
 
+/**
+ * Updates visible reference cards with translated text
+ * based on `currentRefIndex` and the active language.
+ */
 function updateReferences() {
   const translations = getTranslations();
   const refs = translations[currentLang].references;
@@ -155,6 +200,9 @@ function updateReferences() {
   });
 }
 
+/**
+ * Attaches click handlers to the previous/next reference navigation buttons.
+ */
 function initReferenceButtons() {
   const prev = document.getElementById("previousRef");
   const next = document.getElementById("nextRef");
@@ -176,6 +224,10 @@ function initReferenceButtons() {
   };
 }
 
+/**
+ * Renders the dot indicators for the references carousel,
+ * highlighting the dot at `currentRefIndex`.
+ */
 function renderReferenceDots() {
   const container = document.getElementById("activeIndex");
 
