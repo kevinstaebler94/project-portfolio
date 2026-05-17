@@ -14,6 +14,8 @@ const projectList = {
       { name: "Firebase", icon: "assets/icons/Firebase.svg" },
     ],
     image: "../../assets/images/join-img.svg",
+    github: "https://join.kevin-staebler.de/",
+    liveTest: "https://github.com/DanielBumbuc/join",
   },
 
   elPolloLoco: {
@@ -30,5 +32,7 @@ const projectList = {
       { name: "JavaScript", icon: "assets/icons/JavaScript.svg" },
     ],
     image: "assets/images/el-pollo-loco-img.svg",
+    github: "https://github.com/kevinstaebler94/el_pollo_loco",
+    liveTest: "https://el-polo-loco.kevin-staebler.de/",
   },
 };

@@ -35,12 +35,28 @@ function openProjectModal(projectKey) {
   modalData.title.innerText = projectList[projectKey].title;
   modalData.description.innerText = projectList[projectKey].description[currentLang];
   modalData.image.src = projectList[projectKey].image;
+  setProjectLinks(projectKey);
 
   renderModalSkills(projectKey);
 
   modalData.modal.classList.remove("dNone");
   modalData.overlay.classList.remove("dNone");
   document.body.style.overflow = "hidden";
+}
+
+function setProjectLinks(projectKey) {
+  let githubBtn = document.getElementById("github-btn");
+  let liveTestBtn = document.getElementById("live-test-btn");
+
+  if (!githubBtn || !liveTestBtn) return;
+
+  githubBtn.onclick = function () {
+    window.open(projectList[projectKey].github, "_blank");
+  };
+
+  liveTestBtn.onclick = function () {
+    window.open(projectList[projectKey].liveTest, "_blank");
+  };
 }
 
 /**
