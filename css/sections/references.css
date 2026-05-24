@@ -40,6 +40,7 @@
 }
 
 .references > h2 {
+  font-family: var(--fira);
   font-size: clamp(var(--fs-lg), 6.5vw, var(--fs-xl));
   font-weight: 700;
   color: var(--color-primary);
