@@ -156,6 +156,30 @@ function getDe() {
       legal: "Impressum",
       home: "Startseite",
     },
+
+    privacy: {
+      title: "Datenschutzerklärung",
+      section1_title: "1. Datenschutz auf einen Blick",
+      section1_sub1_title: "Allgemeine Hinweise",
+      section1_sub1_text:
+        "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.",
+      section2_title: "2. Hosting",
+      section2_sub1_title: "All-Inkl",
+      section2_sub1_text1: "Anbieter ist die ALL-INKL.COM - Neue Medien Münnich, Inh. René Münnich, Hauptstraße 68, 02742 Friedersdorf.",
+      section2_sub1_text2: "Details entnehmen Sie der Datenschutzerklärung von All-Inkl:",
+      section3_title: "3. Allgemeine Hinweise und Pflichtinformationen",
+      section3_sub1_title: "Hinweis zur verantwortlichen Stelle",
+      section3_sub2_title: "SSL- bzw. TLS-Verschlüsselung",
+      section3_sub2_text:
+        "Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung.",
+      section4_title: "4. Datenerfassung auf dieser Website",
+      section4_sub1_title: "Kontaktformular",
+      section4_sub1_text:
+        "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben zwecks Bearbeitung der Anfrage gespeichert.",
+      section5_title: "5. Plugins und Tools",
+      section5_sub1_title: "Google Fonts (lokales Hosting)",
+      section5_sub1_text: "Diese Seite nutzt lokal installierte Google Fonts. Eine Verbindung zu Google-Servern findet dabei nicht statt.",
+    },
   };
 }
 
@@ -303,6 +327,30 @@ function getEn() {
     footer: {
       legal: "Legal Notice",
       home: "Home",
+    },
+
+    privacy: {
+      title: "Privacy Policy",
+      section1_title: "1. Privacy at a Glance",
+      section1_sub1_title: "General Information",
+      section1_sub1_text:
+        "The following notes provide a simple overview of what happens to your personal data when you visit this website.",
+      section2_title: "2. Hosting",
+      section2_sub1_title: "All-Inkl",
+      section2_sub1_text1: "The provider is ALL-INKL.COM - Neue Medien Münnich, owner René Münnich, Hauptstraße 68, 02742 Friedersdorf.",
+      section2_sub1_text2: "For details, please refer to All-Inkl's privacy policy:",
+      section3_title: "3. General Information and Mandatory Details",
+      section3_sub1_title: "Note on the Responsible Party",
+      section3_sub2_title: "SSL/TLS Encryption",
+      section3_sub2_text:
+        "This site uses SSL or TLS encryption for security reasons and to protect the transmission of confidential content.",
+      section4_title: "4. Data Collection on This Website",
+      section4_sub1_title: "Contact Form",
+      section4_sub1_text:
+        "If you submit inquiries via the contact form, your details will be stored for the purpose of processing your request.",
+      section5_title: "5. Plugins and Tools",
+      section5_sub1_title: "Google Fonts (Local Hosting)",
+      section5_sub1_text: "This site uses locally installed Google Fonts. No connection to Google servers is established.",
     },
   };
 }
