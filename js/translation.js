@@ -364,6 +364,8 @@ function setLanguage(lang) {
   currentLang = lang;
   const texts = getTranslations()[lang];
 
+  localStorage.setItem("lang", lang);
+
   if (!texts) return;
 
   updateElements("[data-i18n]", texts, "textContent");
@@ -371,6 +373,12 @@ function setLanguage(lang) {
 
   document.documentElement.lang = lang;
   updateProjectModal();
+
+  document.querySelectorAll("[data-lang]").forEach((b) => {
+    b.classList.toggle("lang-switch__option--active", b.dataset.lang === lang);
+  });
+
+  updateSkillsButton(document.getElementById("skills-button"), lang);
 }
 
 /**
@@ -430,13 +438,13 @@ function getValue(obj, path) {
  * On click, marks the selected language as active across all matching buttons
  * and calls {@link setLanguage} with the chosen language code.
  */
-function switchLang() {
+function switchLang(lang) {
   const btns = document.querySelectorAll("[data-lang]");
   const skillsBtn = document.getElementById("skills-button");
 
   btns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      const lang = btn.dataset.lang;
+      lang = btn.dataset.lang;
 
       btns.forEach((b) => {
         b.classList.remove("lang-switch__option--active");

@@ -14,6 +14,10 @@
   color: var(--color-primary);
   justify-self: center;
   padding: var(--spacing-4xl) 0 var(--spacing-2xl) 0;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+  width: 100%;
 }
 
 .privacy-policy__section {
@@ -44,6 +48,10 @@
 
 .privacy-policy__link {
   color: var(--color-text);
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+  width: 100%;
 }
 
 @media (max-width: 480px) {

@@ -5,27 +5,53 @@
   flex-direction: column;
 }
 
+.references__viewport {
+  width: 100%;
+  overflow: hidden;
+  padding: var(--spacing-4xl) 0;
+}
+
+.references__track {
+  transition: transform 300ms ease;
+  position: relative;
+}
+
 .references__card {
   background-color: rgba(61, 207, 182, 0.35);
-  width: 100%;
+  width: 550px;
   min-height: 300px;
+  flex: 0 0 clamp(250px, 50%, 550px);
   border: 2px solid var(--color-primary);
   border-radius: var(--br-25);
   padding: clamp(var(--spacing-xs), 2.5vw, var(--spacing-lg)) clamp(var(--spacing-xs), 2.5vw, var(--spacing-md));
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  justify-content: space-evenly;
-  flex: 0 0 clamp(250px, 50%, 550px);
+  position: absolute;
+  transition: transform 300ms ease;
+  left: 50%;
+  top: 50%;
 }
 
-.references__card:nth-child(2) {
-  background-color: rgba(61, 207, 183, 0.678);
-  scale: 1.2;
-  transition: opacity 125ms ease-in-out;
-  position: relative;
+.left {
+  transform: translate(-50%, -50%) translateX(-100%) scale(0.8);
+  opacity: 0.5;
+  z-index: 1;
 }
 
-.references__card:nth-child(2)::after {
+.center {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  z-index: 2;
+}
+
+.right {
+  transform: translate(-50%, -50%) translateX(100%) scale(0.8);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.references__card.center::after {
   content: "";
   display: block;
   position: absolute;
@@ -52,6 +78,7 @@
 .references__text {
   font-family: var(--karla);
   font-size: clamp(var(--fs-xxs), 3vw, var(--fs-md));
+  padding-bottom: var(--spacing-xl);
 }
 
 .references__author {
@@ -84,18 +111,6 @@
 .dot--active {
   background-color: var(--color-primary);
   transform: scale(1.2);
-}
-
-.references__content {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  gap: var(--spacing-xl);
-}
-
-.references__content:nth-child(2) {
-  justify-content: center;
-  gap: clamp(var(--spacing-xl), 10vw, calc(var(--spacing-3xl) + var(--spacing-sm)));
 }
 
 .references__actions {

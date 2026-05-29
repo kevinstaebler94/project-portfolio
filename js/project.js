@@ -1,6 +1,6 @@
 let currentProjectIndex = 0;
 let currentRefIndex = 0;
-let currentLang = "en";
+let currentLang = localStorage.getItem("lang") || "en";
 
 const projectKeys = Object.keys(projectList);
 
@@ -171,16 +171,105 @@ function addMouseOut(projects, imageContainer, previewImage) {
  * Renders all reference cards into the DOM and initializes
  * the reference display with translated text and navigation dots.
  */
+// function renderReferences() {
+//   const refContent = document.getElementById("referencesContent");
+
+//   if (!refContent) return;
+
+//   refContent.innerHTML = "";
+
+//   references.forEach((ref, i) => {
+//     refContent.innerHTML += `
+//       <div id="ref-${i}" class="references__card">
+//         <p class="references__text">
+//           ${ref.text}
+//         </p>
+
+//         <p class="references__author">
+//           ${ref.author}
+//         </p>
+//       </div>
+//     `;
+//   });
+
+//   updateReferences();
+//   renderReferenceDots();
+// }
+
+/**
+ * Updates visible reference cards with translated text
+ * based on `currentRefIndex` and the active language.
+ */
+// function updateReferences() {
+//   const translations = getTranslations();
+//   const refs = translations[currentLang].references;
+//   const cards = document.querySelectorAll(".references__card");
+
+//   if (!cards.length) return;
+
+//   cards.forEach((card, i) => {
+//     const index = (currentRefIndex + i) % references.length;
+//     const text = card.querySelector(".references__text");
+//     const author = card.querySelector(".references__author");
+//     text.innerText = refs.texts[index];
+//     author.innerText = refs.authors[index];
+//   });
+// }
+
+/**
+ * Attaches click handlers to the previous/next reference navigation buttons.
+ */
+// function initReferenceButtons() {
+//   const prev = document.getElementById("previousRef");
+//   const next = document.getElementById("nextRef");
+
+//   if (!prev || !next) return;
+
+//   prev.onclick = () => {
+//     currentRefIndex = (currentRefIndex - 1 + references.length) % references.length;
+
+//     updateReferences();
+//     renderReferenceDots();
+//   };
+
+//   next.onclick = () => {
+//     currentRefIndex = (currentRefIndex + 1) % references.length;
+
+//     updateReferences();
+//     renderReferenceDots();
+//   };
+// }
+
+/**
+ * Renders the dot indicators for the references carousel,
+ * highlighting the dot at `currentRefIndex`.
+ */
+// function renderReferenceDots() {
+//   const container = document.getElementById("activeIndex");
+
+//   if (!container) return;
+
+//   container.innerHTML = "";
+
+//   for (let i = 0; i < references.length; i++) {
+//     container.innerHTML += `
+//       <div class="
+//         dot
+//         ${i === currentRefIndex ? "dot--active" : ""}
+//       "></div>
+//     `;
+//   }
+// }
+
 function renderReferences() {
-  const refContent = document.getElementById("referencesContent");
+  let track = document.getElementById("track");
 
-  if (!refContent) return;
-
-  refContent.innerHTML = "";
+  if (!track) return;
+  track.innerHTML = "";
 
   references.forEach((ref, i) => {
-    refContent.innerHTML += `
-      <div id="ref-${i}" class="references__card">
+    track.innerHTML += `
+      <div class="references__card">
         <p class="references__text">
           ${ref.text}
         </p>
@@ -191,72 +280,46 @@ function renderReferences() {
       </div>
     `;
   });
-
-  updateReferences();
-  renderReferenceDots();
 }
 
-/**
- * Updates visible reference cards with translated text
- * based on `currentRefIndex` and the active language.
- */
-function updateReferences() {
-  const translations = getTranslations();
-  const refs = translations[currentLang].references;
-  const cards = document.querySelectorAll(".references__card");
+function initiateCarouselSlider() {
+  const previous = document.getElementById("previousRef");
+  const next = document.getElementById("nextRef");
 
-  if (!cards.length) return;
+  if (!previous || !next) return;
 
-  cards.forEach((card, i) => {
-    const index = (currentRefIndex + i) % references.length;
-    const text = card.querySelector(".references__text");
-    const author = card.querySelector(".references__author");
-    text.innerText = refs.texts[index];
-    author.innerText = refs.authors[index];
+  updateCarousel();
+
+  previous.addEventListener("click", () => {
+    currentRefIndex--;
+
+    if (currentRefIndex < 0) {
+      currentRefIndex = references.length - 1;
+    }
+    updateCarousel();
+  });
+
+  next.addEventListener("click", () => {
+    currentRefIndex++;
+
+    if (currentRefIndex >= references.length) {
+      currentRefIndex = 0;
+    }
+    updateCarousel();
   });
 }
 
-/**
- * Attaches click handlers to the previous/next reference navigation buttons.
- */
-function initReferenceButtons() {
-  const prev = document.getElementById("previousRef");
-  const next = document.getElementById("nextRef");
+function updateCarousel() {
+  let cards = document.querySelectorAll(".references__card");
 
-  if (!prev || !next) return;
+  cards.forEach((card) => {
+    card.classList.remove("left", "center", "right");
+  });
 
-  prev.onclick = () => {
-    currentRefIndex = (currentRefIndex - 1 + references.length) % references.length;
+  let left = (currentRefIndex - 1 + cards.length) % cards.length;
+  let right = (currentRefIndex + 1) % cards.length;
 
-    updateReferences();
-    renderReferenceDots();
-  };
-
-  next.onclick = () => {
-    currentRefIndex = (currentRefIndex + 1) % references.length;
-
-    updateReferences();
-    renderReferenceDots();
-  };
-}
-
-/**
- * Renders the dot indicators for the references carousel,
- * highlighting the dot at `currentRefIndex`.
- */
-function renderReferenceDots() {
-  const container = document.getElementById("activeIndex");
-
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  for (let i = 0; i < references.length; i++) {
-    container.innerHTML += `
-      <div class="
-        dot
-        ${i === currentRefIndex ? "dot--active" : ""}
-      "></div>
-    `;
-  }
+  cards[left].classList.add("left");
+  cards[currentRefIndex].classList.add("center");
+  cards[right].classList.add("right");
 }

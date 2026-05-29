@@ -3,11 +3,13 @@
  * Runs once the DOM is fully loaded.
  */
 function init() {
+  setLanguage(currentLang);
   initHoverImagePreview();
   initBurgerMenu();
-  initReferenceButtons();
+  // initReferenceButtons();
   renderReferences();
-  switchLang();
+  initiateCarouselSlider();
+  switchLang(currentLang);
 }
 
 /**
@@ -35,4 +37,14 @@ function initBurgerMenu() {
   button.addEventListener("click", toggleBurgerMenu);
 }
 
+function checkWindowSize() {
+  const body = document.body;
+
+  if (window.innerWidth > 969 && body.classList.contains("burger-menu--open")) {
+    body.classList.remove("burger-menu--open");
+  }
+}
+
 document.addEventListener("DOMContentLoaded", init);
+
+window.addEventListener("resize", checkWindowSize);
