@@ -368,6 +368,8 @@ function setLanguage(lang) {
 
   if (!texts) return;
 
+  renderReferences();
+  updateCarousel();
   updateElements("[data-i18n]", texts, "textContent");
   updateElements("[data-i18n-placeholder]", texts, "placeholder");
 
@@ -434,29 +436,47 @@ function getValue(obj, path) {
 }
 
 /**
- * Registers click handlers on all `[data-lang]` buttons.
- * On click, marks the selected language as active across all matching buttons
- * and calls {@link setLanguage} with the chosen language code.
+ * Registers click handlers on all `[data-lang]` buttons so that
+ * clicking one activates the selected language across the entire page.
+ * @param {string} lang - The initially active language code (unused after setup).
  */
 function switchLang(lang) {
   const btns = document.querySelectorAll("[data-lang]");
   const skillsBtn = document.getElementById("skills-button");
 
   btns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      lang = btn.dataset.lang;
+    handleLanguageChange(btn, btns, skillsBtn);
+  });
+}
 
-      btns.forEach((b) => {
-        b.classList.remove("lang-switch__option--active");
-      });
+/**
+ * Handles a language-button click: updates the active-button styling,
+ * updates the skills button modifier class, and applies the new language.
+ * @param {HTMLElement} btn - The clicked language button.
+ * @param {NodeList} btns - All language buttons.
+ * @param {HTMLElement|null} skillsBtn - The skills CTA button.
+ */
+function handleLanguageChange(btn, btns, skillsBtn) {
+  const lang = btn.dataset.lang;
 
-      document.querySelectorAll(`[data-lang='${lang}']`).forEach((b) => {
-        b.classList.add("lang-switch__option--active");
-      });
+  updateActiveButtons(btns, lang);
+  updateSkillsButton(skillsBtn, lang);
+  setLanguage(lang);
+}
 
-      updateSkillsButton(skillsBtn, lang);
-      setLanguage(lang);
-    });
+/**
+ * Removes the active class from all language buttons and re-applies it
+ * to every button whose `data-lang` value matches `lang`.
+ * @param {NodeList} btns - All language buttons.
+ * @param {string} lang - The language code to mark as active.
+ */
+function updateActiveButtons(btns, lang) {
+  btns.forEach((btn) => {
+    btn.classList.remove("lang-switch__option--active");
+  });
+
+  document.querySelectorAll(`[data-lang='${lang}']`).forEach((btn) => {
+    btn.classList.add("lang-switch__option--active");
   });
 }
 

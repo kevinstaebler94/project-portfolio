@@ -1,3 +1,9 @@
+/**
+ * List of colleague references displayed in the references carousel.
+ * Each entry holds the English fallback text and the author label.
+ * Translated strings are sourced from the translation module at runtime.
+ * @type {Array<{text: string, author: string}>}
+ */
 const references = [
   {
     text: "Kevin has grown tremendously, both in his work ethic and personal skills. His reliability and honesty define him as a person. He is a highly valued and appreciated colleague.",

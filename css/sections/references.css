@@ -12,7 +12,7 @@
 }
 
 .references__track {
-  transition: transform 300ms ease;
+  transition: transform 1000ms ease;
   position: relative;
 }
 
@@ -28,7 +28,7 @@
   justify-content: center;
   flex-direction: column;
   position: absolute;
-  transition: transform 300ms ease;
+  transition: transform 1000ms ease;
   left: 50%;
   top: 50%;
 }

@@ -1,3 +1,9 @@
+/**
+ * Map of all portfolio projects keyed by a unique project identifier.
+ * Each entry contains display data (number, title, descriptions in `de`/`en`,
+ * skill icons, preview image, GitHub URL and live-test URL).
+ * @type {Object.<string, {number: string, title: string, description: {de: string, en: string}, languages: Array<{name: string, icon: string}>, image: string, github: string, liveTest: string}>}
+ */
 const projectList = {
   join: {
     number: "01",

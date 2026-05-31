@@ -6,10 +6,9 @@ function init() {
   setLanguage(currentLang);
   initHoverImagePreview();
   initBurgerMenu();
-  // initReferenceButtons();
-  renderReferences();
-  initiateCarouselSlider();
   switchLang(currentLang);
+  initiateCarouselSlider();
+  renderReferenceDots();
 }
 
 /**
@@ -37,6 +36,10 @@ function initBurgerMenu() {
   button.addEventListener("click", toggleBurgerMenu);
 }
 
+/**
+ * Closes the burger menu when the viewport width exceeds 969 px.
+ * Called on every `resize` event.
+ */
 function checkWindowSize() {
   const body = document.body;
 

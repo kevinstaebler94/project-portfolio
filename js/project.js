@@ -1,6 +1,7 @@
 let currentProjectIndex = 0;
 let currentRefIndex = 0;
 let currentLang = localStorage.getItem("lang") || "en";
+let isSliding = false;
 
 const projectKeys = Object.keys(projectList);
 
@@ -44,6 +45,11 @@ function openProjectModal(projectKey) {
   document.body.style.overflow = "hidden";
 }
 
+/**
+ * Sets the `onclick` handlers on the GitHub and live-test buttons
+ * inside the project modal for the given project.
+ * @param {string} projectKey - Key of the project in `projectList`.
+ */
 function setProjectLinks(projectKey) {
   let githubBtn = document.getElementById("github-btn");
   let liveTestBtn = document.getElementById("live-test-btn");
@@ -168,120 +174,57 @@ function addMouseOut(projects, imageContainer, previewImage) {
 }
 
 /**
- * Renders all reference cards into the DOM and initializes
- * the reference display with translated text and navigation dots.
- */
-// function renderReferences() {
-//   const refContent = document.getElementById("referencesContent");
-
-//   if (!refContent) return;
-
-//   refContent.innerHTML = "";
-
-//   references.forEach((ref, i) => {
-//     refContent.innerHTML += `
-//       <div id="ref-${i}" class="references__card">
-//         <p class="references__text">
-//           ${ref.text}
-//         </p>
-
-//         <p class="references__author">
-//           ${ref.author}
-//         </p>
-//       </div>
-//     `;
-//   });
-
-//   updateReferences();
-//   renderReferenceDots();
-// }
-
-/**
- * Updates visible reference cards with translated text
- * based on `currentRefIndex` and the active language.
- */
-// function updateReferences() {
-//   const translations = getTranslations();
-//   const refs = translations[currentLang].references;
-//   const cards = document.querySelectorAll(".references__card");
-
-//   if (!cards.length) return;
-
-//   cards.forEach((card, i) => {
-//     const index = (currentRefIndex + i) % references.length;
-//     const text = card.querySelector(".references__text");
-//     const author = card.querySelector(".references__author");
-//     text.innerText = refs.texts[index];
-//     author.innerText = refs.authors[index];
-//   });
-// }
-
-/**
- * Attaches click handlers to the previous/next reference navigation buttons.
- */
-// function initReferenceButtons() {
-//   const prev = document.getElementById("previousRef");
-//   const next = document.getElementById("nextRef");
-
-//   if (!prev || !next) return;
-
-//   prev.onclick = () => {
-//     currentRefIndex = (currentRefIndex - 1 + references.length) % references.length;
-
-//     updateReferences();
-//     renderReferenceDots();
-//   };
-
-//   next.onclick = () => {
-//     currentRefIndex = (currentRefIndex + 1) % references.length;
-
-//     updateReferences();
-//     renderReferenceDots();
-//   };
-// }
-
-/**
  * Renders the dot indicators for the references carousel,
  * highlighting the dot at `currentRefIndex`.
  */
-// function renderReferenceDots() {
-//   const container = document.getElementById("activeIndex");
+function renderReferenceDots() {
+  const container = document.getElementById("activeIndex");
 
-//   if (!container) return;
+  if (!container) return;
 
-//   container.innerHTML = "";
+  container.innerHTML = "";
 
-//   for (let i = 0; i < references.length; i++) {
-//     container.innerHTML += `
-//       <div class="
-//         dot
-//         ${i === currentRefIndex ? "dot--active" : ""}
-//       "></div>
-//     `;
-//   }
-// }
+  for (let i = 0; i < references.length; i++) {
+    container.innerHTML += `
+      <div class="
+        dot
+        ${i === currentRefIndex ? "dot--active" : ""}
+      "></div>
+    `;
+  }
+}
 
+/**
+ * Clears and re-renders the reference cards inside the carousel track
+ * using translated text and authors for the currently active language.
+ */
 function renderReferences() {
   let track = document.getElementById("track");
 
   if (!track) return;
   track.innerHTML = "";
 
+  const refTranslations = getTranslations()[currentLang].references;
+
   references.forEach((ref, i) => {
     track.innerHTML += `
       <div class="references__card">
-        <p class="references__text">
-          ${ref.text}
+        <p class="references__text" data-i18n="references.texts.${i}">
+          ${refTranslations.texts[i]}
         </p>
 
-        <p class="references__author">
-          ${ref.author}
+        <p class="references__author" data-i18n="references.authors.${i}">
+          ${refTranslations.authors[i]}
         </p>
       </div>
     `;
   });
 }
 
+/**
+ * Attaches click handlers to the previous and next arrow buttons
+ * and positions the carousel at the initial index.
+ */
 function initiateCarouselSlider() {
   const previous = document.getElementById("previousRef");
   const next = document.getElementById("nextRef");
@@ -289,26 +232,58 @@ function initiateCarouselSlider() {
   if (!previous || !next) return;
 
   updateCarousel();
-
-  previous.addEventListener("click", () => {
-    currentRefIndex--;
-
-    if (currentRefIndex < 0) {
-      currentRefIndex = references.length - 1;
-    }
-    updateCarousel();
-  });
-
-  next.addEventListener("click", () => {
-    currentRefIndex++;
-
-    if (currentRefIndex >= references.length) {
-      currentRefIndex = 0;
-    }
-    updateCarousel();
-  });
+  previous.addEventListener("click", handlePrevious);
+  next.addEventListener("click", handleNext);
 }
 
+/**
+ * Handles a click on the previous arrow button.
+ * Decrements `currentRefIndex` (wrapping around) and updates the carousel.
+ * Debounced by `isSliding` for the duration of the CSS transition.
+ * @param {MouseEvent} previous - The click event (unused).
+ */
+function handlePrevious(previous) {
+  if (isSliding) return;
+  isSliding = true;
+  currentRefIndex--;
+
+  if (currentRefIndex < 0) {
+    currentRefIndex = references.length - 1;
+  }
+  updateCarousel();
+  renderReferenceDots();
+
+  setTimeout(() => {
+    isSliding = false;
+  }, 1000);
+}
+
+/**
+ * Handles a click on the next arrow button.
+ * Increments `currentRefIndex` (wrapping around) and updates the carousel.
+ * Debounced by `isSliding` for the duration of the CSS transition.
+ * @param {MouseEvent} next - The click event (unused).
+ */
+function handleNext(next) {
+  if (isSliding) return;
+  isSliding = true;
+  currentRefIndex++;
+
+  if (currentRefIndex >= references.length) {
+    currentRefIndex = 0;
+  }
+  updateCarousel();
+  renderReferenceDots();
+
+  setTimeout(() => {
+    isSliding = false;
+  }, 1000);
+}
+
+/**
+ * Assigns `left`, `center`, and `right` CSS classes to the three
+ * reference cards based on `currentRefIndex`, driving the 3-D carousel effect.
+ */
 function updateCarousel() {
   let cards = document.querySelectorAll(".references__card");
 
