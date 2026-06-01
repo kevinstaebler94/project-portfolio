@@ -7,6 +7,7 @@ function init() {
   initHoverImagePreview();
   initBurgerMenu();
   switchLang(currentLang);
+  renderReferences();
   initiateCarouselSlider();
   renderReferenceDots();
 }
