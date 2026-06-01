@@ -206,14 +206,13 @@ form.addEventListener("submit", (event) => {
   showApprovalMessage();
   form.reset();
   updatePlaceholders();
-  console.log("Test");
 
-  // emailjs.sendForm("service_urv966s", "template_6ro37zj", form).then(
-  //   function () {
-  //     form.reset();
-  //   },
-  //   function (error) {
-  //     alert("Etwas ist schiefgelaufen: " + error.text);
-  //   }
-  // );
+  emailjs.sendForm("service_urv966s", "template_6ro37zj", form).then(
+    function () {
+      form.reset();
+    },
+    function (error) {
+      alert("Etwas ist schiefgelaufen: " + error.text);
+    }
+  );
 });
