@@ -287,6 +287,8 @@ function handleNext(next) {
 function updateCarousel() {
   let cards = document.querySelectorAll(".references__card");
 
+  if (cards.length === 0) return;
+
   cards.forEach((card) => {
     card.classList.remove("left", "center", "right");
   });
