@@ -22,8 +22,6 @@ function setLanguage(lang) {
 
   if (!texts) return;
 
-  renderReferences();
-  updateCarousel();
   updateElements("[data-i18n]", texts, "textContent");
   updateElements("[data-i18n-placeholder]", texts, "placeholder");
 
