@@ -203,13 +203,15 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  showApprovalMessage();
-  form.reset();
-  updatePlaceholders();
+  console.log("Name:", form.from_name.value);
+  console.log("Email:", form.from_email.value);
+  console.log("Message:", form.message.value);
 
   emailjs.sendForm("service_urv966s", "template_6ro37zj", form).then(
     function () {
+      showApprovalMessage();
       form.reset();
+      updatePlaceholders();
     },
     function (error) {
       alert("Etwas ist schiefgelaufen: " + error.text);

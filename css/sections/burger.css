@@ -24,7 +24,7 @@ body.burger-menu--open .burger-menu {
   z-index: 9999;
   border: var(--border);
   border-radius: var(--br-35);
-  transform: translateX(150%);
+  transform: translateX(200%);
   transition: transform 300ms ease-in-out;
 }
 
@@ -39,4 +39,5 @@ body.burger-menu--open .burger-menu {
 
 .burger-menu__content > a {
   font-size: var(--fs-lg);
+  font-family: var(--fira);
 }

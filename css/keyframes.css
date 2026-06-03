@@ -51,14 +51,14 @@
 
   to {
     transform: translateX(0);
-    color: var(--color-primary);
+    color: rgb(245, 6, 173);
   }
 }
 
 @keyframes approvalMessageOut {
   from {
     transform: translateX(0);
-    color: var(--color-primary);
+    color: rgb(245, 6, 173);
   }
 
   to {

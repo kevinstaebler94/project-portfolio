@@ -209,6 +209,7 @@
   align-items: center;
   gap: 20px;
   margin-right: var(--spacing-xl);
+  user-select: none;
 }
 
 .hero__side-right::after {
@@ -275,16 +276,17 @@
   border-radius: var(--br-25);
   padding: clamp(var(--spacing-sm), 4.5vw, var(--spacing-md)) clamp(var(--spacing-xxxs), 4.5vw, var(--spacing-xxs));
   margin-bottom: var(--spacing-sm);
-  cursor: pointer;
 }
 
 .image-wrapper > img {
   height: clamp(15px, 5vw, 25px);
+  animation: bounce 1500ms linear infinite;
+  user-select: none;
 }
 
-.image-wrapper > img {
+/* .image-wrapper > img {
   animation: bounce 1500ms linear infinite;
-}
+} */
 
 @media (max-width: 768px) {
   .hero__mail-adress {

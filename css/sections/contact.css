@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(413px, 1fr));
   column-gap: var(--spacing-xl);
-  padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-2xl) var(--spacing-2xl);
+  padding: var(--spacing-2xl);
 }
 
 .contact-info > h2,
@@ -53,9 +53,11 @@
   color: whitesmoke;
   font-family: var(--karla);
   font-size: var(--fs-xs);
+  height: 50px;
 }
 
-.contact-form > input:focus {
+.contact-form > input:focus,
+.contact-form > textarea:focus {
   background-color: var(--color-bg);
   border: none;
   outline: none;
@@ -161,30 +163,35 @@ input[type="checkbox"]:hover::before {
 }
 
 .privacy__validation {
-  font-size: var(--fs-xs);
+  font-size: var(--fs-md);
   color: transparent;
   padding: var(--spacing-sm) 0 var(--spacing-xs) 0;
 }
 
 .approval__message {
-  font-size: var(--fs-xs);
-  padding-bottom: var(--spacing-md);
+  font-size: var(--fs-md);
+  padding: var(--spacing-xs) var(--spacing-sm);
   color: transparent;
   transform: translateX(100%);
+  text-align: left;
 }
 
 .approval__message--show {
-  animation: approvalMessageIn 500ms ease-in-out forwards;
+  animation: approvalMessageIn 750ms ease-in-out forwards;
 }
 
 .approval__message--hide {
-  animation: approvalMessageOut 500ms ease-in-out forwards;
+  animation: approvalMessageOut 750ms ease-in-out forwards;
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px var(--color-bg) inset !important;
   -webkit-text-fill-color: whitesmoke !important;
   font-size: var(--fs-xs);
@@ -195,10 +202,17 @@ input:-webkit-autofill:active {
   box-sizing: border-box;
 }
 
-input:-webkit-autofill::placeholder {
+input:-webkit-autofill::placeholder,
+textarea:-webkit-autofill::placeholder {
   -webkit-text-fill-color: rgb(153, 153, 153) !important;
   font-size: var(--fs-xs);
   font-family: var(--karla);
+}
+
+.contact-form > textarea:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .contact-form__submit:disabled {
@@ -211,12 +225,14 @@ input:-webkit-autofill::placeholder {
   opacity: 1;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
   font-size: var(--fs-xs);
   font-family: var(--karla);
 }
 
-input.error::placeholder {
+input.error::placeholder,
+textarea.error::placeholder {
   color: var(--color-error);
   font-size: var(--fs-xs);
   font-family: var(--karla);
@@ -241,8 +257,10 @@ input.error::placeholder {
   padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-lg);
 }
 
-.contact-form > input {
+.contact-form > input,
+.contact-form > textarea {
   padding: 0 0 var(--spacing-sm) var(--spacing-lg);
+  resize: none;
 }
 
 .contact-form {
@@ -300,7 +318,7 @@ input.error::placeholder {
   max-width: 65ch;
 }
 
-@media (max-width: 969px) {
+@media (max-width: 1002px) {
   .contact {
     grid-template-columns: none;
     padding: var(--spacing-2xl) var(--spacing-sm);
@@ -316,7 +334,8 @@ input.error::placeholder {
     padding: var(--spacing-sm) var(--spacing-xs);
   }
 
-  .contact-form > input {
+  .contact-form > input,
+  .contact-form > textarea {
     padding: 0 0 var(--spacing-sm) var(--spacing-xs);
   }
 
