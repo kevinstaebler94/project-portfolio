@@ -143,6 +143,11 @@ function showApprovalMessage() {
 function validateForm() {
   let valid = true;
 
+  if (!isCheckboxChecked() && isNameValid() && isEmailValid() && isMessageValid()) {
+    showCheckboxError();
+    valid = false;
+  }
+
   if (!isNameValid()) {
     showNameError();
     valid = false;
@@ -155,11 +160,6 @@ function validateForm() {
 
   if (!isMessageValid()) {
     showMessageError();
-    valid = false;
-  }
-
-  if (!isCheckboxChecked()) {
-    showCheckboxError();
     valid = false;
   }
 
@@ -202,19 +202,19 @@ form.addEventListener("submit", (event) => {
     toggleButton();
     return;
   }
+  console.log(alert, "sent");
+  showApprovalMessage();
+  form.reset();
+  updatePlaceholders();
 
-  console.log("Name:", form.from_name.value);
-  console.log("Email:", form.from_email.value);
-  console.log("Message:", form.message.value);
-
-  emailjs.sendForm("service_urv966s", "template_6ro37zj", form).then(
-    function () {
-      showApprovalMessage();
-      form.reset();
-      updatePlaceholders();
-    },
-    function (error) {
-      alert("Etwas ist schiefgelaufen: " + error.text);
-    }
-  );
+  // emailjs.sendForm("service_urv966s", "template_6ro37zj", form).then(
+  //   function () {
+  //     showApprovalMessage();
+  //     form.reset();
+  //     updatePlaceholders();
+  //   },
+  //   function (error) {
+  //     alert("Etwas ist schiefgelaufen: " + error.text);
+  //   }
+  // );
 });

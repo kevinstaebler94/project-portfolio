@@ -107,3 +107,15 @@ button {
 ::-webkit-scrollbar {
   width: 0;
 }
+
+@media (max-width: 969px) {
+  .header__burger,
+  .header__return {
+    display: flex;
+  }
+
+  .burger-menu__content > a {
+    width: 130px;
+    text-align: left;
+  }
+}

@@ -1,3 +1,5 @@
+let isClicked = false;
+
 /**
  * Initializes the application by calling all setup functions.
  * Runs once the DOM is fully loaded.
@@ -10,6 +12,7 @@ function init() {
   renderReferences();
   initiateCarouselSlider();
   renderReferenceDots();
+  closeBurgerMenu();
 }
 
 /**
@@ -35,6 +38,16 @@ function initBurgerMenu() {
 
   if (!button) return;
   button.addEventListener("click", toggleBurgerMenu);
+}
+
+function closeBurgerMenu() {
+  document.body.classList.remove("burger-menu--open");
+
+  let sectionLinks = document.querySelectorAll(".burger-menu__content a");
+
+  sectionLinks.forEach((link) => {
+    link.addEventListener("click", closeBurgerMenu);
+  });
 }
 
 /**
