@@ -93,9 +93,9 @@ function getDe() {
 
         submit: "Sag Hallo",
 
-        name_error: "Oops! Bitte gib deinen Namen ein",
-        email_error: "Oops! Bitte gib deine E-Mail ein",
-        message_error: "Was möchtest du entwickeln?",
+        name_error: "Mindestens 2 Zeichen.",
+        email_error: "Ungültige E-Mail.",
+        message_error: "Mindestens 10 Zeichen.",
         approval_message: "Nachricht erfolgreich gesendet",
       },
     },
@@ -266,9 +266,9 @@ function getEn() {
 
         submit: "Say Hello",
 
-        name_error: "Oops! It seems your name is missing",
-        email_error: "Oops! Your email is required",
-        message_error: "What do you need to develop?",
+        name_error: "At least 2 characters.",
+        email_error: "Invalid email.",
+        message_error: "At least 10 characters.",
         approval_message: "Message sent successfully",
       },
     },

@@ -284,10 +284,6 @@
   user-select: none;
 }
 
-/* .image-wrapper > img {
-  animation: bounce 1500ms linear infinite;
-} */
-
 @media (max-width: 768px) {
   .hero__mail-adress {
     display: none;
