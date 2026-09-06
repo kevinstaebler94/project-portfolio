@@ -41,4 +41,22 @@ const projectList = {
     github: "https://github.com/kevinstaebler94/el_pollo_loco",
     liveTest: "https://el-polo-loco.kevin-staebler.de/index.html",
   },
+
+  memory: {
+    number: "03",
+    title: "Memory",
+    description: {
+      de: "Ein klassisches Memory-Spiel für zwei Spieler. Finde passende Kartenpaare, sammle Punkte und entdecke verschiedene Themes und Spielfeldgrößen.",
+
+      en: "A classic memory game for two players. Find matching card pairs, score points, and explore different themes and board sizes.",
+    },
+    languages: [
+      { name: "HTML", icon: "assets/icons/HTML.svg" },
+      { name: "CSS", icon: "assets/icons/CSS.svg" },
+      { name: "TypeScript", icon: "assets/icons/TypeScript.svg" },
+    ],
+    image: "../../assets/images/memory-img.svg",
+    github: "https://github.com/kevinstaebler94/memory-ts",
+    liveTest: "https://memory.kevin-staebler.de/index.html",
+  },
 };

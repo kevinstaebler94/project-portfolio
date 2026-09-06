@@ -74,11 +74,18 @@
 .projects__preview {
   grid-column: 2;
   position: relative;
+  pointer-events: none;
 }
 
 .projects__preview-img {
   width: 80%;
-  position: relative;
+  aspect-ratio: 296 / 192;
+  object-fit: cover;
+  border-radius: 16px;
+  position: absolute;
+  top: var(--preview-center, 0px);
+  transform: translateY(-50%);
+  visibility: hidden;
   z-index: 2;
   left: 20px;
 }
@@ -86,10 +93,11 @@
 .projects__preview::after {
   content: "";
   position: absolute;
-  top: 20px;
+  top: calc(var(--preview-center, 0px) + 20px);
   left: 40px;
-  right: 30px;
-  bottom: -10px;
+  width: 80%;
+  aspect-ratio: 296 / 192;
+  transform: translateY(-50%);
   background-image: url("../../assets/images/portrait-bg.svg");
   background-repeat: repeat;
   opacity: 0;
@@ -99,6 +107,10 @@
 
 .projects__preview--active::after {
   opacity: 1;
+}
+
+.projects__preview--active .projects__preview-img {
+  visibility: visible;
 }
 
 .projects > h3 {
@@ -159,6 +171,12 @@
 @media (max-width: 969px) {
   .projects {
     padding: 0 var(--spacing-xs) var(--spacing-2xl) var(--spacing-xs);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: var(--spacing-xl) var(--spacing-xs) var(--spacing-2xl) var(--spacing-xs);
   }
 }
 

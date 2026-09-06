@@ -179,6 +179,10 @@
 }
 
 @media (max-width: 768px) {
+  .references {
+    padding: var(--spacing-xl) var(--spacing-xs) var(--spacing-2xl) var(--spacing-xs);
+  }
+
   .references__content {
     gap: 0;
   }

@@ -113,7 +113,7 @@ function showNextProject() {
 
 /**
  * Initializes the hover image preview for all project cards.
- * Attaches `mouseover` and `mouseout` listeners to show/hide the preview image.
+ * Attaches `mouseenter` and `mouseleave` listeners to show/hide the preview image.
  */
 function initHoverImagePreview() {
   const projects = document.querySelectorAll(".project[data-project]");
@@ -129,7 +129,7 @@ function initHoverImagePreview() {
 }
 
 /**
- * Adds `mouseover` event listeners to project cards that show the preview image.
+ * Adds `mouseenter` event listeners to project cards that show the preview image.
  * Skips cards that already have the listener attached.
  * @param {NodeList} projects - Project card elements.
  * @param {HTMLElement} imageContainer - Container element for the preview image.
@@ -141,19 +141,24 @@ function addMouseOver(projects, imageContainer, previewImage) {
 
     project.dataset.listener = "true";
 
-    project.addEventListener("mouseover", () => {
+    project.addEventListener("mouseenter", () => {
       const key = project.dataset.project;
 
       if (!projectList[key]) return;
 
       previewImage.src = projectList[key].image;
+      previewImage.alt = projectList[key].title;
+      const projectRect = project.getBoundingClientRect();
+      const containerRect = imageContainer.getBoundingClientRect();
+      const center = projectRect.top - containerRect.top + projectRect.height / 2;
+      imageContainer.style.setProperty("--preview-center", `${center}px`);
       imageContainer.classList.add("projects__preview--active");
     });
   });
 }
 
 /**
- * Adds `mouseout` event listeners to project cards that hide the preview image.
+ * Adds `mouseleave` event listeners to project cards that hide the preview image.
  * Skips cards that already have the listener attached.
  * @param {NodeList} projects - Project card elements.
  * @param {HTMLElement} imageContainer - Container element for the preview image.
@@ -165,9 +170,7 @@ function addMouseOut(projects, imageContainer, previewImage) {
 
     project.dataset.listenerOut = "true";
 
-    project.addEventListener("mouseout", () => {
-      previewImage.src = "";
-
+    project.addEventListener("mouseleave", () => {
       imageContainer.classList.remove("projects__preview--active");
     });
   });

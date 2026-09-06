@@ -113,6 +113,9 @@
 .project-modal__preview > img {
   width: clamp(250px, 85vw, 650px);
   height: auto;
+  aspect-ratio: 296 / 192;
+  object-fit: cover;
+  border-radius: 16px;
   margin: var(--spacing-lg) 0 var(--spacing-2xl) 0;
   align-self: center;
 }

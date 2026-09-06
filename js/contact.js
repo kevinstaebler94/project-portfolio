@@ -202,19 +202,15 @@ form.addEventListener("submit", (event) => {
     toggleButton();
     return;
   }
-  console.log(alert, "sent");
-  showApprovalMessage();
-  form.reset();
-  updatePlaceholders();
 
-  // emailjs.sendForm("service_urv966s", "template_6ro37zj", form).then(
-  //   function () {
-  //     showApprovalMessage();
-  //     form.reset();
-  //     updatePlaceholders();
-  //   },
-  //   function (error) {
-  //     alert("Etwas ist schiefgelaufen: " + error.text);
-  //   }
-  // );
+  emailjs.sendForm("service_urv966s", "template_6ro37zj", form).then(
+    function () {
+      showApprovalMessage();
+      form.reset();
+      updatePlaceholders();
+    },
+    function (error) {
+      alert("Etwas ist schiefgelaufen: " + error.text);
+    }
+  );
 });

@@ -168,7 +168,7 @@
 
 @media (max-width: 768px) {
   .skills__container {
-    padding: var(--spacing-2xl) var(--spacing-xs) var(--spacing-2xl) var(--spacing-xs);
+    padding: var(--spacing-xl) var(--spacing-xs) var(--spacing-2xl) var(--spacing-xs);
   }
 }
 
